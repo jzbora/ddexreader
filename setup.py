@@ -13,6 +13,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'PyXB',
+    'requests'
 ]
 
 test_requirements = [
@@ -33,7 +34,7 @@ class PyTest(TestCommand):
 
 setup(
     name='ddexreader',
-    version='0.1.1',
+    version='0.1.1.1',
     description="This small project allows you to decode DDEX files into friendly Python data types.",
     long_description=readme + '\n\n' + history,
     author="Flavian Hautbois",
@@ -53,6 +54,7 @@ setup(
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.5',
     ],
     cmdclass={'test': PyTest},
     tests_require=test_requirements
