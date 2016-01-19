@@ -1,29 +1,57 @@
 import pyxb
-import ern312
-import ern32
-import ern33
-import ern34
-import ern341
-import ern35
-import ern351
-import ern36
+import requests
+from .import ern312
+from .import ern32
+from .import ern33
+from .import ern34
+from .import ern341
+from .import ern35
+from .import ern351
+from .import ern36
 
+
+def load_ddex(url):
+    """
+    load ddex url
+    """
+
+    r = requests.get(url)
+    if r.status_code == 200:
+        xml_data = r.text
+
+        if 'MessageSchemaVersionId="2010/ern-main/312"' in xml_data:
+            return ern312.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/32"' in xml_data:
+            return ern32.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="2011/ern-main/33"' in xml_data:
+            return ern33.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/34"' in xml_data:
+            return ern34.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/341"' in xml_data:
+            return ern341.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/35"' in xml_data:
+            return ern35.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/351"' in xml_data:
+            return ern351.CreateFromDocument(xml_data)
+        elif 'MessageSchemaVersionId="ern/36"' in xml_data:
+            return ern36.CreateFromDocument(xml_data)
+        else:
+            raise ValueError('No ERN version compatible with this DDEX file.')
+    else:
+        raise ValueError('Can not load url')
 
 def open_ddex(path):
     """
     Open an XML from a path and parse it into a DDEX data structure.
     This script automatically finds which ERN version to use.
-
     Args:
         path (str): path to the XML file.
-
     Returns:
         A DDEX data structure. The type depends on the ERN version.
-
     Raises:
         ValueError: No ERN version compatible with this DDEX file.
     """
-    with open(path, 'rb') as f:
+    with open(path, 'r') as f:
         xml_data = f.read()
 
     if 'MessageSchemaVersionId="2010/ern-main/312"' in xml_data:
@@ -62,7 +90,7 @@ def ddex_to_dict(ddex):
 
     # Check if we have a leaf type (which means its repr will be a string containing a unicode string)
     if 'object' not in repr(ddex):
-        return unicode(ddex)
+        return str(ddex)
     d = {}
 
     for attr in attributes:

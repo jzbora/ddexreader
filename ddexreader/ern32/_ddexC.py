@@ -24,11 +24,11 @@ if pyxb.__version__ != _PyXBVersion:
     raise pyxb.PyXBVersionError(_PyXBVersion)
 
 # Import bindings for namespaces imported into schema
-import _iso4217a as _ImportedBinding__iso4217a
+from .import _iso4217a as _ImportedBinding__iso4217a
 import pyxb.binding.datatypes
-import _iso639a2 as _ImportedBinding__iso639a2
-import _ddex as _ImportedBinding__ddex
-import _iso3166a2 as _ImportedBinding__iso3166a2
+from .import _iso639a2 as _ImportedBinding__iso639a2
+from .import _ddex as _ImportedBinding__ddex
+from .import _iso3166a2 as _ImportedBinding__iso3166a2
 
 # NOTE: All namespace declarations are reserved within the binding
 Namespace = pyxb.namespace.NamespaceForURI('http://ddex.net/xml/20100712/ddexC', create_if_missing=True)
@@ -350,16 +350,16 @@ class AdditionalInformation (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_AdditionalInformation_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 16, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 16, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the AdditionalInformation as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -378,39 +378,39 @@ class AmountByUseAndDistributionChannelType (pyxb.binding.basis.complexTypeDefin
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Amount uses Python identifier Amount
     __Amount = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Amount'), 'Amount', '__httpddex_netxml20100712ddexC_AmountByUseAndDistributionChannelType_Amount', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 43, 12), )
 
-    
+
     Amount = property(__Amount.value, __Amount.set, None, 'The Amount specified for the UseType and the DistributionChannelType.')
 
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_AmountByUseAndDistributionChannelType_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 48, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_AmountByUseAndDistributionChannelType_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 53, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer uses a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_AmountByUseAndDistributionChannelType_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 58, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_AmountByUseAndDistributionChannelType_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 63, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
     _ElementMap.update({
@@ -421,7 +421,7 @@ class AmountByUseAndDistributionChannelType (pyxb.binding.basis.complexTypeDefin
         __CarrierType.name() : __CarrierType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'AmountByUseAndDistributionChannelType', AmountByUseAndDistributionChannelType)
 
@@ -437,18 +437,18 @@ class AmountPerCollection (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Amount uses Python identifier Amount
     __Amount = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Amount'), 'Amount', '__httpddex_netxml20100712ddexC_AmountPerCollection_Amount', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 75, 12), )
 
-    
+
     Amount = property(__Amount.value, __Amount.set, None, 'The Amount specified for the CollectionType.')
 
-    
+
     # Element CollectionType uses Python identifier CollectionType
     __CollectionType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionType'), 'CollectionType', '__httpddex_netxml20100712ddexC_AmountPerCollection_CollectionType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 80, 12), )
 
-    
+
     CollectionType = property(__CollectionType.value, __CollectionType.set, None, 'A Composite containing details of the Type of the Collection.')
 
     _ElementMap.update({
@@ -456,7 +456,7 @@ class AmountPerCollection (pyxb.binding.basis.complexTypeDefinition):
         __CollectionType.name() : __CollectionType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'AmountPerCollection', AmountPerCollection)
 
@@ -472,16 +472,16 @@ class Annotation (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Annotation_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 93, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 93, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Annotation as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -500,18 +500,18 @@ class AvRating (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element RatingText uses Python identifier RatingText
     __RatingText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RatingText'), 'RatingText', '__httpddex_netxml20100712ddexC_AvRating_RatingText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 178, 12), )
 
-    
+
     RatingText = property(__RatingText.value, __RatingText.set, None, 'The text of the AvRating.')
 
-    
+
     # Element RatingAgency uses Python identifier RatingAgency
     __RatingAgency = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RatingAgency'), 'RatingAgency', '__httpddex_netxml20100712ddexC_AvRating_RatingAgency', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 183, 12), )
 
-    
+
     RatingAgency = property(__RatingAgency.value, __RatingAgency.set, None, 'A Composite containing details of an Organization that issues the AvRating.')
 
     _ElementMap.update({
@@ -519,7 +519,7 @@ class AvRating (pyxb.binding.basis.complexTypeDefinition):
         __RatingAgency.name() : __RatingAgency
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'AvRating', AvRating)
 
@@ -535,16 +535,16 @@ class CatalogNumber (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CatalogNumber_Namespace', pyxb.binding.datatypes.string, required=True)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 243, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 243, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CatalogNumber. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -563,26 +563,26 @@ class CLine (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Year uses Python identifier Year
     __Year = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Year'), 'Year', '__httpddex_netxml20100712ddexC_CLine_Year', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 277, 12), )
 
-    
+
     Year = property(__Year.value, __Year.set, None, 'The Year of the CLine.')
 
-    
+
     # Element CLineText uses Python identifier CLineText
     __CLineText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLineText'), 'CLineText', '__httpddex_netxml20100712ddexC_CLine_CLineText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 282, 12), )
 
-    
+
     CLineText = property(__CLineText.value, __CLineText.set, None, 'The text of the CLine.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_CLine_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 288, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 288, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the CLineText as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -606,96 +606,96 @@ class Collection (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element CollectionId uses Python identifier CollectionId
     __CollectionId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionId'), 'CollectionId', '__httpddex_netxml20100712ddexC_Collection_CollectionId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 299, 12), )
 
-    
+
     CollectionId = property(__CollectionId.value, __CollectionId.set, None, 'A Composite containing details of an Identifier of the Collection.')
 
-    
+
     # Element CollectionType uses Python identifier CollectionType
     __CollectionType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionType'), 'CollectionType', '__httpddex_netxml20100712ddexC_Collection_CollectionType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 304, 12), )
 
-    
+
     CollectionType = property(__CollectionType.value, __CollectionType.set, None, 'A Composite containing details of the Type of the Collection.')
 
-    
+
     # Element CollectionReference uses Python identifier CollectionReference
     __CollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionReference'), 'CollectionReference', '__httpddex_netxml20100712ddexC_Collection_CollectionReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 309, 12), )
 
-    
+
     CollectionReference = property(__CollectionReference.value, __CollectionReference.set, None, 'The Identifier (specific to the Message) of the Collection within the Release which contains it. This LocalAnchor is a string starting with the letter X.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_Collection_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 314, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Collection.')
 
-    
+
     # Element Contributor uses Python identifier Contributor
     __Contributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Contributor'), 'Contributor', '__httpddex_netxml20100712ddexC_Collection_Contributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 319, 12), )
 
-    
+
     Contributor = property(__Contributor.value, __Contributor.set, None, 'A Composite containing details a Contributor to the Collection.')
 
-    
+
     # Element CollectionCollectionReferenceList uses Python identifier CollectionCollectionReferenceList
     __CollectionCollectionReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionCollectionReferenceList'), 'CollectionCollectionReferenceList', '__httpddex_netxml20100712ddexC_Collection_CollectionCollectionReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 324, 12), )
 
-    
+
     CollectionCollectionReferenceList = property(__CollectionCollectionReferenceList.value, __CollectionCollectionReferenceList.set, None, 'A Composite containing a list of CollectionCollectionReferences for a Collection (specific to this Message).')
 
-    
+
     # Element IsComplete uses Python identifier IsComplete
     __IsComplete = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsComplete'), 'IsComplete', '__httpddex_netxml20100712ddexC_Collection_IsComplete', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 329, 12), )
 
-    
+
     IsComplete = property(__IsComplete.value, __IsComplete.set, None, 'The Flag indicating whether the Collection is complete (=True) or not (=False). Only one of the Elements IsComplete here and in the CollectionDetailsByTerritory is valid for a given Collection.')
 
-    
+
     # Element DurationOfMusicalContent uses Python identifier DurationOfMusicalContent
     __DurationOfMusicalContent = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DurationOfMusicalContent'), 'DurationOfMusicalContent', '__httpddex_netxml20100712ddexC_Collection_DurationOfMusicalContent', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 334, 12), )
 
-    
+
     DurationOfMusicalContent = property(__DurationOfMusicalContent.value, __DurationOfMusicalContent.set, None, 'The Duration of the musical content (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_Collection_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 339, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Collection was created.')
 
-    
+
     # Element OriginalReleaseDate uses Python identifier OriginalReleaseDate
     __OriginalReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalReleaseDate'), 'OriginalReleaseDate', '__httpddex_netxml20100712ddexC_Collection_OriginalReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 344, 12), )
 
-    
+
     OriginalReleaseDate = property(__OriginalReleaseDate.value, __OriginalReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Collection was or will be first made available for Usage, whether for physical or electronic/online distribution (in ISO 8601:2004 format: YYYY-MM-DD).')
 
-    
+
     # Element OriginalLanguage uses Python identifier OriginalLanguage
     __OriginalLanguage = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalLanguage'), 'OriginalLanguage', '__httpddex_netxml20100712ddexC_Collection_OriginalLanguage', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 349, 12), )
 
-    
+
     OriginalLanguage = property(__OriginalLanguage.value, __OriginalLanguage.set, None, 'The orignal Language of the Collection (represented by an ISO 639-2 LanguageCode).')
 
-    
+
     # Element CollectionDetailsByTerritory uses Python identifier CollectionDetailsByTerritory
     __CollectionDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionDetailsByTerritory'), 'CollectionDetailsByTerritory', '__httpddex_netxml20100712ddexC_Collection_CollectionDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 354, 12), )
 
-    
+
     CollectionDetailsByTerritory = property(__CollectionDetailsByTerritory.value, __CollectionDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the Collection which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Collection_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 360, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 360, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Collection as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -729,46 +729,46 @@ class CollectionCollectionReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_SequenceNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 371, 12), )
 
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the Collection in a group of Collections within a Medley, SoundRecording or other Collection.')
 
-    
+
     # Element CollectionCollectionReference uses Python identifier CollectionCollectionReference
     __CollectionCollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionCollectionReference'), 'CollectionCollectionReference', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_CollectionCollectionReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 376, 12), )
 
-    
+
     CollectionCollectionReference = property(__CollectionCollectionReference.value, __CollectionCollectionReference.set, None, 'A Reference for a Collection (specific to this Message). This LocalAnchorReference is a string starting with the letter X. The referenced Collection has to be of CollectionType Series, Season or Episode.')
 
-    
+
     # Element StartTime uses Python identifier StartTime
     __StartTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'StartTime'), 'StartTime', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_StartTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 381, 12), )
 
-    
+
     StartTime = property(__StartTime.value, __StartTime.set, None, 'The start time of the Creation, measured from the start of the Resource from which the CueSheet is referenced (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 386, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration of the use of the Creation that is referenced in the CueCreationReference (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element EndTime uses Python identifier EndTime
     __EndTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'EndTime'), 'EndTime', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_EndTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 391, 12), )
 
-    
+
     EndTime = property(__EndTime.value, __EndTime.set, None, 'The end time of the Creation, measured from the start of the Resource from which the CueSheet is referenced (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element InclusionDate uses Python identifier InclusionDate
     __InclusionDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'InclusionDate'), 'InclusionDate', '__httpddex_netxml20100712ddexC_CollectionCollectionReference_InclusionDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 396, 12), )
 
-    
+
     InclusionDate = property(__InclusionDate.value, __InclusionDate.set, None, 'A Date on which the Collection or Resource was included in the parent Collection.')
 
     _ElementMap.update({
@@ -780,7 +780,7 @@ class CollectionCollectionReference (pyxb.binding.basis.complexTypeDefinition):
         __InclusionDate.name() : __InclusionDate
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CollectionCollectionReference', CollectionCollectionReference)
 
@@ -796,18 +796,18 @@ class CollectionCollectionReferenceList (pyxb.binding.basis.complexTypeDefinitio
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element NumberOfCollections uses Python identifier NumberOfCollections
     __NumberOfCollections = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NumberOfCollections'), 'NumberOfCollections', '__httpddex_netxml20100712ddexC_CollectionCollectionReferenceList_NumberOfCollections', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 408, 12), )
 
-    
+
     NumberOfCollections = property(__NumberOfCollections.value, __NumberOfCollections.set, None, 'The number of referenced Collections (typically Chapters).')
 
-    
+
     # Element CollectionCollectionReference uses Python identifier CollectionCollectionReference
     __CollectionCollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionCollectionReference'), 'CollectionCollectionReference', '__httpddex_netxml20100712ddexC_CollectionCollectionReferenceList_CollectionCollectionReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 413, 12), )
 
-    
+
     CollectionCollectionReference = property(__CollectionCollectionReference.value, __CollectionCollectionReference.set, None, 'A Composite containing a CollectionCollectionReference for a Collection (specific to this Message).')
 
     _ElementMap.update({
@@ -815,7 +815,7 @@ class CollectionCollectionReferenceList (pyxb.binding.basis.complexTypeDefinitio
         __CollectionCollectionReference.name() : __CollectionCollectionReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CollectionCollectionReferenceList', CollectionCollectionReferenceList)
 
@@ -831,39 +831,39 @@ class CollectionDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_CollectionDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 426, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the Collection details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_CollectionDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 431, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the Collection details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_CollectionDetailsByTerritory_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 437, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Collection.')
 
-    
+
     # Element Contributor uses Python identifier Contributor
     __Contributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Contributor'), 'Contributor', '__httpddex_netxml20100712ddexC_CollectionDetailsByTerritory_Contributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 442, 12), )
 
-    
+
     Contributor = property(__Contributor.value, __Contributor.set, None, 'A Composite containing details of a Contributor to the Collection.')
 
-    
+
     # Element IsComplete uses Python identifier IsComplete
     __IsComplete = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsComplete'), 'IsComplete', '__httpddex_netxml20100712ddexC_CollectionDetailsByTerritory_IsComplete', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 447, 12), )
 
-    
+
     IsComplete = property(__IsComplete.value, __IsComplete.set, None, 'The Flag indicating whether the Collection is complete (=True) or not (=False). Only one of the Elements IsComplete here and in the Collection is valid for a given Collection.')
 
     _ElementMap.update({
@@ -874,7 +874,7 @@ class CollectionDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
         __IsComplete.name() : __IsComplete
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CollectionDetailsByTerritory', CollectionDetailsByTerritory)
 
@@ -890,53 +890,53 @@ class CollectionId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element GRid uses Python identifier GRid
     __GRid = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'GRid'), 'GRid', '__httpddex_netxml20100712ddexC_CollectionId_GRid', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 459, 12), )
 
-    
+
     GRid = property(__GRid.value, __GRid.set, None, 'The GRid identifying the Collection. This is the preferred Element and is mandatory if a GRid is available. A GRid comprises four parts: the string "A1", followed by five alphanumeric characters, ten alphanumeric characters and and one alphanumeric character.')
 
-    
+
     # Element ISRC uses Python identifier ISRC
     __ISRC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISRC'), 'ISRC', '__httpddex_netxml20100712ddexC_CollectionId_ISRC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 464, 12), )
 
-    
+
     ISRC = property(__ISRC.value, __ISRC.set, None, 'The ISRC (International Standard Recording Code as defined in ISO 3901) for the Collection. An ISRC comprises four parts: two characters, followed by three alphanumeric characters, then two digits and five digits.')
 
-    
+
     # Element ISAN uses Python identifier ISAN
     __ISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISAN'), 'ISAN', '__httpddex_netxml20100712ddexC_CollectionId_ISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 469, 12), )
 
-    
+
     ISAN = property(__ISAN.value, __ISAN.set, None, 'The ISAN (International Standard Audiovisual Number as defined in ISO 15706) for the Collection. An ISAN comprises four blocks of four hexadecimal charaters followed by a check character.')
 
-    
+
     # Element VISAN uses Python identifier VISAN
     __VISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VISAN'), 'VISAN', '__httpddex_netxml20100712ddexC_CollectionId_VISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 474, 12), )
 
-    
+
     VISAN = property(__VISAN.value, __VISAN.set, None, 'The V-ISAN (Version Identifier of a International Standard Audiovisual Number as defined in ISO 15706-2) for the Collection. A V-ISAN comprises four blocks of four hexadecimal charaters followed by a check character, followed by two further blocks of four hexadecimal characters, followed by a further check character.')
 
-    
+
     # Element ICPN uses Python identifier ICPN
     __ICPN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ICPN'), 'ICPN', '__httpddex_netxml20100712ddexC_CollectionId_ICPN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 479, 12), )
 
-    
+
     ICPN = property(__ICPN.value, __ICPN.set, None, 'A Composite containing details of the ICPN used as proxy for identification of the Collection. Only applicable when the Collection is an abstraction of a complete PhysicalProduct. An ICPN comprises 12 or 13 digits, depending whether it is an EAN (13) or a UPC (12).')
 
-    
+
     # Element CatalogNumber uses Python identifier CatalogNumber
     __CatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CatalogNumber'), 'CatalogNumber', '__httpddex_netxml20100712ddexC_CollectionId_CatalogNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 484, 12), )
 
-    
+
     CatalogNumber = property(__CatalogNumber.value, __CatalogNumber.set, None, 'A Composite containing details of the CatalogNumber of the Collection.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_CollectionId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 489, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Collection (usually one per society involved in the messaging).')
 
     _ElementMap.update({
@@ -949,7 +949,7 @@ class CollectionId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CollectionId', CollectionId)
 
@@ -965,18 +965,18 @@ class CollectionResourceReferenceList (pyxb.binding.basis.complexTypeDefinition)
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element CollectionResourceReference uses Python identifier CollectionResourceReference
     __CollectionResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CollectionResourceReference'), 'CollectionResourceReference', '__httpddex_netxml20100712ddexC_CollectionResourceReferenceList_CollectionResourceReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 501, 12), )
 
-    
+
     CollectionResourceReference = property(__CollectionResourceReference.value, __CollectionResourceReference.set, None, 'A Reference for a Resource (specific to this Message). This LocalAnchorReference is a string starting with the letter A.')
 
     _ElementMap.update({
         __CollectionResourceReference.name() : __CollectionResourceReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CollectionResourceReferenceList', CollectionResourceReferenceList)
 
@@ -992,16 +992,16 @@ class Comment (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Comment_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 533, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 533, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Comment as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1020,16 +1020,16 @@ class ConsumerRentalPeriod (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.duration
-    
+
     # Attribute IsExtensible uses Python identifier IsExtensible
     __IsExtensible = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsExtensible'), 'IsExtensible', '__httpddex_netxml20100712ddexC_ConsumerRentalPeriod_IsExtensible', pyxb.binding.datatypes.boolean)
     __IsExtensible._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 566, 16)
     __IsExtensible._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 566, 16)
-    
+
     IsExtensible = property(__IsExtensible.value, __IsExtensible.set, None, 'A Flag indicating whether a Period can be extended after the end of a Deal (=True) or not (=False).')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __IsExtensible.name() : __IsExtensible
@@ -1048,16 +1048,16 @@ class CourtesyLine (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_CourtesyLine_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 596, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 596, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the CourtesyLine as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1076,18 +1076,18 @@ class CueCreationReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element CueWorkReference uses Python identifier CueWorkReference
     __CueWorkReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CueWorkReference'), 'CueWorkReference', '__httpddex_netxml20100712ddexC_CueCreationReference_CueWorkReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 610, 16), )
 
-    
+
     CueWorkReference = property(__CueWorkReference.value, __CueWorkReference.set, None, 'A Reference for a Work (specific to this Message). This LocalAnchorReference is a string starting with the letter W.')
 
-    
+
     # Element CueResourceReference uses Python identifier CueResourceReference
     __CueResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CueResourceReference'), 'CueResourceReference', '__httpddex_netxml20100712ddexC_CueCreationReference_CueResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 615, 16), )
 
-    
+
     CueResourceReference = property(__CueResourceReference.value, __CueResourceReference.set, None, 'A Reference for a Resource (specific to this Message). This LocalAnchorReference is a string starting with the letter A.')
 
     _ElementMap.update({
@@ -1095,7 +1095,7 @@ class CueCreationReference (pyxb.binding.basis.complexTypeDefinition):
         __CueResourceReference.name() : __CueResourceReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'CueCreationReference', CueCreationReference)
 
@@ -1111,16 +1111,16 @@ class DealReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_DealReference_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 743, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 743, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the DealReference as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1139,16 +1139,16 @@ class Description (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Description_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 781, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 781, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Description as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1167,16 +1167,16 @@ class DistributionChannelDescriptor (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_DistributionChannelDescriptor_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 816, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 816, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the DistributionChannelDescriptor as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1195,39 +1195,39 @@ class DurationByUseType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_DurationByUseType_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 903, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration specified for the UseType.')
 
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_DurationByUseType_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 908, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_DurationByUseType_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 913, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer uses a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_DurationByUseType_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 918, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_DurationByUseType_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 923, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
     _ElementMap.update({
@@ -1238,7 +1238,7 @@ class DurationByUseType (pyxb.binding.basis.complexTypeDefinition):
         __CarrierType.name() : __CarrierType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'DurationByUseType', DurationByUseType)
 
@@ -1254,39 +1254,39 @@ class ExternalResourceLink (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element URL uses Python identifier URL
     __URL = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'URL'), 'URL', '__httpddex_netxml20100712ddexC_ExternalResourceLink_URL', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1021, 12), )
 
-    
+
     URL = property(__URL.value, __URL.set, None, 'A URL of the linked external Resource.')
 
-    
+
     # Element ValidityPeriod uses Python identifier ValidityPeriod
     __ValidityPeriod = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ValidityPeriod'), 'ValidityPeriod', '__httpddex_netxml20100712ddexC_ExternalResourceLink_ValidityPeriod', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1026, 12), )
 
-    
+
     ValidityPeriod = property(__ValidityPeriod.value, __ValidityPeriod.set, None, 'A Composite containing details about the Period of Time during which the ExternalResourceLink is active.')
 
-    
+
     # Element ExternalLink uses Python identifier ExternalLink
     __ExternalLink = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExternalLink'), 'ExternalLink', '__httpddex_netxml20100712ddexC_ExternalResourceLink_ExternalLink', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1031, 12), )
 
-    
+
     ExternalLink = property(__ExternalLink.value, __ExternalLink.set, None, 'The Identifier which provides a communication link to the related external Resource.')
 
-    
+
     # Element ExternallyLinkedResourceType uses Python identifier ExternallyLinkedResourceType
     __ExternallyLinkedResourceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExternallyLinkedResourceType'), 'ExternallyLinkedResourceType', '__httpddex_netxml20100712ddexC_ExternalResourceLink_ExternallyLinkedResourceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1036, 12), )
 
-    
+
     ExternallyLinkedResourceType = property(__ExternallyLinkedResourceType.value, __ExternallyLinkedResourceType.set, None, 'A Composite containing details of the Type of a Resource pointed to by the ExternalResourceLink.')
 
-    
+
     # Element FileFormat uses Python identifier FileFormat
     __FileFormat = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FileFormat'), 'FileFormat', '__httpddex_netxml20100712ddexC_ExternalResourceLink_FileFormat', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1041, 12), )
 
-    
+
     FileFormat = property(__FileFormat.value, __FileFormat.set, None, 'The FileFormat of the external Resource.')
 
     _ElementMap.update({
@@ -1297,7 +1297,7 @@ class ExternalResourceLink (pyxb.binding.basis.complexTypeDefinition):
         __FileFormat.name() : __FileFormat
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ExternalResourceLink', ExternalResourceLink)
 
@@ -1313,32 +1313,32 @@ class File (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element FileName uses Python identifier FileName
     __FileName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FileName'), 'FileName', '__httpddex_netxml20100712ddexC_File_FileName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1055, 20), )
 
-    
+
     FileName = property(__FileName.value, __FileName.set, None, 'A Name of the File.')
 
-    
+
     # Element FilePath uses Python identifier FilePath
     __FilePath = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FilePath'), 'FilePath', '__httpddex_netxml20100712ddexC_File_FilePath', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1060, 20), )
 
-    
+
     FilePath = property(__FilePath.value, __FilePath.set, None, 'A location of the File.')
 
-    
+
     # Element URL uses Python identifier URL
     __URL = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'URL'), 'URL', '__httpddex_netxml20100712ddexC_File_URL', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1066, 16), )
 
-    
+
     URL = property(__URL.value, __URL.set, None, 'A URL of the File.')
 
-    
+
     # Element HashSum uses Python identifier HashSum
     __HashSum = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'HashSum'), 'HashSum', '__httpddex_netxml20100712ddexC_File_HashSum', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1072, 12), )
 
-    
+
     HashSum = property(__HashSum.value, __HashSum.set, None, 'A Composite containing a HashSum of the File and information about the algorithm with which it has been generated.')
 
     _ElementMap.update({
@@ -1348,7 +1348,7 @@ class File (pyxb.binding.basis.complexTypeDefinition):
         __HashSum.name() : __HashSum
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'File', File)
 
@@ -1364,18 +1364,18 @@ class FulfillmentDate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element FulfillmentDate uses Python identifier FulfillmentDate
     __FulfillmentDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FulfillmentDate'), 'FulfillmentDate', '__httpddex_netxml20100712ddexC_FulfillmentDate_FulfillmentDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1098, 12), )
 
-    
+
     FulfillmentDate = property(__FulfillmentDate.value, __FulfillmentDate.set, None, 'A Date after which an end user can receive the Resource (in ISO 8601:2004 format: YYYY-MM-DD). If no FulfillmentDate is provided the FulfillmentDate is the StartDate of the respective Deal.')
 
-    
+
     # Element ResourceReleaseReference uses Python identifier ResourceReleaseReference
     __ResourceReleaseReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReleaseReference'), 'ResourceReleaseReference', '__httpddex_netxml20100712ddexC_FulfillmentDate_ResourceReleaseReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1103, 12), )
 
-    
+
     ResourceReleaseReference = property(__ResourceReleaseReference.value, __ResourceReleaseReference.set, None, 'The Identifier (specific to the Message) of a Release for a Resource. This LocalAnchorReference is a string starting with the letter R.')
 
     _ElementMap.update({
@@ -1383,7 +1383,7 @@ class FulfillmentDate (pyxb.binding.basis.complexTypeDefinition):
         __ResourceReleaseReference.name() : __ResourceReleaseReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'FulfillmentDate', FulfillmentDate)
 
@@ -1399,26 +1399,26 @@ class Genre (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element GenreText uses Python identifier GenreText
     __GenreText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'GenreText'), 'GenreText', '__httpddex_netxml20100712ddexC_Genre_GenreText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1115, 12), )
 
-    
+
     GenreText = property(__GenreText.value, __GenreText.set, None, 'A Composite containing a Description of a genre or style (such as Musical, literary or audio-visual) with which a Creation is associated.')
 
-    
+
     # Element SubGenre uses Python identifier SubGenre
     __SubGenre = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SubGenre'), 'SubGenre', '__httpddex_netxml20100712ddexC_Genre_SubGenre', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1120, 12), )
 
-    
+
     SubGenre = property(__SubGenre.value, __SubGenre.set, None, 'A Composite containing a Description of a secondary genre or style with which a Creation is associated.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Genre_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1126, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1126, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Genre as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -1442,18 +1442,18 @@ class HashSum (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element HashSum uses Python identifier HashSum
     __HashSum = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'HashSum'), 'HashSum', '__httpddex_netxml20100712ddexC_HashSum_HashSum', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1156, 12), )
 
-    
+
     HashSum = property(__HashSum.value, __HashSum.set, None, 'The value of the HashSum.')
 
-    
+
     # Element HashSumAlgorithmType uses Python identifier HashSumAlgorithmType
     __HashSumAlgorithmType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'HashSumAlgorithmType'), 'HashSumAlgorithmType', '__httpddex_netxml20100712ddexC_HashSum_HashSumAlgorithmType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1161, 12), )
 
-    
+
     HashSumAlgorithmType = property(__HashSumAlgorithmType.value, __HashSumAlgorithmType.set, None, 'A Composite containing details of the Type of HashSumAlgorithm governing the HashSum.')
 
     _ElementMap.update({
@@ -1461,7 +1461,7 @@ class HashSum (pyxb.binding.basis.complexTypeDefinition):
         __HashSumAlgorithmType.name() : __HashSumAlgorithmType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'HashSum', HashSum)
 
@@ -1477,53 +1477,53 @@ class HostSoundCarrier (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseId uses Python identifier ReleaseId
     __ReleaseId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseId'), 'ReleaseId', '__httpddex_netxml20100712ddexC_HostSoundCarrier_ReleaseId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1192, 12), )
 
-    
+
     ReleaseId = property(__ReleaseId.value, __ReleaseId.set, None, 'A Composite containing details of ReleaseIds of the HostSoundCarrier. If available, a GRid has to be used. If the HostSoundCarrier contains only one SoundRecording, the ISRC of the SoundRecording may be used instead.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_HostSoundCarrier_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1197, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the HostSoundCarrier.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_HostSoundCarrier_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1202, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the HostSoundCarrier.')
 
-    
+
     # Element DisplayArtist uses Python identifier DisplayArtist
     __DisplayArtist = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DisplayArtist'), 'DisplayArtist', '__httpddex_netxml20100712ddexC_HostSoundCarrier_DisplayArtist', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1207, 12), )
 
-    
+
     DisplayArtist = property(__DisplayArtist.value, __DisplayArtist.set, None, 'A Composite containing details of the DisplayArtist for the HostSoundCarrier. The DisplayArtist may be described through Name, Identifier and Roles.')
 
-    
+
     # Element AdministratingRecordCompany uses Python identifier AdministratingRecordCompany
     __AdministratingRecordCompany = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'AdministratingRecordCompany'), 'AdministratingRecordCompany', '__httpddex_netxml20100712ddexC_HostSoundCarrier_AdministratingRecordCompany', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1212, 12), )
 
-    
+
     AdministratingRecordCompany = property(__AdministratingRecordCompany.value, __AdministratingRecordCompany.set, None, 'A Composite containing details of the AdministratingRecordCompany for the Rights in the HostSoundCarrier.')
 
-    
+
     # Element TrackNumber uses Python identifier TrackNumber
     __TrackNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TrackNumber'), 'TrackNumber', '__httpddex_netxml20100712ddexC_HostSoundCarrier_TrackNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1217, 12), )
 
-    
+
     TrackNumber = property(__TrackNumber.value, __TrackNumber.set, None, 'The TrackNumber of the SoundRecording within the HostSoundCarrier.')
 
-    
+
     # Element VolumeNumberInSet uses Python identifier VolumeNumberInSet
     __VolumeNumberInSet = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VolumeNumberInSet'), 'VolumeNumberInSet', '__httpddex_netxml20100712ddexC_HostSoundCarrier_VolumeNumberInSet', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1222, 12), )
 
-    
+
     VolumeNumberInSet = property(__VolumeNumberInSet.value, __VolumeNumberInSet.set, None, 'The SequenceNumber within the Set of the volume containing the SoundRecording, where the HostSoundCarrier is a Set (such as a "box set" of CDs).')
 
     _ElementMap.update({
@@ -1536,7 +1536,7 @@ class HostSoundCarrier (pyxb.binding.basis.complexTypeDefinition):
         __VolumeNumberInSet.name() : __VolumeNumberInSet
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'HostSoundCarrier', HostSoundCarrier)
 
@@ -1552,16 +1552,16 @@ class ICPN (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute IsEan uses Python identifier IsEan
     __IsEan = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsEan'), 'IsEan', '__httpddex_netxml20100712ddexC_ICPN_IsEan', pyxb.binding.datatypes.boolean, required=True)
     __IsEan._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1235, 16)
     __IsEan._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1235, 16)
-    
+
     IsEan = property(__IsEan.value, __IsEan.set, None, 'The Flag indicating whether the ICPN is specifically an EAN (=True) or a UPC (=False). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __IsEan.name() : __IsEan
@@ -1580,61 +1580,61 @@ class Image (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ImageType uses Python identifier ImageType
     __ImageType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ImageType'), 'ImageType', '__httpddex_netxml20100712ddexC_Image_ImageType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1248, 12), )
 
-    
+
     ImageType = property(__ImageType.value, __ImageType.set, None, 'A Composite containing details of the Type of the Image.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_Image_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1253, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the Image is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element ImageId uses Python identifier ImageId
     __ImageId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ImageId'), 'ImageId', '__httpddex_netxml20100712ddexC_Image_ImageId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1258, 12), )
 
-    
+
     ImageId = property(__ImageId.value, __ImageId.set, None, 'A Composite containing details of Identifiers of the Image.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_Image_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1263, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the Image within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_Image_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1268, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Image.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_Image_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1273, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Image was created.')
 
-    
+
     # Element ImageDetailsByTerritory uses Python identifier ImageDetailsByTerritory
     __ImageDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ImageDetailsByTerritory'), 'ImageDetailsByTerritory', '__httpddex_netxml20100712ddexC_Image_ImageDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1278, 12), )
 
-    
+
     ImageDetailsByTerritory = property(__ImageDetailsByTerritory.value, __ImageDetailsByTerritory.set, None, 'A Composite containing details of the Image which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Image_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1284, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1284, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Image as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -1663,68 +1663,68 @@ class ImageDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1320, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the Image details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1325, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the Image details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1331, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the Image.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1336, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the Image.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1341, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the Image.')
 
-    
+
     # Element Description uses Python identifier Description
     __Description = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Description'), 'Description', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_Description', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1346, 12), )
 
-    
+
     Description = property(__Description.value, __Description.set, None, 'A Composite containing a Description of the subject of the Image.')
 
-    
+
     # Element CourtesyLine uses Python identifier CourtesyLine
     __CourtesyLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CourtesyLine'), 'CourtesyLine', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_CourtesyLine', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1351, 12), )
 
-    
+
     CourtesyLine = property(__CourtesyLine.value, __CourtesyLine.set, None, 'A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured on the Image.')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1356, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Image was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_ImageDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1362, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1362, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the ImageDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -1754,18 +1754,18 @@ class ImageId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_ImageId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1373, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Image.')
 
     _ElementMap.update({
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ImageId', ImageId)
 
@@ -1781,16 +1781,16 @@ class Keywords (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Keywords_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1426, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1426, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Keywords as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -1809,19 +1809,19 @@ class MessageAuditTrail (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MessageAuditTrailEvent uses Python identifier MessageAuditTrailEvent
     __MessageAuditTrailEvent = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageAuditTrailEvent'), 'MessageAuditTrailEvent', '__httpddex_netxml20100712ddexC_MessageAuditTrail_MessageAuditTrailEvent', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1496, 12), )
 
-    
+
     MessageAuditTrailEvent = property(__MessageAuditTrailEvent.value, __MessageAuditTrailEvent.set, None, 'A Composite containing details of a Party handling the Message and the Time at which the handling took place.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MessageAuditTrail_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1502, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1502, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MessageAuditTrail as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -1844,18 +1844,18 @@ class MessageAuditTrailEvent (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MessagingPartyDescriptor uses Python identifier MessagingPartyDescriptor
     __MessagingPartyDescriptor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessagingPartyDescriptor'), 'MessagingPartyDescriptor', '__httpddex_netxml20100712ddexC_MessageAuditTrailEvent_MessagingPartyDescriptor', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1513, 12), )
 
-    
+
     MessagingPartyDescriptor = property(__MessagingPartyDescriptor.value, __MessagingPartyDescriptor.set, None, 'A Composite containing details of a MessagingParty.')
 
-    
+
     # Element DateTime uses Python identifier DateTime
     __DateTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DateTime'), 'DateTime', '__httpddex_netxml20100712ddexC_MessageAuditTrailEvent_DateTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1518, 12), )
 
-    
+
     DateTime = property(__DateTime.value, __DateTime.set, None, 'The DateTime at which the Message was handled by the MessagingParty (the only allowed format is ISO 8601:2004: YYYY-MM-DDThh:mm:ssTZD).')
 
     _ElementMap.update({
@@ -1863,7 +1863,7 @@ class MessageAuditTrailEvent (pyxb.binding.basis.complexTypeDefinition):
         __DateTime.name() : __DateTime
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'MessageAuditTrailEvent', MessageAuditTrailEvent)
 
@@ -1879,82 +1879,82 @@ class MessageHeader (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MessageThreadId uses Python identifier MessageThreadId
     __MessageThreadId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageThreadId'), 'MessageThreadId', '__httpddex_netxml20100712ddexC_MessageHeader_MessageThreadId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1530, 12), )
 
-    
+
     MessageThreadId = property(__MessageThreadId.value, __MessageThreadId.set, None, 'A string used to uniquely identify the thread of Messages of which the current Message is a part.')
 
-    
+
     # Element MessageId uses Python identifier MessageId
     __MessageId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageId'), 'MessageId', '__httpddex_netxml20100712ddexC_MessageHeader_MessageId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1535, 12), )
 
-    
+
     MessageId = property(__MessageId.value, __MessageId.set, None, 'A string used to uniquely identify the current Message.')
 
-    
+
     # Element MessageFileName uses Python identifier MessageFileName
     __MessageFileName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageFileName'), 'MessageFileName', '__httpddex_netxml20100712ddexC_MessageHeader_MessageFileName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1540, 12), )
 
-    
+
     MessageFileName = property(__MessageFileName.value, __MessageFileName.set, None, 'The FileName, possibly including the FilePath, of the XML File containing the current Message.')
 
-    
+
     # Element MessageSender uses Python identifier MessageSender
     __MessageSender = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageSender'), 'MessageSender', '__httpddex_netxml20100712ddexC_MessageHeader_MessageSender', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1545, 12), )
 
-    
+
     MessageSender = property(__MessageSender.value, __MessageSender.set, None, 'A Composite containing details of the MessageSender.')
 
-    
+
     # Element SentOnBehalfOf uses Python identifier SentOnBehalfOf
     __SentOnBehalfOf = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SentOnBehalfOf'), 'SentOnBehalfOf', '__httpddex_netxml20100712ddexC_MessageHeader_SentOnBehalfOf', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1550, 12), )
 
-    
+
     SentOnBehalfOf = property(__SentOnBehalfOf.value, __SentOnBehalfOf.set, None, 'A Composite containing details of the Party on whose behalf the Message is sent.')
 
-    
+
     # Element MessageRecipient uses Python identifier MessageRecipient
     __MessageRecipient = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageRecipient'), 'MessageRecipient', '__httpddex_netxml20100712ddexC_MessageHeader_MessageRecipient', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1555, 12), )
 
-    
+
     MessageRecipient = property(__MessageRecipient.value, __MessageRecipient.set, None, 'A Composite containing details of the MessageRecipient.')
 
-    
+
     # Element MessageCreatedDateTime uses Python identifier MessageCreatedDateTime
     __MessageCreatedDateTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageCreatedDateTime'), 'MessageCreatedDateTime', '__httpddex_netxml20100712ddexC_MessageHeader_MessageCreatedDateTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1560, 12), )
 
-    
+
     MessageCreatedDateTime = property(__MessageCreatedDateTime.value, __MessageCreatedDateTime.set, None, 'The DateTime on which the Message was created (the only allowed format is ISO 8601:2004: YYYY-MM-DDThh:mm:ssTZD).')
 
-    
+
     # Element MessageAuditTrail uses Python identifier MessageAuditTrail
     __MessageAuditTrail = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageAuditTrail'), 'MessageAuditTrail', '__httpddex_netxml20100712ddexC_MessageHeader_MessageAuditTrail', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1565, 12), )
 
-    
+
     MessageAuditTrail = property(__MessageAuditTrail.value, __MessageAuditTrail.set, None, 'A Composite containing information about Parties in between the original MessageSender and ultimate MessageRecipient.')
 
-    
+
     # Element Comment uses Python identifier Comment
     __Comment = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Comment'), 'Comment', '__httpddex_netxml20100712ddexC_MessageHeader_Comment', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1570, 12), )
 
-    
+
     Comment = property(__Comment.value, __Comment.set, None, 'A Composite containing a human-readable Comment about the Message.')
 
-    
+
     # Element MessageControlType uses Python identifier MessageControlType
     __MessageControlType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageControlType'), 'MessageControlType', '__httpddex_netxml20100712ddexC_MessageHeader_MessageControlType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1575, 12), )
 
-    
+
     MessageControlType = property(__MessageControlType.value, __MessageControlType.set, None, 'The indicator used to distinguish a live Message from a test Message.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MessageHeader_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1581, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1581, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MessageHeader as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -1986,18 +1986,18 @@ class MessageNotificationPeriod (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element StartDate uses Python identifier StartDate
     __StartDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'StartDate'), 'StartDate', '__httpddex_netxml20100712ddexC_MessageNotificationPeriod_StartDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1592, 12), )
 
-    
+
     StartDate = property(__StartDate.value, __StartDate.set, None, 'The Date that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). This cannot be a Date in the future.')
 
-    
+
     # Element EndDate uses Python identifier EndDate
     __EndDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'EndDate'), 'EndDate', '__httpddex_netxml20100712ddexC_MessageNotificationPeriod_EndDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1597, 12), )
 
-    
+
     EndDate = property(__EndDate.value, __EndDate.set, None, 'The Date that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). This cannot be a Date in the future.')
 
     _ElementMap.update({
@@ -2005,7 +2005,7 @@ class MessageNotificationPeriod (pyxb.binding.basis.complexTypeDefinition):
         __EndDate.name() : __EndDate
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'MessageNotificationPeriod', MessageNotificationPeriod)
 
@@ -2021,33 +2021,33 @@ class MessagingParty (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PartyId uses Python identifier PartyId
     __PartyId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyId'), 'PartyId', '__httpddex_netxml20100712ddexC_MessagingParty_PartyId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1609, 12), )
 
-    
+
     PartyId = property(__PartyId.value, __PartyId.set, None, 'A Composite containing details of the PartyId for the Party handling the Message. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, Producers or other Creators.')
 
-    
+
     # Element PartyName uses Python identifier PartyName
     __PartyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyName'), 'PartyName', '__httpddex_netxml20100712ddexC_MessagingParty_PartyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1614, 12), )
 
-    
+
     PartyName = property(__PartyName.value, __PartyName.set, None, 'A Composite containing details of the PartyNames for the Party handling the Message.')
 
-    
+
     # Element TradingName uses Python identifier TradingName
     __TradingName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TradingName'), 'TradingName', '__httpddex_netxml20100712ddexC_MessagingParty_TradingName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1619, 12), )
 
-    
+
     TradingName = property(__TradingName.value, __TradingName.set, None, 'A Composite containing a TradingName for the Party handling the Message.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MessagingParty_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1625, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1625, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MessagingParty as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2072,166 +2072,166 @@ class MIDI (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MidiType uses Python identifier MidiType
     __MidiType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MidiType'), 'MidiType', '__httpddex_netxml20100712ddexC_MIDI_MidiType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1636, 12), )
 
-    
+
     MidiType = property(__MidiType.value, __MidiType.set, None, 'A Composite containing details of the Type of the MIDI.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_MIDI_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1641, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the MIDI is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element MidiId uses Python identifier MidiId
     __MidiId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MidiId'), 'MidiId', '__httpddex_netxml20100712ddexC_MIDI_MidiId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1646, 12), )
 
-    
+
     MidiId = property(__MidiId.value, __MidiId.set, None, 'A Composite containing details of Identifiers of the Midi.')
 
-    
+
     # Element IndirectMidiId uses Python identifier IndirectMidiId
     __IndirectMidiId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectMidiId'), 'IndirectMidiId', '__httpddex_netxml20100712ddexC_MIDI_IndirectMidiId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1651, 12), )
 
-    
+
     IndirectMidiId = property(__IndirectMidiId.value, __IndirectMidiId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the MIDI.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_MIDI_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1656, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the MIDI within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_MIDI_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1661, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the MIDI.')
 
-    
+
     # Element InstrumentationDescription uses Python identifier InstrumentationDescription
     __InstrumentationDescription = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'InstrumentationDescription'), 'InstrumentationDescription', '__httpddex_netxml20100712ddexC_MIDI_InstrumentationDescription', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1666, 12), )
 
-    
+
     InstrumentationDescription = property(__InstrumentationDescription.value, __InstrumentationDescription.set, None, 'A Composite containing a Description of the Type of instrumentation of the MusicalWork(s) in the MIDI.')
 
-    
+
     # Element IsMedley uses Python identifier IsMedley
     __IsMedley = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsMedley'), 'IsMedley', '__httpddex_netxml20100712ddexC_MIDI_IsMedley', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1671, 12), )
 
-    
+
     IsMedley = property(__IsMedley.value, __IsMedley.set, None, 'The Flag indicating whether the MIDI is a Medley (=True) or not (=False).')
 
-    
+
     # Element IsPotpourri uses Python identifier IsPotpourri
     __IsPotpourri = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsPotpourri'), 'IsPotpourri', '__httpddex_netxml20100712ddexC_MIDI_IsPotpourri', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1676, 12), )
 
-    
+
     IsPotpourri = property(__IsPotpourri.value, __IsPotpourri.set, None, 'The Flag indicating whether the MIDI is a Potpourri (=True) or not (=False).')
 
-    
+
     # Element IsInstrumental uses Python identifier IsInstrumental
     __IsInstrumental = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsInstrumental'), 'IsInstrumental', '__httpddex_netxml20100712ddexC_MIDI_IsInstrumental', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1681, 12), )
 
-    
+
     IsInstrumental = property(__IsInstrumental.value, __IsInstrumental.set, None, 'The Flag indicating whether the MIDI is instrumental (=True) or not (=False).')
 
-    
+
     # Element IsBackground uses Python identifier IsBackground
     __IsBackground = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBackground'), 'IsBackground', '__httpddex_netxml20100712ddexC_MIDI_IsBackground', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1686, 12), )
 
-    
+
     IsBackground = property(__IsBackground.value, __IsBackground.set, None, 'The Flag indicating whether the MIDI is used as background to other audio or audiovisual material (=True) or not (=False).')
 
-    
+
     # Element IsHiddenResource uses Python identifier IsHiddenResource
     __IsHiddenResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsHiddenResource'), 'IsHiddenResource', '__httpddex_netxml20100712ddexC_MIDI_IsHiddenResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1691, 12), )
 
-    
+
     IsHiddenResource = property(__IsHiddenResource.value, __IsHiddenResource.set, None, 'The Flag indicating whether the MIDI is hidden in some way from the Consumer (=True) or not (=False).')
 
-    
+
     # Element IsBonusResource uses Python identifier IsBonusResource
     __IsBonusResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBonusResource'), 'IsBonusResource', '__httpddex_netxml20100712ddexC_MIDI_IsBonusResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1696, 12), )
 
-    
+
     IsBonusResource = property(__IsBonusResource.value, __IsBonusResource.set, None, 'The Flag indicating whether the MIDI is additional to those on the original Release of which this is a Version (=True) or not (=False).')
 
-    
+
     # Element IsComputerGenerated uses Python identifier IsComputerGenerated
     __IsComputerGenerated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsComputerGenerated'), 'IsComputerGenerated', '__httpddex_netxml20100712ddexC_MIDI_IsComputerGenerated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1701, 12), )
 
-    
+
     IsComputerGenerated = property(__IsComputerGenerated.value, __IsComputerGenerated.set, None, 'The Flag indicating whether the MIDI is generated by a computer (=True) or not (=False).')
 
-    
+
     # Element LanguageOfPerformance uses Python identifier LanguageOfPerformance
     __LanguageOfPerformance = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LanguageOfPerformance'), 'LanguageOfPerformance', '__httpddex_netxml20100712ddexC_MIDI_LanguageOfPerformance', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1706, 12), )
 
-    
+
     LanguageOfPerformance = property(__LanguageOfPerformance.value, __LanguageOfPerformance.set, None, 'The Language of the Performance recorded in the MIDI (represented by an ISO 639-2 LanguageCode).')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_MIDI_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1711, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration of the MIDI (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_MIDI_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1716, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the MIDI.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_MIDI_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1721, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the MIDI.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_MIDI_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1726, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current MIDI.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_MIDI_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1731, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the MIDI was created.')
 
-    
+
     # Element MasteredDate uses Python identifier MasteredDate
     __MasteredDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MasteredDate'), 'MasteredDate', '__httpddex_netxml20100712ddexC_MIDI_MasteredDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1736, 12), )
 
-    
+
     MasteredDate = property(__MasteredDate.value, __MasteredDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the MIDI was originally mastered (either in analogue or digital form).')
 
-    
+
     # Element MidiDetailsByTerritory uses Python identifier MidiDetailsByTerritory
     __MidiDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MidiDetailsByTerritory'), 'MidiDetailsByTerritory', '__httpddex_netxml20100712ddexC_MIDI_MidiDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1741, 12), )
 
-    
+
     MidiDetailsByTerritory = property(__MidiDetailsByTerritory.value, __MidiDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the MIDI which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MIDI_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1747, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1747, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MIDI as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2275,96 +2275,96 @@ class MidiDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1759, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the MIDI details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1764, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the MIDI details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1770, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the MIDI.')
 
-    
+
     # Element DisplayArtist uses Python identifier DisplayArtist
     __DisplayArtist = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DisplayArtist'), 'DisplayArtist', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_DisplayArtist', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1775, 12), )
 
-    
+
     DisplayArtist = property(__DisplayArtist.value, __DisplayArtist.set, None, 'A Composite containing details of the DisplayArtist for the MIDI. The DisplayArtist may be described through Name, Identifier and Roles.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1780, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the MIDI.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1785, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the MIDI.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1790, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the MIDI.')
 
-    
+
     # Element LabelName uses Python identifier LabelName
     __LabelName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LabelName'), 'LabelName', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_LabelName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1795, 12), )
 
-    
+
     LabelName = property(__LabelName.value, __LabelName.set, None, 'A Composite containing the Name of the Label under which the Release is to be marketed.')
 
-    
+
     # Element RightsController uses Python identifier RightsController
     __RightsController = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsController'), 'RightsController', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_RightsController', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1800, 12), )
 
-    
+
     RightsController = property(__RightsController.value, __RightsController.set, None, 'A Composite containing details of RightsController of Rights in the MIDI.')
 
-    
+
     # Element RemasteredDate uses Python identifier RemasteredDate
     __RemasteredDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RemasteredDate'), 'RemasteredDate', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_RemasteredDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1805, 12), )
 
-    
+
     RemasteredDate = property(__RemasteredDate.value, __RemasteredDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the MIDI was re-mastered (usually digitally).')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1810, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the MIDI was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1815, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the MIDI.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MidiDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1821, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1821, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MidiDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2398,18 +2398,18 @@ class MidiId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_MidiId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1832, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Midi.')
 
     _ElementMap.update({
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'MidiId', MidiId)
 
@@ -2425,76 +2425,76 @@ class MusicalWork (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MusicalWorkId uses Python identifier MusicalWorkId
     __MusicalWorkId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkId'), 'MusicalWorkId', '__httpddex_netxml20100712ddexC_MusicalWork_MusicalWorkId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1863, 12), )
 
-    
+
     MusicalWorkId = property(__MusicalWorkId.value, __MusicalWorkId.set, None, 'A Composite containing details of a MusicalWorkId of the MusicalWork.')
 
-    
+
     # Element MusicalWorkReference uses Python identifier MusicalWorkReference
     __MusicalWorkReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkReference'), 'MusicalWorkReference', '__httpddex_netxml20100712ddexC_MusicalWork_MusicalWorkReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1868, 12), )
 
-    
+
     MusicalWorkReference = property(__MusicalWorkReference.value, __MusicalWorkReference.set, None, 'The Identifier (specific to the Message) of the MusicalWork within the Release which contains it. This LocalAnchor is a string starting with the letter W.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_MusicalWork_ReferenceTitle', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1873, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of a ReferenceTitle of the MusicalWork.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_MusicalWork_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1878, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork.')
 
-    
+
     # Element MusicalWorkContributor uses Python identifier MusicalWorkContributor
     __MusicalWorkContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkContributor'), 'MusicalWorkContributor', '__httpddex_netxml20100712ddexC_MusicalWork_MusicalWorkContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1883, 12), )
 
-    
+
     MusicalWorkContributor = property(__MusicalWorkContributor.value, __MusicalWorkContributor.set, None, 'A Composite containing details a MusicalWorkContributor to the MusicalWork.')
 
-    
+
     # Element MusicalWorkType uses Python identifier MusicalWorkType
     __MusicalWorkType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkType'), 'MusicalWorkType', '__httpddex_netxml20100712ddexC_MusicalWork_MusicalWorkType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1888, 12), )
 
-    
+
     MusicalWorkType = property(__MusicalWorkType.value, __MusicalWorkType.set, None, 'A Composite containing details of the Type of the MusicalWork.')
 
-    
+
     # Element RightShare uses Python identifier RightShare
     __RightShare = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShare'), 'RightShare', '__httpddex_netxml20100712ddexC_MusicalWork_RightShare', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1893, 12), )
 
-    
+
     RightShare = property(__RightShare.value, __RightShare.set, None, 'A Composite containing details of a RightShare for the MusicalWork.')
 
-    
+
     # Element MusicalWorkDetailsByTerritory uses Python identifier MusicalWorkDetailsByTerritory
     __MusicalWorkDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkDetailsByTerritory'), 'MusicalWorkDetailsByTerritory', '__httpddex_netxml20100712ddexC_MusicalWork_MusicalWorkDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1898, 12), )
 
-    
+
     MusicalWorkDetailsByTerritory = property(__MusicalWorkDetailsByTerritory.value, __MusicalWorkDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the MusicalWork which may vary according to Territory of release.')
 
-    
+
     # Attribute IsUpdated uses Python identifier IsUpdated
     __IsUpdated = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsUpdated'), 'IsUpdated', '__httpddex_netxml20100712ddexC_MusicalWork_IsUpdated', pyxb.binding.datatypes.boolean)
     __IsUpdated._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1904, 8)
     __IsUpdated._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1904, 8)
-    
+
     IsUpdated = property(__IsUpdated.value, __IsUpdated.set, None, 'The Flag indicating whether the MusicalWork Element was updated (=True) or not (=False). The Flag may only be used when the UpdateIndicator is set to UpdateMessage. When this Boolean Flag is set to true, the MessageRecipient is expected to replace any previously provided MusicalWork data with the now provided data.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MusicalWork_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1909, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1909, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MusicalWork as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2525,33 +2525,33 @@ class MusicalWorkDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_MusicalWorkDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1966, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the MusicalWork details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_MusicalWorkDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1971, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the MusicalWork details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element MusicalWorkContributor uses Python identifier MusicalWorkContributor
     __MusicalWorkContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkContributor'), 'MusicalWorkContributor', '__httpddex_netxml20100712ddexC_MusicalWorkDetailsByTerritory_MusicalWorkContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1977, 12), )
 
-    
+
     MusicalWorkContributor = property(__MusicalWorkContributor.value, __MusicalWorkContributor.set, None, 'A Composite containing details a MusicalWorkContributor to the MusicalWork.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_MusicalWorkDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1983, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1983, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MusicalWorkDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2576,32 +2576,32 @@ class MusicalWorkId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISWC uses Python identifier ISWC
     __ISWC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISWC'), 'ISWC', '__httpddex_netxml20100712ddexC_MusicalWorkId_ISWC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1994, 12), )
 
-    
+
     ISWC = property(__ISWC.value, __ISWC.set, None, 'The ISWC (International Standard Musical Work Code defined in ISO 15707) identifying the MusicalWork. An ISWC comprises three parts: the letter "T", followed by nine digits and then one check digit.')
 
-    
+
     # Element OpusNumber uses Python identifier OpusNumber
     __OpusNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OpusNumber'), 'OpusNumber', '__httpddex_netxml20100712ddexC_MusicalWorkId_OpusNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1999, 12), )
 
-    
+
     OpusNumber = property(__OpusNumber.value, __OpusNumber.set, None, 'The MusicalWorkId identifying the MusicalWork within the catalog of its Composer (typically of classical music) as an opus number.')
 
-    
+
     # Element ComposerCatalogNumber uses Python identifier ComposerCatalogNumber
     __ComposerCatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ComposerCatalogNumber'), 'ComposerCatalogNumber', '__httpddex_netxml20100712ddexC_MusicalWorkId_ComposerCatalogNumber', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2004, 12), )
 
-    
+
     ComposerCatalogNumber = property(__ComposerCatalogNumber.value, __ComposerCatalogNumber.set, None, 'A MusicalWorkId identifying a MusicalWork within the catalog of its Composer (typically of classical music) according to a standardized numbering (e.g. "K" numbers for Koechel\'s catalog of Mozart).')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_MusicalWorkId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2009, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the MusicalWork.')
 
     _ElementMap.update({
@@ -2611,7 +2611,7 @@ class MusicalWorkId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'MusicalWorkId', MusicalWorkId)
 
@@ -2627,16 +2627,16 @@ class Name (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Name_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2041, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2041, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Name as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -2655,39 +2655,39 @@ class NumberOfSubscribers (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Quantity uses Python identifier Quantity
     __Quantity = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Quantity'), 'Quantity', '__httpddex_netxml20100712ddexC_NumberOfSubscribers_Quantity', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2068, 12), )
 
-    
+
     Quantity = property(__Quantity.value, __Quantity.set, None, 'The number of Consumers using the DSP service specified for the UseType.')
 
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_NumberOfSubscribers_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2073, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_NumberOfSubscribers_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2078, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer uses a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_NumberOfSubscribers_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2083, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_NumberOfSubscribers_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2088, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
     _ElementMap.update({
@@ -2698,7 +2698,7 @@ class NumberOfSubscribers (pyxb.binding.basis.complexTypeDefinition):
         __CarrierType.name() : __CarrierType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'NumberOfSubscribers', NumberOfSubscribers)
 
@@ -2714,18 +2714,18 @@ class PartyDescriptor (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PartyId uses Python identifier PartyId
     __PartyId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyId'), 'PartyId', '__httpddex_netxml20100712ddexC_PartyDescriptor_PartyId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2162, 12), )
 
-    
+
     PartyId = property(__PartyId.value, __PartyId.set, None, 'A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, Producers or other Creators.')
 
-    
+
     # Element PartyName uses Python identifier PartyName
     __PartyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyName'), 'PartyName', '__httpddex_netxml20100712ddexC_PartyDescriptor_PartyName', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2168, 16), )
 
-    
+
     PartyName = property(__PartyName.value, __PartyName.set, None, 'A Composite containing details of the PartyName(s).')
 
     _ElementMap.update({
@@ -2733,7 +2733,7 @@ class PartyDescriptor (pyxb.binding.basis.complexTypeDefinition):
         __PartyName.name() : __PartyName
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'PartyDescriptor', PartyDescriptor)
 
@@ -2749,16 +2749,16 @@ class PartyId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_PartyId_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2187, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2187, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the PartyId if it belongs to a proprietary Party ID scheme. If the PartyId is a DPID, the Namespace Element must not be used. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -2777,61 +2777,61 @@ class PartyName (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element FullName uses Python identifier FullName
     __FullName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FullName'), 'FullName', '__httpddex_netxml20100712ddexC_PartyName_FullName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2200, 12), )
 
-    
+
     FullName = property(__FullName.value, __FullName.set, None, 'A Composite containing the complete Name of the Party, in its normal form of presentation (e.g. John H. Smith, Acme Music Inc, A Composite containing the Beatles).')
 
-    
+
     # Element FullNameAsciiTranscribed uses Python identifier FullNameAsciiTranscribed
     __FullNameAsciiTranscribed = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FullNameAsciiTranscribed'), 'FullNameAsciiTranscribed', '__httpddex_netxml20100712ddexC_PartyName_FullNameAsciiTranscribed', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2205, 12), )
 
-    
+
     FullNameAsciiTranscribed = property(__FullNameAsciiTranscribed.value, __FullNameAsciiTranscribed.set, None, 'The FullName transcribed using 7-bit ASCII code.')
 
-    
+
     # Element FullNameIndexed uses Python identifier FullNameIndexed
     __FullNameIndexed = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FullNameIndexed'), 'FullNameIndexed', '__httpddex_netxml20100712ddexC_PartyName_FullNameIndexed', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2210, 12), )
 
-    
+
     FullNameIndexed = property(__FullNameIndexed.value, __FullNameIndexed.set, None, 'A Composite containing the complete Name of the Party in the form in which it normally appears in an alphabetic index, with the KeyName first (e.g. Smith, John H.; Beatles, A Composite containing the).')
 
-    
+
     # Element NamesBeforeKeyName uses Python identifier NamesBeforeKeyName
     __NamesBeforeKeyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NamesBeforeKeyName'), 'NamesBeforeKeyName', '__httpddex_netxml20100712ddexC_PartyName_NamesBeforeKeyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2215, 12), )
 
-    
+
     NamesBeforeKeyName = property(__NamesBeforeKeyName.value, __NamesBeforeKeyName.set, None, 'A Composite containing the Name(s) preceding the KeyName in the FullName (and that is placed after it in a FullNameIndexed). Examples: "George" in "George Michael"; "John Fitzgerald" in "John Fitzgerald Kennedy". Not all PartyNames have a NamesBeforeKeyName (e.g. Madonna, EMI Music Inc).')
 
-    
+
     # Element KeyName uses Python identifier KeyName
     __KeyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'KeyName'), 'KeyName', '__httpddex_netxml20100712ddexC_PartyName_KeyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2220, 12), )
 
-    
+
     KeyName = property(__KeyName.value, __KeyName.set, None, 'A Composite containing the Part of a Name of the Party normally used to index an entry in an alphabetical list, such as "Smith" (in John Smith) or "Garcia Marquez" or "Madonna" or "Francis de Sales" (in Saint Francis de Sales). For persons, this normally corresponds to the "family name" or names, which in Western name forms usually comes as a surname at the end of a FullName, and in Asian name forms often at the beginning of a FullName.')
 
-    
+
     # Element NamesAfterKeyName uses Python identifier NamesAfterKeyName
     __NamesAfterKeyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NamesAfterKeyName'), 'NamesAfterKeyName', '__httpddex_netxml20100712ddexC_PartyName_NamesAfterKeyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2225, 12), )
 
-    
+
     NamesAfterKeyName = property(__NamesAfterKeyName.value, __NamesAfterKeyName.set, None, 'A Composite containing the Name(s) following the KeyName. Example:"Ibrahim" (in Anwar Ibrahim). This is common, e.g., in many Asian personal name forms where a FullName begins with the KeyName, which is followed by other names.')
 
-    
+
     # Element AbbreviatedName uses Python identifier AbbreviatedName
     __AbbreviatedName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'AbbreviatedName'), 'AbbreviatedName', '__httpddex_netxml20100712ddexC_PartyName_AbbreviatedName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2230, 12), )
 
-    
+
     AbbreviatedName = property(__AbbreviatedName.value, __AbbreviatedName.set, None, 'A Composite containing a short version of the PartyName (e.g. for use on devices with a small display).')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_PartyName_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2236, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2236, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the PartyName as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2860,18 +2860,18 @@ class Period (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element StartDate uses Python identifier StartDate
     __StartDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'StartDate'), 'StartDate', '__httpddex_netxml20100712ddexC_Period_StartDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2247, 12), )
 
-    
+
     StartDate = property(__StartDate.value, __StartDate.set, None, 'A Composite containing details of the Date and Place of an Event that marks the beginning of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The StartDate must be earlier than the EndDate if both are provided.')
 
-    
+
     # Element EndDate uses Python identifier EndDate
     __EndDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'EndDate'), 'EndDate', '__httpddex_netxml20100712ddexC_Period_EndDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2252, 12), )
 
-    
+
     EndDate = property(__EndDate.value, __EndDate.set, None, 'A Composite containing details of the Date and Place of an Event that marks the end of the Period (in ISO 8601:2004 format: YYYY-MM-DD). The EndDate must be later than the StartDate if both are provided.')
 
     _ElementMap.update({
@@ -2879,7 +2879,7 @@ class Period (pyxb.binding.basis.complexTypeDefinition):
         __EndDate.name() : __EndDate
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'Period', Period)
 
@@ -2895,26 +2895,26 @@ class PLine (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Year uses Python identifier Year
     __Year = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Year'), 'Year', '__httpddex_netxml20100712ddexC_PLine_Year', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2264, 12), )
 
-    
+
     Year = property(__Year.value, __Year.set, None, 'The Year of the PLine.')
 
-    
+
     # Element PLineText uses Python identifier PLineText
     __PLineText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PLineText'), 'PLineText', '__httpddex_netxml20100712ddexC_PLine_PLineText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2269, 12), )
 
-    
+
     PLineText = property(__PLineText.value, __PLineText.set, None, 'The text of the PLine.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_PLine_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2275, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2275, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the PLineText as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -2938,39 +2938,39 @@ class PriceInformation (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PriceRangeType uses Python identifier PriceRangeType
     __PriceRangeType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PriceRangeType'), 'PriceRangeType', '__httpddex_netxml20100712ddexC_PriceInformation_PriceRangeType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2314, 12), )
 
-    
+
     PriceRangeType = property(__PriceRangeType.value, __PriceRangeType.set, None, 'A Composite containing a Type of Price according to its value range. Typical examples include "budget" and "front line".')
 
-    
+
     # Element PriceType uses Python identifier PriceType
     __PriceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PriceType'), 'PriceType', '__httpddex_netxml20100712ddexC_PriceInformation_PriceType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2319, 12), )
 
-    
+
     PriceType = property(__PriceType.value, __PriceType.set, None, 'A Composite containing further details of the Price. Often used to refine the PriceRangeType.')
 
-    
+
     # Element WholesalePricePerUnit uses Python identifier WholesalePricePerUnit
     __WholesalePricePerUnit = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'WholesalePricePerUnit'), 'WholesalePricePerUnit', '__httpddex_netxml20100712ddexC_PriceInformation_WholesalePricePerUnit', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2324, 12), )
 
-    
+
     WholesalePricePerUnit = property(__WholesalePricePerUnit.value, __WholesalePricePerUnit.set, None, 'A Composite containing details of a wholesale Price for a single unit of Usage. Note that this Price applies to all UseTypes referenced in a DealTerm Composite.')
 
-    
+
     # Element BulkOrderWholesalePricePerUnit uses Python identifier BulkOrderWholesalePricePerUnit
     __BulkOrderWholesalePricePerUnit = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'BulkOrderWholesalePricePerUnit'), 'BulkOrderWholesalePricePerUnit', '__httpddex_netxml20100712ddexC_PriceInformation_BulkOrderWholesalePricePerUnit', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2329, 12), )
 
-    
+
     BulkOrderWholesalePricePerUnit = property(__BulkOrderWholesalePricePerUnit.value, __BulkOrderWholesalePricePerUnit.set, None, 'A Composite containing details of a wholesale Price for a single unit. Note that the size of a bulk order is defined in the contract between MessageSender and the MessageRecipient.')
 
-    
+
     # Element SuggestedRetailPrice uses Python identifier SuggestedRetailPrice
     __SuggestedRetailPrice = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SuggestedRetailPrice'), 'SuggestedRetailPrice', '__httpddex_netxml20100712ddexC_PriceInformation_SuggestedRetailPrice', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2334, 12), )
 
-    
+
     SuggestedRetailPrice = property(__SuggestedRetailPrice.value, __SuggestedRetailPrice.set, None, 'A Composite containing details of a suggested retail Price.')
 
     _ElementMap.update({
@@ -2981,7 +2981,7 @@ class PriceInformation (pyxb.binding.basis.complexTypeDefinition):
         __SuggestedRetailPrice.name() : __SuggestedRetailPrice
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'PriceInformation', PriceInformation)
 
@@ -2997,16 +2997,16 @@ class PromotionalCode (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_PromotionalCode_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2394, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2394, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the PromotionalCode. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -3025,16 +3025,16 @@ class ProprietaryId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ProprietaryId_Namespace', pyxb.binding.datatypes.string, required=True)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2408, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2408, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ProprietaryId. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -3053,16 +3053,16 @@ class Reason (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Reason_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2460, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2460, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Reason as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -3081,46 +3081,46 @@ class RecordCompanyMarketShareData (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseType uses Python identifier ReleaseType
     __ReleaseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseType'), 'ReleaseType', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_ReleaseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2492, 12), )
 
-    
+
     ReleaseType = property(__ReleaseType.value, __ReleaseType.set, None, 'A Composite containing details of the form in which a ReleaseCreator anticipates offering the Release to Consumers.')
 
-    
+
     # Element UnitsSoldTotal uses Python identifier UnitsSoldTotal
     __UnitsSoldTotal = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UnitsSoldTotal'), 'UnitsSoldTotal', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_UnitsSoldTotal', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2497, 12), )
 
-    
+
     UnitsSoldTotal = property(__UnitsSoldTotal.value, __UnitsSoldTotal.set, None, 'The total number of Releases sold of the ReleaseType.')
 
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2502, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2507, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer uses a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2512, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_RecordCompanyMarketShareData_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2517, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
     _ElementMap.update({
@@ -3132,7 +3132,7 @@ class RecordCompanyMarketShareData (pyxb.binding.basis.complexTypeDefinition):
         __CarrierType.name() : __CarrierType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'RecordCompanyMarketShareData', RecordCompanyMarketShareData)
 
@@ -3148,26 +3148,26 @@ class ReferenceTitle (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TitleText uses Python identifier TitleText
     __TitleText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TitleText'), 'TitleText', '__httpddex_netxml20100712ddexC_ReferenceTitle_TitleText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2548, 12), )
 
-    
+
     TitleText = property(__TitleText.value, __TitleText.set, None, 'A Composite containing the text of the ReferenceTitle.')
 
-    
+
     # Element SubTitle uses Python identifier SubTitle
     __SubTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SubTitle'), 'SubTitle', '__httpddex_netxml20100712ddexC_ReferenceTitle_SubTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2553, 12), )
 
-    
+
     SubTitle = property(__SubTitle.value, __SubTitle.set, None, 'A Composite containing details of a SubTitle of the ReferenceTitle, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRId and ISRC ReferenceDescriptiveMetadataSets.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_ReferenceTitle_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2559, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2559, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the ReferenceTitle as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -3191,61 +3191,61 @@ class RelatedRelease (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseId uses Python identifier ReleaseId
     __ReleaseId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseId'), 'ReleaseId', '__httpddex_netxml20100712ddexC_RelatedRelease_ReleaseId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2570, 12), )
 
-    
+
     ReleaseId = property(__ReleaseId.value, __ReleaseId.set, None, 'A Composite containing details of ReleaseIds. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_RelatedRelease_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2575, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the Release.')
 
-    
+
     # Element ReleaseSummaryDetailsByTerritory uses Python identifier ReleaseSummaryDetailsByTerritory
     __ReleaseSummaryDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseSummaryDetailsByTerritory'), 'ReleaseSummaryDetailsByTerritory', '__httpddex_netxml20100712ddexC_RelatedRelease_ReleaseSummaryDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2580, 12), )
 
-    
+
     ReleaseSummaryDetailsByTerritory = property(__ReleaseSummaryDetailsByTerritory.value, __ReleaseSummaryDetailsByTerritory.set, None, 'A Composite containing summary details of Descriptors and other attributes of the Release which may vary according to Territory of Release. Territory of Release may be the world.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_RelatedRelease_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2585, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the Release.')
 
-    
+
     # Element ReleaseRelationshipType uses Python identifier ReleaseRelationshipType
     __ReleaseRelationshipType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseRelationshipType'), 'ReleaseRelationshipType', '__httpddex_netxml20100712ddexC_RelatedRelease_ReleaseRelationshipType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2590, 12), )
 
-    
+
     ReleaseRelationshipType = property(__ReleaseRelationshipType.value, __ReleaseRelationshipType.set, None, 'A Composite containing details of the Type of the relationship between the two Releases.')
 
-    
+
     # Element ReleaseDate uses Python identifier ReleaseDate
     __ReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseDate'), 'ReleaseDate', '__httpddex_netxml20100712ddexC_RelatedRelease_ReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2595, 12), )
 
-    
+
     ReleaseDate = property(__ReleaseDate.value, __ReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the related Release is made available for Usage.')
 
-    
+
     # Element OriginalReleaseDate uses Python identifier OriginalReleaseDate
     __OriginalReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalReleaseDate'), 'OriginalReleaseDate', '__httpddex_netxml20100712ddexC_RelatedRelease_OriginalReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2600, 12), )
 
-    
+
     OriginalReleaseDate = property(__OriginalReleaseDate.value, __OriginalReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Release was or will be first made available for Usage, whether for physical or electronic/online distribution (in ISO 8601:2004 format: YYYY-MM-DD).')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_RelatedRelease_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2606, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2606, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the ReleatedRelease as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -3274,75 +3274,75 @@ class Release (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseId uses Python identifier ReleaseId
     __ReleaseId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseId'), 'ReleaseId', '__httpddex_netxml20100712ddexC_Release_ReleaseId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2617, 12), )
 
-    
+
     ReleaseId = property(__ReleaseId.value, __ReleaseId.set, None, 'A Composite containing details of ReleaseIds. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_Release_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2622, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the Release.')
 
-    
+
     # Element ReleaseResourceReferenceList uses Python identifier ReleaseResourceReferenceList
     __ReleaseResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseResourceReferenceList'), 'ReleaseResourceReferenceList', '__httpddex_netxml20100712ddexC_Release_ReleaseResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2627, 12), )
 
-    
+
     ReleaseResourceReferenceList = property(__ReleaseResourceReferenceList.value, __ReleaseResourceReferenceList.set, None, 'A Composite containing details of one or more Resources contained in the Release.')
 
-    
+
     # Element ReleaseType uses Python identifier ReleaseType
     __ReleaseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseType'), 'ReleaseType', '__httpddex_netxml20100712ddexC_Release_ReleaseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2632, 12), )
 
-    
+
     ReleaseType = property(__ReleaseType.value, __ReleaseType.set, None, 'A Composite containing details of the form in which a ReleaseCreator anticipates offering the Release to Consumers. This may be overridden by the ReleaseType for specific Territories as specified in the ReleaseDetailsByTerritory Composite.')
 
-    
+
     # Element ReleaseDetailsByTerritory uses Python identifier ReleaseDetailsByTerritory
     __ReleaseDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseDetailsByTerritory'), 'ReleaseDetailsByTerritory', '__httpddex_netxml20100712ddexC_Release_ReleaseDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2637, 12), )
 
-    
+
     ReleaseDetailsByTerritory = property(__ReleaseDetailsByTerritory.value, __ReleaseDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the Release which may vary according to Territory of release.')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_Release_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2642, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The sum of the Durations of all Resources contained in the Release (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_Release_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2647, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the Release.')
 
-    
+
     # Element PLine uses Python identifier PLine
     __PLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PLine'), 'PLine', '__httpddex_netxml20100712ddexC_Release_PLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2652, 12), )
 
-    
+
     PLine = property(__PLine.value, __PLine.set, None, 'A Composite containing details of the PLine for the Release.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_Release_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2657, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the Release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Release_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2663, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2663, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Release as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -3373,18 +3373,18 @@ class ReleaseCollectionReferenceList (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element NumberOfCollections uses Python identifier NumberOfCollections
     __NumberOfCollections = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NumberOfCollections'), 'NumberOfCollections', '__httpddex_netxml20100712ddexC_ReleaseCollectionReferenceList_NumberOfCollections', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2707, 12), )
 
-    
+
     NumberOfCollections = property(__NumberOfCollections.value, __NumberOfCollections.set, None, 'The number of referenced Collections (typically Chapters).')
 
-    
+
     # Element ReleaseCollectionReference uses Python identifier ReleaseCollectionReference
     __ReleaseCollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseCollectionReference'), 'ReleaseCollectionReference', '__httpddex_netxml20100712ddexC_ReleaseCollectionReferenceList_ReleaseCollectionReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2712, 12), )
 
-    
+
     ReleaseCollectionReference = property(__ReleaseCollectionReference.value, __ReleaseCollectionReference.set, None, 'A Composite containing a ReleaseCollectionReference for a Collection (specific to this Message). The referenced Collection has to be of CollectionType Series, Season or Episode.')
 
     _ElementMap.update({
@@ -3392,7 +3392,7 @@ class ReleaseCollectionReferenceList (pyxb.binding.basis.complexTypeDefinition):
         __ReleaseCollectionReference.name() : __ReleaseCollectionReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ReleaseCollectionReferenceList', ReleaseCollectionReferenceList)
 
@@ -3408,39 +3408,39 @@ class ReleaseId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element GRid uses Python identifier GRid
     __GRid = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'GRid'), 'GRid', '__httpddex_netxml20100712ddexC_ReleaseId_GRid', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2765, 12), )
 
-    
+
     GRid = property(__GRid.value, __GRid.set, None, 'The GRid identifying the Release. This is the preferred Element and is mandatory if a GRid is available. A GRid comprises four parts: the string "A1", followed by five alphanumeric characters, ten alphanumeric characters and and one alphanumeric character.')
 
-    
+
     # Element ISRC uses Python identifier ISRC
     __ISRC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISRC'), 'ISRC', '__httpddex_netxml20100712ddexC_ReleaseId_ISRC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2770, 12), )
 
-    
+
     ISRC = property(__ISRC.value, __ISRC.set, None, 'The ISRC (International Standard Recording Code as defined in ISO 3901) used as proxy for identification of the Release. Only applicable when the Release only contains one SoundRecording or one MusicalWorkVideo. An ISRC comprises four parts: two characters, followed by three alphanumeric characters, then two digits and five digits.')
 
-    
+
     # Element ICPN uses Python identifier ICPN
     __ICPN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ICPN'), 'ICPN', '__httpddex_netxml20100712ddexC_ReleaseId_ICPN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2775, 12), )
 
-    
+
     ICPN = property(__ICPN.value, __ICPN.set, None, 'A Composite containing details of the ICPN used as proxy for identification of the Release. Only applicable when the Release is an abstraction of a complete PhysicalProduct. An ICPN comprises 12 or 13 digits, depending whether it is an EAN (13) or a UPC (12).')
 
-    
+
     # Element CatalogNumber uses Python identifier CatalogNumber
     __CatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CatalogNumber'), 'CatalogNumber', '__httpddex_netxml20100712ddexC_ReleaseId_CatalogNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2780, 12), )
 
-    
+
     CatalogNumber = property(__CatalogNumber.value, __CatalogNumber.set, None, 'A Composite containing details of the CatalogNumber of the Release.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_ReleaseId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2785, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Release.')
 
     _ElementMap.update({
@@ -3451,7 +3451,7 @@ class ReleaseId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ReleaseId', ReleaseId)
 
@@ -3467,18 +3467,18 @@ class ReleaseResourceReferenceList (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseResourceReference uses Python identifier ReleaseResourceReference
     __ReleaseResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseResourceReference'), 'ReleaseResourceReference', '__httpddex_netxml20100712ddexC_ReleaseResourceReferenceList_ReleaseResourceReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2830, 12), )
 
-    
+
     ReleaseResourceReference = property(__ReleaseResourceReference.value, __ReleaseResourceReference.set, None, 'A Composite containing a Reference for a Resource (specific to this Message). The LocalAnchorReference in this Composite is a string starting with the letter A.')
 
     _ElementMap.update({
         __ReleaseResourceReference.name() : __ReleaseResourceReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ReleaseResourceReferenceList', ReleaseResourceReferenceList)
 
@@ -3494,40 +3494,40 @@ class ReleaseSummary (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseId uses Python identifier ReleaseId
     __ReleaseId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseId'), 'ReleaseId', '__httpddex_netxml20100712ddexC_ReleaseSummary_ReleaseId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2842, 12), )
 
-    
+
     ReleaseId = property(__ReleaseId.value, __ReleaseId.set, None, 'A Composite containing details of ReleaseIds. If available, a GRid shall always to be used. If the Release contains only one SoundRecording, the ISRC of the SoundRecording may be used instead. If the Release is an abstraction of a complete PhysicalProduct (such as a CD Album), the ICPN of the PhysicalProduct may be used instead. More than one of these identifiers may be provided.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_ReleaseSummary_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2847, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the Release.')
 
-    
+
     # Element ReleaseSummaryDetailsByTerritory uses Python identifier ReleaseSummaryDetailsByTerritory
     __ReleaseSummaryDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseSummaryDetailsByTerritory'), 'ReleaseSummaryDetailsByTerritory', '__httpddex_netxml20100712ddexC_ReleaseSummary_ReleaseSummaryDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2852, 12), )
 
-    
+
     ReleaseSummaryDetailsByTerritory = property(__ReleaseSummaryDetailsByTerritory.value, __ReleaseSummaryDetailsByTerritory.set, None, 'A Composite containing summary details of Descriptors and other attributes of the Release which may vary according to Territory of Release. Territory of Release may be the world.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_ReleaseSummary_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2857, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the Release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_ReleaseSummary_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2863, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2863, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the ReleaseSummary as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -3553,47 +3553,47 @@ class ReleaseSummaryDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2875, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the ReleaseSummaryDetailsByTerritory apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2880, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the ReleaseSummaryDetailsByTerritory do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element DisplayArtistName uses Python identifier DisplayArtistName
     __DisplayArtistName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DisplayArtistName'), 'DisplayArtistName', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_DisplayArtistName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2886, 12), )
 
-    
+
     DisplayArtistName = property(__DisplayArtistName.value, __DisplayArtistName.set, None, 'A Composite containing the Name to be used by a DSP when presenting Artist details of the Release to a Consumer.')
 
-    
+
     # Element LabelName uses Python identifier LabelName
     __LabelName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LabelName'), 'LabelName', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_LabelName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2891, 12), )
 
-    
+
     LabelName = property(__LabelName.value, __LabelName.set, None, 'A Composite containing the Name of the Label for the Release.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2896, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the Release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_ReleaseSummaryDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2902, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2902, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the ReleaseSummaryDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -3620,16 +3620,16 @@ class RemittanceAdvice (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_RemittanceAdvice_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2933, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2933, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the RemittanceAdvice as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -3648,32 +3648,32 @@ class ResourceContainedResourceReference (pyxb.binding.basis.complexTypeDefiniti
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ResourceContainedResourceReference uses Python identifier ResourceContainedResourceReference
     __ResourceContainedResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReference'), 'ResourceContainedResourceReference', '__httpddex_netxml20100712ddexC_ResourceContainedResourceReference_ResourceContainedResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2984, 12), )
 
-    
+
     ResourceContainedResourceReference = property(__ResourceContainedResourceReference.value, __ResourceContainedResourceReference.set, None, 'A Reference for a Resource (specific to this Message). This LocalAnchorReference is a string starting with the letter A.')
 
-    
+
     # Element DurationUsed uses Python identifier DurationUsed
     __DurationUsed = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DurationUsed'), 'DurationUsed', '__httpddex_netxml20100712ddexC_ResourceContainedResourceReference_DurationUsed', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2989, 12), )
 
-    
+
     DurationUsed = property(__DurationUsed.value, __DurationUsed.set, None, 'The total Duration of the Resource that has been used in a specified context (this may be less than the total Duration of the Resource) (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element StartPoint uses Python identifier StartPoint
     __StartPoint = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'StartPoint'), 'StartPoint', '__httpddex_netxml20100712ddexC_ResourceContainedResourceReference_StartPoint', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2994, 12), )
 
-    
+
     StartPoint = property(__StartPoint.value, __StartPoint.set, None, 'The start point of the preview given in seconds from the start of the referenced Resource.')
 
-    
+
     # Element Purpose uses Python identifier Purpose
     __Purpose = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Purpose'), 'Purpose', '__httpddex_netxml20100712ddexC_ResourceContainedResourceReference_Purpose', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2999, 12), )
 
-    
+
     Purpose = property(__Purpose.value, __Purpose.set, None, 'A Composite containing details of the Purpose of the usage.')
 
     _ElementMap.update({
@@ -3683,7 +3683,7 @@ class ResourceContainedResourceReference (pyxb.binding.basis.complexTypeDefiniti
         __Purpose.name() : __Purpose
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceContainedResourceReference', ResourceContainedResourceReference)
 
@@ -3699,18 +3699,18 @@ class ResourceContainedResourceReferenceList (pyxb.binding.basis.complexTypeDefi
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ResourceContainedResourceReference uses Python identifier ResourceContainedResourceReference
     __ResourceContainedResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReference'), 'ResourceContainedResourceReference', '__httpddex_netxml20100712ddexC_ResourceContainedResourceReferenceList_ResourceContainedResourceReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3011, 12), )
 
-    
+
     ResourceContainedResourceReference = property(__ResourceContainedResourceReference.value, __ResourceContainedResourceReference.set, None, 'A Composite containing details of a ResourceContainedResourceReference.')
 
     _ElementMap.update({
         __ResourceContainedResourceReference.name() : __ResourceContainedResourceReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceContainedResourceReferenceList', ResourceContainedResourceReferenceList)
 
@@ -3726,18 +3726,18 @@ class ResourceGroupResourceReferenceList (pyxb.binding.basis.complexTypeDefiniti
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ResourceGroupResourceReference uses Python identifier ResourceGroupResourceReference
     __ResourceGroupResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceGroupResourceReference'), 'ResourceGroupResourceReference', '__httpddex_netxml20100712ddexC_ResourceGroupResourceReferenceList_ResourceGroupResourceReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3063, 12), )
 
-    
+
     ResourceGroupResourceReference = property(__ResourceGroupResourceReference.value, __ResourceGroupResourceReference.set, None, 'A Reference for a Resource (specific to this Message). This LocalAnchorReference is a string starting with the letter A.')
 
     _ElementMap.update({
         __ResourceGroupResourceReference.name() : __ResourceGroupResourceReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceGroupResourceReferenceList', ResourceGroupResourceReferenceList)
 
@@ -3753,67 +3753,67 @@ class ResourceId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISRC uses Python identifier ISRC
     __ISRC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISRC'), 'ISRC', '__httpddex_netxml20100712ddexC_ResourceId_ISRC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3075, 12), )
 
-    
+
     ISRC = property(__ISRC.value, __ISRC.set, None, 'The ISRC (International Standard Recording Code as defined in ISO 3901) for the Resource. An ISRC comprises four parts: two characters, followed by three alphanumeric characters, then two digits and five digits.')
 
-    
+
     # Element ISMN uses Python identifier ISMN
     __ISMN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISMN'), 'ISMN', '__httpddex_netxml20100712ddexC_ResourceId_ISMN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3080, 12), )
 
-    
+
     ISMN = property(__ISMN.value, __ISMN.set, None, 'The ISMN (International Standard Music Number defined in ISO 10957) for the Resource. An ISMN is a thirteen-digit number. Pre-2008 ISMNs, which had 10 characters and are now deprecated, are converted by replacing the initial letter ("M") with "979-0".')
 
-    
+
     # Element ISAN uses Python identifier ISAN
     __ISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISAN'), 'ISAN', '__httpddex_netxml20100712ddexC_ResourceId_ISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3085, 12), )
 
-    
+
     ISAN = property(__ISAN.value, __ISAN.set, None, 'The ISAN (International Standard Audiovisual Number as defined in ISO 15706) for the Resource. An ISAN comprises four blocks of four hexadecimal charaters followed by a check character.')
 
-    
+
     # Element VISAN uses Python identifier VISAN
     __VISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VISAN'), 'VISAN', '__httpddex_netxml20100712ddexC_ResourceId_VISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3090, 12), )
 
-    
+
     VISAN = property(__VISAN.value, __VISAN.set, None, 'The V-ISAN (Version Identifier of a International Standard Audiovisual Number as defined in ISO 15706-2) for the Resource. A V-ISAN comprises four blocks of four hexadecimal charaters followed by a check character, followed by two further blocks of four hexadecimal characters, followed by a further check character.')
 
-    
+
     # Element ISBN uses Python identifier ISBN
     __ISBN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISBN'), 'ISBN', '__httpddex_netxml20100712ddexC_ResourceId_ISBN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3095, 12), )
 
-    
+
     ISBN = property(__ISBN.value, __ISBN.set, None, 'The ISBN (International Standard Book Number defined in ISO 2108) for the Resource. An ISBN is a 13-digit number. Pre-2007, ISBNs, which had 10-digits and are now deprecated, are converted by adding the prefix "978" and re-calculating the check character.')
 
-    
+
     # Element ISSN uses Python identifier ISSN
     __ISSN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISSN'), 'ISSN', '__httpddex_netxml20100712ddexC_ResourceId_ISSN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3100, 12), )
 
-    
+
     ISSN = property(__ISSN.value, __ISSN.set, None, 'The ISSN (International Standard Serial Number defined in ISO 3297) for the Resource. An ISSN comprises two groups of four digits, separated by a hyphen and a control digit.')
 
-    
+
     # Element SICI uses Python identifier SICI
     __SICI = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SICI'), 'SICI', '__httpddex_netxml20100712ddexC_ResourceId_SICI', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3105, 12), )
 
-    
+
     SICI = property(__SICI.value, __SICI.set, None, 'The SICI (Serial Item and Contribution Identifier defined in ANSI/NISO Z39.56-199) for the Resource.')
 
-    
+
     # Element CatalogNumber uses Python identifier CatalogNumber
     __CatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CatalogNumber'), 'CatalogNumber', '__httpddex_netxml20100712ddexC_ResourceId_CatalogNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3110, 12), )
 
-    
+
     CatalogNumber = property(__CatalogNumber.value, __CatalogNumber.set, None, 'A Composite containing details of the CatalogNumber of the Resource.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_ResourceId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3115, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Resource.')
 
     _ElementMap.update({
@@ -3828,7 +3828,7 @@ class ResourceId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceId', ResourceId)
 
@@ -3844,32 +3844,32 @@ class ResourceMusicalWorkReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_ResourceMusicalWorkReference_SequenceNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3127, 12), )
 
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the MusicalWork in a group of MusicalWorks within a Medley, SoundRecording or other Resource.')
 
-    
+
     # Element DurationUsed uses Python identifier DurationUsed
     __DurationUsed = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DurationUsed'), 'DurationUsed', '__httpddex_netxml20100712ddexC_ResourceMusicalWorkReference_DurationUsed', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3132, 12), )
 
-    
+
     DurationUsed = property(__DurationUsed.value, __DurationUsed.set, None, 'The total Duration of the MusicalWork that has been used in a specified context (this may be less than the total Duration of the MusicalWork) (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element IsFragment uses Python identifier IsFragment
     __IsFragment = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsFragment'), 'IsFragment', '__httpddex_netxml20100712ddexC_ResourceMusicalWorkReference_IsFragment', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3137, 12), )
 
-    
+
     IsFragment = property(__IsFragment.value, __IsFragment.set, None, 'The Flag indicating whether the MusicalWork is a Fragment (=True) or not (=False).')
 
-    
+
     # Element ResourceMusicalWorkReference uses Python identifier ResourceMusicalWorkReference
     __ResourceMusicalWorkReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReference'), 'ResourceMusicalWorkReference', '__httpddex_netxml20100712ddexC_ResourceMusicalWorkReference_ResourceMusicalWorkReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3142, 12), )
 
-    
+
     ResourceMusicalWorkReference = property(__ResourceMusicalWorkReference.value, __ResourceMusicalWorkReference.set, None, 'A Reference for a MusicalWork (specific to this Message). This LocalAnchorReference is a string starting with the letter W.')
 
     _ElementMap.update({
@@ -3879,7 +3879,7 @@ class ResourceMusicalWorkReference (pyxb.binding.basis.complexTypeDefinition):
         __ResourceMusicalWorkReference.name() : __ResourceMusicalWorkReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceMusicalWorkReference', ResourceMusicalWorkReference)
 
@@ -3895,18 +3895,18 @@ class ResourceMusicalWorkReferenceList (pyxb.binding.basis.complexTypeDefinition
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ResourceMusicalWorkReference uses Python identifier ResourceMusicalWorkReference
     __ResourceMusicalWorkReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReference'), 'ResourceMusicalWorkReference', '__httpddex_netxml20100712ddexC_ResourceMusicalWorkReferenceList_ResourceMusicalWorkReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3154, 12), )
 
-    
+
     ResourceMusicalWorkReference = property(__ResourceMusicalWorkReference.value, __ResourceMusicalWorkReference.set, None, 'A Composite containing a ResourceMusicalWorkReference for a MusicalWork (specific to this Message).')
 
     _ElementMap.update({
         __ResourceMusicalWorkReference.name() : __ResourceMusicalWorkReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ResourceMusicalWorkReferenceList', ResourceMusicalWorkReferenceList)
 
@@ -3922,18 +3922,18 @@ class RightsAgreementId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MWLI uses Python identifier MWLI
     __MWLI = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MWLI'), 'MWLI', '__httpddex_netxml20100712ddexC_RightsAgreementId_MWLI', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3185, 12), )
 
-    
+
     MWLI = property(__MWLI.value, __MWLI.set, None, 'A MusicalWork License Identifier identifying a License. If the Composite is meant to describe a Claim, RightShare or contract, then the License relates to that Claim, RightShare or contract. A MWLI comprises four parts: one of the strings "M1" or "M2" or "M3" or "M4", followed by five alphanumeric characters, ten alphanumeric characters and one alphanumeric check character.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_RightsAgreementId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3190, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the License, Claim, RightShare or contract.')
 
     _ElementMap.update({
@@ -3941,7 +3941,7 @@ class RightsAgreementId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'RightsAgreementId', RightsAgreementId)
 
@@ -3957,145 +3957,145 @@ class RightShare (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element RightShareId uses Python identifier RightShareId
     __RightShareId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareId'), 'RightShareId', '__httpddex_netxml20100712ddexC_RightShare_RightShareId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3235, 12), )
 
-    
+
     RightShareId = property(__RightShareId.value, __RightShareId.set, None, 'A Composite containing details of Identifiers for the RightShare.')
 
-    
+
     # Element RightShareReference uses Python identifier RightShareReference
     __RightShareReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareReference'), 'RightShareReference', '__httpddex_netxml20100712ddexC_RightShare_RightShareReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3240, 12), )
 
-    
+
     RightShareReference = property(__RightShareReference.value, __RightShareReference.set, None, 'The Identifier (specific to the Message) of the RightShare within the Release which contains it. This LocalAnchor is a string starting with the letter S.')
 
-    
+
     # Element RightShareCreationReferenceList uses Python identifier RightShareCreationReferenceList
     __RightShareCreationReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareCreationReferenceList'), 'RightShareCreationReferenceList', '__httpddex_netxml20100712ddexC_RightShare_RightShareCreationReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3245, 12), )
 
-    
+
     RightShareCreationReferenceList = property(__RightShareCreationReferenceList.value, __RightShareCreationReferenceList.set, None, 'A Composite containing details of one or more Creations contained in the RightShare.')
 
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_RightShare_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3251, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the RightShare applies (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_RightShare_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3256, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the RightShare does not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element RightsType uses Python identifier RightsType
     __RightsType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsType'), 'RightsType', '__httpddex_netxml20100712ddexC_RightShare_RightsType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3262, 12), )
 
-    
+
     RightsType = property(__RightsType.value, __RightsType.set, None, 'A Type of Right covered by the RightShare. One of the Elements RightsType and UseType must be present. The RightsType is defined according to the jurisdiction of the Territory indicated in the TerritoryCode XmlAttribute.')
 
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_RightShare_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3267, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer. One of the Elements RightsType and UseType must be present.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_RightShare_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3272, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer uses a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_RightShare_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3277, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_RightShare_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3282, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
-    
+
     # Element CommercialModelType uses Python identifier CommercialModelType
     __CommercialModelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CommercialModelType'), 'CommercialModelType', '__httpddex_netxml20100712ddexC_RightShare_CommercialModelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3287, 12), )
 
-    
+
     CommercialModelType = property(__CommercialModelType.value, __CommercialModelType.set, None, 'A Composite containing details of the fundamental business model which applies (e.g. SubscriptionModel and PayAsYouGoModel). The CommercialModelType indicates how the Consumer pays for the Service or Release.')
 
-    
+
     # Element MusicalWorkRightsClaimType uses Python identifier MusicalWorkRightsClaimType
     __MusicalWorkRightsClaimType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkRightsClaimType'), 'MusicalWorkRightsClaimType', '__httpddex_netxml20100712ddexC_RightShare_MusicalWorkRightsClaimType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3292, 12), )
 
-    
+
     MusicalWorkRightsClaimType = property(__MusicalWorkRightsClaimType.value, __MusicalWorkRightsClaimType.set, None, 'A Type of the RightsClaim related to a MusicalWork.')
 
-    
+
     # Element RightsController uses Python identifier RightsController
     __RightsController = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsController'), 'RightsController', '__httpddex_netxml20100712ddexC_RightShare_RightsController', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3297, 12), )
 
-    
+
     RightsController = property(__RightsController.value, __RightsController.set, None, 'A Composite containing details of a RightsController of Rights in a Creation.')
 
-    
+
     # Element ValidityPeriod uses Python identifier ValidityPeriod
     __ValidityPeriod = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ValidityPeriod'), 'ValidityPeriod', '__httpddex_netxml20100712ddexC_RightShare_ValidityPeriod', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3302, 12), )
 
-    
+
     ValidityPeriod = property(__ValidityPeriod.value, __ValidityPeriod.set, None, 'A Composite containing details about the Period of Time for which the RightShare is valid.')
 
-    
+
     # Element PercentageUnknown uses Python identifier PercentageUnknown
     __PercentageUnknown = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PercentageUnknown'), 'PercentageUnknown', '__httpddex_netxml20100712ddexC_RightShare_PercentageUnknown', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3308, 16), )
 
-    
+
     PercentageUnknown = property(__PercentageUnknown.value, __PercentageUnknown.set, None, 'The Flag indicating whether the RightSharePercentage is unknown (=True) or not (=False).')
 
-    
+
     # Element PercentageRate uses Python identifier PercentageRate
     __PercentageRate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PercentageRate'), 'PercentageRate', '__httpddex_netxml20100712ddexC_RightShare_PercentageRate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3313, 16), )
 
-    
+
     PercentageRate = property(__PercentageRate.value, __PercentageRate.set, None, 'The share of the licensed Rights owned by the RightsController. RightShare information is given as a decimal value (e.g. "0.125" represents 12.5%) or as a fraction (e.g. "1/8" represents 12.5%).')
 
-    
+
     # Element TariffReference uses Python identifier TariffReference
     __TariffReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TariffReference'), 'TariffReference', '__httpddex_netxml20100712ddexC_RightShare_TariffReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3319, 12), )
 
-    
+
     TariffReference = property(__TariffReference.value, __TariffReference.set, None, 'A Composite containing details of a Reference to a TextDocument containing details of a Tariff (in the form of an Identifier, Name or Description) that is to be applied to the RightShare.')
 
-    
+
     # Element LicenseStatus uses Python identifier LicenseStatus
     __LicenseStatus = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LicenseStatus'), 'LicenseStatus', '__httpddex_netxml20100712ddexC_RightShare_LicenseStatus', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3324, 12), )
 
-    
+
     LicenseStatus = property(__LicenseStatus.value, __LicenseStatus.set, None, 'The legal status of a License for the RightShare.')
 
-    
+
     # Element HasFirstLicenseRefusal uses Python identifier HasFirstLicenseRefusal
     __HasFirstLicenseRefusal = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'HasFirstLicenseRefusal'), 'HasFirstLicenseRefusal', '__httpddex_netxml20100712ddexC_RightShare_HasFirstLicenseRefusal', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3329, 12), )
 
-    
+
     HasFirstLicenseRefusal = property(__HasFirstLicenseRefusal.value, __HasFirstLicenseRefusal.set, None, 'The Flag indicating whether a RightsController retains the right of refusal regarding the granting of the first licence for creating a SoundRecording of a Musical Work (=True) or not (=False).')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_RightShare_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3335, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3335, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the RightShare as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4136,25 +4136,25 @@ class RightShareCreationReferenceList (pyxb.binding.basis.complexTypeDefinition)
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element RightShareWorkReference uses Python identifier RightShareWorkReference
     __RightShareWorkReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareWorkReference'), 'RightShareWorkReference', '__httpddex_netxml20100712ddexC_RightShareCreationReferenceList_RightShareWorkReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3346, 12), )
 
-    
+
     RightShareWorkReference = property(__RightShareWorkReference.value, __RightShareWorkReference.set, None, 'A Reference for a Work (specific to this Message) that is part of the RightShare. This LocalAnchorReference is a string starting with the letter W.')
 
-    
+
     # Element RightShareResourceReference uses Python identifier RightShareResourceReference
     __RightShareResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareResourceReference'), 'RightShareResourceReference', '__httpddex_netxml20100712ddexC_RightShareCreationReferenceList_RightShareResourceReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3351, 12), )
 
-    
+
     RightShareResourceReference = property(__RightShareResourceReference.value, __RightShareResourceReference.set, None, 'A Reference for a Resource (specific to this Message) that is part of the RightShare. This LocalAnchorReference is a string starting with the letter A. The RightShare covers the Works used in the Resource(s).')
 
-    
+
     # Element RightShareReleaseReference uses Python identifier RightShareReleaseReference
     __RightShareReleaseReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareReleaseReference'), 'RightShareReleaseReference', '__httpddex_netxml20100712ddexC_RightShareCreationReferenceList_RightShareReleaseReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3356, 12), )
 
-    
+
     RightShareReleaseReference = property(__RightShareReleaseReference.value, __RightShareReleaseReference.set, None, 'A Reference for a Release (specific to this Message) that is part of the RightShare. This LocalAnchorReference is a string starting with the letter R. The RightShare covers the Works used in the Release(s).')
 
     _ElementMap.update({
@@ -4163,7 +4163,7 @@ class RightShareCreationReferenceList (pyxb.binding.basis.complexTypeDefinition)
         __RightShareReleaseReference.name() : __RightShareReleaseReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'RightShareCreationReferenceList', RightShareCreationReferenceList)
 
@@ -4179,16 +4179,16 @@ class RoyaltyCode (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_RoyaltyCode_Namespace', pyxb.binding.datatypes.string, required=True)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3407, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3407, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the RoyaltyRateType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -4207,25 +4207,25 @@ class SalesReportingProxyReleaseId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseId uses Python identifier ReleaseId
     __ReleaseId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseId'), 'ReleaseId', '__httpddex_netxml20100712ddexC_SalesReportingProxyReleaseId_ReleaseId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3420, 12), )
 
-    
+
     ReleaseId = property(__ReleaseId.value, __ReleaseId.set, None, 'A Composite containing details of ReleaseIds. If available, a GRid should always be used.')
 
-    
+
     # Element Reason uses Python identifier Reason
     __Reason = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Reason'), 'Reason', '__httpddex_netxml20100712ddexC_SalesReportingProxyReleaseId_Reason', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3425, 12), )
 
-    
+
     Reason = property(__Reason.value, __Reason.set, None, 'A Composite containing the textual Description of the reason for the Identifier being used as a proxy.')
 
-    
+
     # Element ReasonType uses Python identifier ReasonType
     __ReasonType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReasonType'), 'ReasonType', '__httpddex_netxml20100712ddexC_SalesReportingProxyReleaseId_ReasonType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3430, 12), )
 
-    
+
     ReasonType = property(__ReasonType.value, __ReasonType.set, None, 'A Composite containing details of a ReasonType.')
 
     _ElementMap.update({
@@ -4234,7 +4234,7 @@ class SalesReportingProxyReleaseId (pyxb.binding.basis.complexTypeDefinition):
         __ReasonType.name() : __ReasonType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SalesReportingProxyReleaseId', SalesReportingProxyReleaseId)
 
@@ -4250,96 +4250,96 @@ class SheetMusic (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SheetMusicType uses Python identifier SheetMusicType
     __SheetMusicType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SheetMusicType'), 'SheetMusicType', '__httpddex_netxml20100712ddexC_SheetMusic_SheetMusicType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3456, 12), )
 
-    
+
     SheetMusicType = property(__SheetMusicType.value, __SheetMusicType.set, None, 'A Composite containing details of the Type of the SheetMusic.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_SheetMusic_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3461, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the SheetMusic is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element SheetMusicId uses Python identifier SheetMusicId
     __SheetMusicId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SheetMusicId'), 'SheetMusicId', '__httpddex_netxml20100712ddexC_SheetMusic_SheetMusicId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3466, 12), )
 
-    
+
     SheetMusicId = property(__SheetMusicId.value, __SheetMusicId.set, None, 'A Composite containing details of Identifiers of the SheetMusic.')
 
-    
+
     # Element IndirectSheetMusicId uses Python identifier IndirectSheetMusicId
     __IndirectSheetMusicId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectSheetMusicId'), 'IndirectSheetMusicId', '__httpddex_netxml20100712ddexC_SheetMusic_IndirectSheetMusicId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3471, 12), )
 
-    
+
     IndirectSheetMusicId = property(__IndirectSheetMusicId.value, __IndirectSheetMusicId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the SheetMusic.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_SheetMusic_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3476, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the SheetMusic within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element LanguageOfLyrics uses Python identifier LanguageOfLyrics
     __LanguageOfLyrics = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LanguageOfLyrics'), 'LanguageOfLyrics', '__httpddex_netxml20100712ddexC_SheetMusic_LanguageOfLyrics', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3481, 12), )
 
-    
+
     LanguageOfLyrics = property(__LanguageOfLyrics.value, __LanguageOfLyrics.set, None, 'The Language of the lyrics of the SheetMusic (represented by an ISO 639-2 LanguageCode).')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_SheetMusic_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3486, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) related to the SheetMusic.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_SheetMusic_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3491, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the SheetMusic.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_SheetMusic_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3496, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SheetMusic.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_SheetMusic_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3501, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the SheetMusic.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_SheetMusic_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3506, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SheetMusic was created.')
 
-    
+
     # Element SheetMusicDetailsByTerritory uses Python identifier SheetMusicDetailsByTerritory
     __SheetMusicDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SheetMusicDetailsByTerritory'), 'SheetMusicDetailsByTerritory', '__httpddex_netxml20100712ddexC_SheetMusic_SheetMusicDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3511, 12), )
 
-    
+
     SheetMusicDetailsByTerritory = property(__SheetMusicDetailsByTerritory.value, __SheetMusicDetailsByTerritory.set, None, 'A Composite containing details of the SheetMusic which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SheetMusic_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3517, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3517, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the SheetMusic as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4373,68 +4373,68 @@ class SheetMusicDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3553, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the SheetMusic details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3558, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the SheetMusic details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3564, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the SheetMusic.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3569, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the SheetMusic.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3574, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the SheetMusic.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3579, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the SheetMusic.')
 
-    
+
     # Element CourtesyLine uses Python identifier CourtesyLine
     __CourtesyLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CourtesyLine'), 'CourtesyLine', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_CourtesyLine', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3584, 12), )
 
-    
+
     CourtesyLine = property(__CourtesyLine.value, __CourtesyLine.set, None, 'A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the SheetMusic.')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3589, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SheetMusic was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SheetMusicDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3595, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3595, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the SheetMusicDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4464,18 +4464,18 @@ class SheetMusicId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISMN uses Python identifier ISMN
     __ISMN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISMN'), 'ISMN', '__httpddex_netxml20100712ddexC_SheetMusicId_ISMN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3606, 12), )
 
-    
+
     ISMN = property(__ISMN.value, __ISMN.set, None, 'The ISMN (International Standard Music Number defined in ISO 10957) for the SheetMusic. An ISMN is a thirteen-digit number. Pre-2008 ISMNs, which had 10 characters and are now deprecated, are converted by replacing the initial letter ("M") with "979-0".')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_SheetMusicId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3611, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the SheetMusic.')
 
     _ElementMap.update({
@@ -4483,7 +4483,7 @@ class SheetMusicId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SheetMusicId', SheetMusicId)
 
@@ -4499,68 +4499,68 @@ class SimpleProfileMessageHeader (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MessageThreadId uses Python identifier MessageThreadId
     __MessageThreadId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageThreadId'), 'MessageThreadId', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageThreadId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3663, 12), )
 
-    
+
     MessageThreadId = property(__MessageThreadId.value, __MessageThreadId.set, None, 'A string used to uniquely identify the thread of Messages of which the current Message is a part.')
 
-    
+
     # Element MessageId uses Python identifier MessageId
     __MessageId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageId'), 'MessageId', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3668, 12), )
 
-    
+
     MessageId = property(__MessageId.value, __MessageId.set, None, 'A string used to uniquely identify the current Message.')
 
-    
+
     # Element MessageFileName uses Python identifier MessageFileName
     __MessageFileName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageFileName'), 'MessageFileName', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageFileName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3673, 12), )
 
-    
+
     MessageFileName = property(__MessageFileName.value, __MessageFileName.set, None, 'The FileName, possibly including the FilePath, of the XML File containing the current Message.')
 
-    
+
     # Element MessageSender uses Python identifier MessageSender
     __MessageSender = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageSender'), 'MessageSender', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageSender', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3678, 12), )
 
-    
+
     MessageSender = property(__MessageSender.value, __MessageSender.set, None, 'A Composite containing details of the MessageSender.')
 
-    
+
     # Element MessageRecipient uses Python identifier MessageRecipient
     __MessageRecipient = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageRecipient'), 'MessageRecipient', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageRecipient', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3683, 12), )
 
-    
+
     MessageRecipient = property(__MessageRecipient.value, __MessageRecipient.set, None, 'A Composite containing details of the MessageRecipient.')
 
-    
+
     # Element MessageCreatedDateTime uses Python identifier MessageCreatedDateTime
     __MessageCreatedDateTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageCreatedDateTime'), 'MessageCreatedDateTime', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageCreatedDateTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3688, 12), )
 
-    
+
     MessageCreatedDateTime = property(__MessageCreatedDateTime.value, __MessageCreatedDateTime.set, None, 'The DateTime on which the Message was created (the only allowed format is ISO 8601:2004: YYYY-MM-DDThh:mm:ssTZD).')
 
-    
+
     # Element Comment uses Python identifier Comment
     __Comment = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Comment'), 'Comment', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_Comment', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3693, 12), )
 
-    
+
     Comment = property(__Comment.value, __Comment.set, None, 'A Composite containing a human-readable Comment about the Message.')
 
-    
+
     # Element MessageControlType uses Python identifier MessageControlType
     __MessageControlType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MessageControlType'), 'MessageControlType', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_MessageControlType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3698, 12), )
 
-    
+
     MessageControlType = property(__MessageControlType.value, __MessageControlType.set, None, 'The indicator used to distinguish a live Message from a test Message.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SimpleProfileMessageHeader_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3704, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3704, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MessageHeader as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4590,26 +4590,26 @@ class SimpleProfileMessagingParty (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PartyId uses Python identifier PartyId
     __PartyId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyId'), 'PartyId', '__httpddex_netxml20100712ddexC_SimpleProfileMessagingParty_PartyId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3715, 12), )
 
-    
+
     PartyId = property(__PartyId.value, __PartyId.set, None, 'A Composite containing details of the PartyId for the Party handling the Message. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, Producers or other Creators.')
 
-    
+
     # Element PartyName uses Python identifier PartyName
     __PartyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyName'), 'PartyName', '__httpddex_netxml20100712ddexC_SimpleProfileMessagingParty_PartyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3720, 12), )
 
-    
+
     PartyName = property(__PartyName.value, __PartyName.set, None, 'A Composite containing details of the PartyNames for the Party handling the Message.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SimpleProfileMessagingParty_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3726, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3726, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the MessagingParty as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4633,18 +4633,18 @@ class SimpleProfilePartyDescriptor (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PartyId uses Python identifier PartyId
     __PartyId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyId'), 'PartyId', '__httpddex_netxml20100712ddexC_SimpleProfilePartyDescriptor_PartyId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3737, 12), )
 
-    
+
     PartyId = property(__PartyId.value, __PartyId.set, None, 'A Composite containing details of the PartyId for the Party. If no Namespace is given, the Identifier is a DdexPartyId (DPID). Note that DPIDs are not normally used to identify Artists, Producers or other Creators.')
 
-    
+
     # Element PartyName uses Python identifier PartyName
     __PartyName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PartyName'), 'PartyName', '__httpddex_netxml20100712ddexC_SimpleProfilePartyDescriptor_PartyName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3743, 16), )
 
-    
+
     PartyName = property(__PartyName.value, __PartyName.set, None, 'A Composite containing details of the PartyName(s).')
 
     _ElementMap.update({
@@ -4652,7 +4652,7 @@ class SimpleProfilePartyDescriptor (pyxb.binding.basis.complexTypeDefinition):
         __PartyName.name() : __PartyName
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SimpleProfilePartyDescriptor', SimpleProfilePartyDescriptor)
 
@@ -4668,19 +4668,19 @@ class SimpleProfilePartyName (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element FullName uses Python identifier FullName
     __FullName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'FullName'), 'FullName', '__httpddex_netxml20100712ddexC_SimpleProfilePartyName_FullName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3761, 12), )
 
-    
+
     FullName = property(__FullName.value, __FullName.set, None, 'A Composite containing the complete Name of the Party, in its normal form of presentation (e.g. John H. Smith, Acme Music Inc, A Composite containing the Beatles).')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SimpleProfilePartyName_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3767, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3767, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the PartyName as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4703,25 +4703,25 @@ class SocietyAffiliation (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_SocietyAffiliation_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3800, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the affiliation details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_SocietyAffiliation_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3805, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the affiliation details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element MusicRightsSociety uses Python identifier MusicRightsSociety
     __MusicRightsSociety = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicRightsSociety'), 'MusicRightsSociety', '__httpddex_netxml20100712ddexC_SocietyAffiliation_MusicRightsSociety', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3811, 12), )
 
-    
+
     MusicRightsSociety = property(__MusicRightsSociety.value, __MusicRightsSociety.set, None, 'A Composite containing details of a MusicRightsSociety.')
 
     _ElementMap.update({
@@ -4730,7 +4730,7 @@ class SocietyAffiliation (pyxb.binding.basis.complexTypeDefinition):
         __MusicRightsSociety.name() : __MusicRightsSociety
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SocietyAffiliation', SocietyAffiliation)
 
@@ -4746,82 +4746,82 @@ class Software (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SoftwareType uses Python identifier SoftwareType
     __SoftwareType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoftwareType'), 'SoftwareType', '__httpddex_netxml20100712ddexC_Software_SoftwareType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3823, 12), )
 
-    
+
     SoftwareType = property(__SoftwareType.value, __SoftwareType.set, None, 'A Composite containing details of the Type of the Software.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_Software_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3828, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the Software is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element SoftwareId uses Python identifier SoftwareId
     __SoftwareId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoftwareId'), 'SoftwareId', '__httpddex_netxml20100712ddexC_Software_SoftwareId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3833, 12), )
 
-    
+
     SoftwareId = property(__SoftwareId.value, __SoftwareId.set, None, 'A Composite containing details of Identifiers of the Software.')
 
-    
+
     # Element IndirectSoftwareId uses Python identifier IndirectSoftwareId
     __IndirectSoftwareId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectSoftwareId'), 'IndirectSoftwareId', '__httpddex_netxml20100712ddexC_Software_IndirectSoftwareId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3838, 12), )
 
-    
+
     IndirectSoftwareId = property(__IndirectSoftwareId.value, __IndirectSoftwareId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the Software.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_Software_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3843, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the Software within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_Software_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3848, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the Software.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_Software_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3853, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Software.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_Software_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3858, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Software.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_Software_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3863, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Software was created.')
 
-    
+
     # Element SoftwareDetailsByTerritory uses Python identifier SoftwareDetailsByTerritory
     __SoftwareDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoftwareDetailsByTerritory'), 'SoftwareDetailsByTerritory', '__httpddex_netxml20100712ddexC_Software_SoftwareDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3868, 12), )
 
-    
+
     SoftwareDetailsByTerritory = property(__SoftwareDetailsByTerritory.value, __SoftwareDetailsByTerritory.set, None, 'A Composite containing details of the Software which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Software_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3874, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3874, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Software as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4853,68 +4853,68 @@ class SoftwareDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3886, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the Software details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3891, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the Software details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3897, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the Software.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3902, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the Software.')
 
-    
+
     # Element PLine uses Python identifier PLine
     __PLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PLine'), 'PLine', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_PLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3907, 12), )
 
-    
+
     PLine = property(__PLine.value, __PLine.set, None, 'A Composite containing details of the PLine for the Software.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3912, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the Software.')
 
-    
+
     # Element CourtesyLine uses Python identifier CourtesyLine
     __CourtesyLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CourtesyLine'), 'CourtesyLine', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_CourtesyLine', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3917, 12), )
 
-    
+
     CourtesyLine = property(__CourtesyLine.value, __CourtesyLine.set, None, 'A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the Software.')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3922, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Software was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SoftwareDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3928, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3928, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the SoftwareDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -4944,18 +4944,18 @@ class SoftwareId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_SoftwareId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3939, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Software.')
 
     _ElementMap.update({
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SoftwareId', SoftwareId)
 
@@ -4971,166 +4971,166 @@ class SoundRecording (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SoundRecordingType uses Python identifier SoundRecordingType
     __SoundRecordingType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoundRecordingType'), 'SoundRecordingType', '__httpddex_netxml20100712ddexC_SoundRecording_SoundRecordingType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3994, 12), )
 
-    
+
     SoundRecordingType = property(__SoundRecordingType.value, __SoundRecordingType.set, None, 'A Composite containing details of the Type of the SoundRecording.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_SoundRecording_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3999, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the SoundRecording is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element SoundRecordingId uses Python identifier SoundRecordingId
     __SoundRecordingId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoundRecordingId'), 'SoundRecordingId', '__httpddex_netxml20100712ddexC_SoundRecording_SoundRecordingId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4004, 12), )
 
-    
+
     SoundRecordingId = property(__SoundRecordingId.value, __SoundRecordingId.set, None, 'A Composite containing details of SoundRecordingIds.')
 
-    
+
     # Element IndirectSoundRecordingId uses Python identifier IndirectSoundRecordingId
     __IndirectSoundRecordingId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectSoundRecordingId'), 'IndirectSoundRecordingId', '__httpddex_netxml20100712ddexC_SoundRecording_IndirectSoundRecordingId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4009, 12), )
 
-    
+
     IndirectSoundRecordingId = property(__IndirectSoundRecordingId.value, __IndirectSoundRecordingId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the SoundRecording.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_SoundRecording_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4014, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the SoundRecording within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_SoundRecording_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4019, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the SoundRecording.')
 
-    
+
     # Element InstrumentationDescription uses Python identifier InstrumentationDescription
     __InstrumentationDescription = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'InstrumentationDescription'), 'InstrumentationDescription', '__httpddex_netxml20100712ddexC_SoundRecording_InstrumentationDescription', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4024, 12), )
 
-    
+
     InstrumentationDescription = property(__InstrumentationDescription.value, __InstrumentationDescription.set, None, 'A Composite containing a Description of the Type of instrumentation of the MusicalWork(s) in the SoundRecording.')
 
-    
+
     # Element IsMedley uses Python identifier IsMedley
     __IsMedley = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsMedley'), 'IsMedley', '__httpddex_netxml20100712ddexC_SoundRecording_IsMedley', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4029, 12), )
 
-    
+
     IsMedley = property(__IsMedley.value, __IsMedley.set, None, 'The Flag indicating whether the SoundRecording is a Medley (=True) or not (=False).')
 
-    
+
     # Element IsPotpourri uses Python identifier IsPotpourri
     __IsPotpourri = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsPotpourri'), 'IsPotpourri', '__httpddex_netxml20100712ddexC_SoundRecording_IsPotpourri', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4034, 12), )
 
-    
+
     IsPotpourri = property(__IsPotpourri.value, __IsPotpourri.set, None, 'The Flag indicating whether the SoundRecording is a Potpourri (=True) or not (=False).')
 
-    
+
     # Element IsInstrumental uses Python identifier IsInstrumental
     __IsInstrumental = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsInstrumental'), 'IsInstrumental', '__httpddex_netxml20100712ddexC_SoundRecording_IsInstrumental', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4039, 12), )
 
-    
+
     IsInstrumental = property(__IsInstrumental.value, __IsInstrumental.set, None, 'The Flag indicating whether the SoundRecording is instrumental (=True) or not (=False).')
 
-    
+
     # Element IsBackground uses Python identifier IsBackground
     __IsBackground = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBackground'), 'IsBackground', '__httpddex_netxml20100712ddexC_SoundRecording_IsBackground', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4044, 12), )
 
-    
+
     IsBackground = property(__IsBackground.value, __IsBackground.set, None, 'The Flag indicating whether the SoundRecording is used as background to other audio or audiovisual material (=True) or not (=False).')
 
-    
+
     # Element IsHiddenResource uses Python identifier IsHiddenResource
     __IsHiddenResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsHiddenResource'), 'IsHiddenResource', '__httpddex_netxml20100712ddexC_SoundRecording_IsHiddenResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4049, 12), )
 
-    
+
     IsHiddenResource = property(__IsHiddenResource.value, __IsHiddenResource.set, None, 'The Flag indicating whether the SoundRecording is hidden in some way from the Consumer (=True) or not (=False).')
 
-    
+
     # Element IsBonusResource uses Python identifier IsBonusResource
     __IsBonusResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBonusResource'), 'IsBonusResource', '__httpddex_netxml20100712ddexC_SoundRecording_IsBonusResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4054, 12), )
 
-    
+
     IsBonusResource = property(__IsBonusResource.value, __IsBonusResource.set, None, 'The Flag indicating whether the SoundRecording is additional to those on the original Release of which this is a Version (=True) or not (=False).')
 
-    
+
     # Element IsComputerGenerated uses Python identifier IsComputerGenerated
     __IsComputerGenerated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsComputerGenerated'), 'IsComputerGenerated', '__httpddex_netxml20100712ddexC_SoundRecording_IsComputerGenerated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4059, 12), )
 
-    
+
     IsComputerGenerated = property(__IsComputerGenerated.value, __IsComputerGenerated.set, None, 'The Flag indicating whether the SoundRecording is generated by a computer (=True) or not (=False).')
 
-    
+
     # Element LanguageOfPerformance uses Python identifier LanguageOfPerformance
     __LanguageOfPerformance = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LanguageOfPerformance'), 'LanguageOfPerformance', '__httpddex_netxml20100712ddexC_SoundRecording_LanguageOfPerformance', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4064, 12), )
 
-    
+
     LanguageOfPerformance = property(__LanguageOfPerformance.value, __LanguageOfPerformance.set, None, 'The Language of the Performance recorded in the SoundRecording (represented by an ISO 639-2 LanguageCode).')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_SoundRecording_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4069, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration of the SoundRecording (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_SoundRecording_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4074, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the SoundRecording.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_SoundRecording_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4079, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the SoundRecording.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_SoundRecording_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4084, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current SoundRecording.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_SoundRecording_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4089, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SoundRecording was created.')
 
-    
+
     # Element MasteredDate uses Python identifier MasteredDate
     __MasteredDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MasteredDate'), 'MasteredDate', '__httpddex_netxml20100712ddexC_SoundRecording_MasteredDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4094, 12), )
 
-    
+
     MasteredDate = property(__MasteredDate.value, __MasteredDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SoundRecording was originally mastered (either in analogue or digital form).')
 
-    
+
     # Element SoundRecordingDetailsByTerritory uses Python identifier SoundRecordingDetailsByTerritory
     __SoundRecordingDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoundRecordingDetailsByTerritory'), 'SoundRecordingDetailsByTerritory', '__httpddex_netxml20100712ddexC_SoundRecording_SoundRecordingDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4099, 12), )
 
-    
+
     SoundRecordingDetailsByTerritory = property(__SoundRecordingDetailsByTerritory.value, __SoundRecordingDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the SoundRecording which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SoundRecording_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4105, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4105, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the SoundRecording as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -5174,46 +5174,46 @@ class SoundRecordingCollectionReference (pyxb.binding.basis.complexTypeDefinitio
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_SequenceNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4116, 12), )
 
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the Collection in a group of Collections within a Medley, SoundRecording or other Collection.')
 
-    
+
     # Element SoundRecordingCollectionReference uses Python identifier SoundRecordingCollectionReference
     __SoundRecordingCollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoundRecordingCollectionReference'), 'SoundRecordingCollectionReference', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_SoundRecordingCollectionReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4121, 12), )
 
-    
+
     SoundRecordingCollectionReference = property(__SoundRecordingCollectionReference.value, __SoundRecordingCollectionReference.set, None, 'A Reference for a Collection (specific to this Message). This LocalAnchorReference is a string starting with the letter X. The referenced Collection has to be of CollectionType Series, Season or Episode.')
 
-    
+
     # Element StartTime uses Python identifier StartTime
     __StartTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'StartTime'), 'StartTime', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_StartTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4126, 12), )
 
-    
+
     StartTime = property(__StartTime.value, __StartTime.set, None, 'The start time of the Creation, measured from the start of the Resource from which the CueSheet is referenced (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4131, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration of the use of the Creation that is referenced in the CueCreationReference (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element EndTime uses Python identifier EndTime
     __EndTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'EndTime'), 'EndTime', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_EndTime', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4136, 12), )
 
-    
+
     EndTime = property(__EndTime.value, __EndTime.set, None, 'The end time of the Creation, measured from the start of the Resource from which the CueSheet is referenced (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element ReleaseResourceType uses Python identifier ReleaseResourceType
     __ReleaseResourceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseResourceType'), 'ReleaseResourceType', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReference_ReleaseResourceType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4141, 12), )
 
-    
+
     ReleaseResourceType = property(__ReleaseResourceType.value, __ReleaseResourceType.set, None, 'A Type of Collection in the context of a Video. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -5225,7 +5225,7 @@ class SoundRecordingCollectionReference (pyxb.binding.basis.complexTypeDefinitio
         __ReleaseResourceType.name() : __ReleaseResourceType
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SoundRecordingCollectionReference', SoundRecordingCollectionReference)
 
@@ -5241,18 +5241,18 @@ class SoundRecordingCollectionReferenceList (pyxb.binding.basis.complexTypeDefin
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element NumberOfCollections uses Python identifier NumberOfCollections
     __NumberOfCollections = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NumberOfCollections'), 'NumberOfCollections', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReferenceList_NumberOfCollections', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4153, 12), )
 
-    
+
     NumberOfCollections = property(__NumberOfCollections.value, __NumberOfCollections.set, None, 'The number of referenced Collections (typically Chapters).')
 
-    
+
     # Element SoundRecordingCollectionReference uses Python identifier SoundRecordingCollectionReference
     __SoundRecordingCollectionReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SoundRecordingCollectionReference'), 'SoundRecordingCollectionReference', '__httpddex_netxml20100712ddexC_SoundRecordingCollectionReferenceList_SoundRecordingCollectionReference', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4158, 12), )
 
-    
+
     SoundRecordingCollectionReference = property(__SoundRecordingCollectionReference.value, __SoundRecordingCollectionReference.set, None, 'A Composite containing a SoundRecordingCollectionReference for a Collection (specific to this Message).')
 
     _ElementMap.update({
@@ -5260,7 +5260,7 @@ class SoundRecordingCollectionReferenceList (pyxb.binding.basis.complexTypeDefin
         __SoundRecordingCollectionReference.name() : __SoundRecordingCollectionReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SoundRecordingCollectionReferenceList', SoundRecordingCollectionReferenceList)
 
@@ -5276,96 +5276,96 @@ class SoundRecordingDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4171, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the SoundRecording details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4176, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the SoundRecording details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4182, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the SoundRecording.')
 
-    
+
     # Element DisplayArtist uses Python identifier DisplayArtist
     __DisplayArtist = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DisplayArtist'), 'DisplayArtist', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_DisplayArtist', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4187, 12), )
 
-    
+
     DisplayArtist = property(__DisplayArtist.value, __DisplayArtist.set, None, 'A Composite containing details of the DisplayArtist for the SoundRecording. The DisplayArtist may be described through Name, Identifier and Roles.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4192, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the SoundRecording.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4197, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the SoundRecording.')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4202, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the SoundRecording.')
 
-    
+
     # Element LabelName uses Python identifier LabelName
     __LabelName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LabelName'), 'LabelName', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_LabelName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4207, 12), )
 
-    
+
     LabelName = property(__LabelName.value, __LabelName.set, None, 'A Composite containing the Name of the Label under which the Release is to be marketed.')
 
-    
+
     # Element RightsController uses Python identifier RightsController
     __RightsController = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsController'), 'RightsController', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_RightsController', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4212, 12), )
 
-    
+
     RightsController = property(__RightsController.value, __RightsController.set, None, 'A Composite containing details of RightsController of Rights in the SoundRecording.')
 
-    
+
     # Element RemasteredDate uses Python identifier RemasteredDate
     __RemasteredDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RemasteredDate'), 'RemasteredDate', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_RemasteredDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4217, 12), )
 
-    
+
     RemasteredDate = property(__RemasteredDate.value, __RemasteredDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SoundRecording was re-mastered (usually digitally).')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4222, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the SoundRecording was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Element PLine uses Python identifier PLine
     __PLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PLine'), 'PLine', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_PLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4227, 12), )
 
-    
+
     PLine = property(__PLine.value, __PLine.set, None, 'A Composite containing details of the PLine for the SoundRecording.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SoundRecordingDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4233, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4233, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the SoundRecordingDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -5399,25 +5399,25 @@ class SoundRecordingId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISRC uses Python identifier ISRC
     __ISRC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISRC'), 'ISRC', '__httpddex_netxml20100712ddexC_SoundRecordingId_ISRC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4244, 12), )
 
-    
+
     ISRC = property(__ISRC.value, __ISRC.set, None, 'The ISRC (International Standard Recording Code as defined in ISO 3901) for the SoundRecording. An ISRC comprises four parts: two characters, followed by three alphanumeric characters, then two digits and five digits.')
 
-    
+
     # Element CatalogNumber uses Python identifier CatalogNumber
     __CatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CatalogNumber'), 'CatalogNumber', '__httpddex_netxml20100712ddexC_SoundRecordingId_CatalogNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4249, 12), )
 
-    
+
     CatalogNumber = property(__CatalogNumber.value, __CatalogNumber.set, None, 'A Composite containing details of the CatalogNumber of the SoundRecording.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_SoundRecordingId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4254, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the SoundRecording (usually one per society involved in the messaging).')
 
     _ElementMap.update({
@@ -5426,7 +5426,7 @@ class SoundRecordingId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'SoundRecordingId', SoundRecordingId)
 
@@ -5442,16 +5442,16 @@ class StoreLocationDescriptor (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_StoreLocationDescriptor_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4286, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4286, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the StoreLocationDescriptor as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -5470,16 +5470,16 @@ class SubTitle (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_SubTitle_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4300, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4300, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the SubTitle as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -5498,16 +5498,16 @@ class Synopsis (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Synopsis_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4333, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4333, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Synopsis as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -5526,24 +5526,24 @@ class TariffReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_TariffReference_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4347, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4347, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the TariffReference (and the TariffSubReference if applicable) as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute TariffSubReference uses Python identifier TariffSubReference
     __TariffSubReference = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'TariffSubReference'), 'TariffSubReference', '__httpddex_netxml20100712ddexC_TariffReference_TariffSubReference', pyxb.binding.datatypes.string)
     __TariffSubReference._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4352, 16)
     __TariffSubReference._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4352, 16)
-    
+
     TariffSubReference = property(__TariffSubReference.value, __TariffSubReference.set, None, 'The Reference to a TextDocument containing more specific details of a Tariff. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode,
@@ -5563,25 +5563,25 @@ class TaxRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element Rate uses Python identifier Rate
     __Rate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Rate'), 'Rate', '__httpddex_netxml20100712ddexC_TaxRate_Rate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4379, 12), )
 
-    
+
     Rate = property(__Rate.value, __Rate.set, None, 'The TaxRate as a percentage.')
 
-    
+
     # Element TaxType uses Python identifier TaxType
     __TaxType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TaxType'), 'TaxType', '__httpddex_netxml20100712ddexC_TaxRate_TaxType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4384, 12), )
 
-    
+
     TaxType = property(__TaxType.value, __TaxType.set, None, 'A Composite containing details of the Type of Tax.')
 
-    
+
     # Element TaxScope uses Python identifier TaxScope
     __TaxScope = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TaxScope'), 'TaxScope', '__httpddex_netxml20100712ddexC_TaxRate_TaxScope', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4389, 12), )
 
-    
+
     TaxScope = property(__TaxScope.value, __TaxScope.set, None, 'A Composite containing details of the Type of Tax according to its scope.')
 
     _ElementMap.update({
@@ -5590,7 +5590,7 @@ class TaxRate (pyxb.binding.basis.complexTypeDefinition):
         __TaxScope.name() : __TaxScope
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'TaxRate', TaxRate)
 
@@ -5606,32 +5606,32 @@ class TechnicalInstantiation (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element DrmEnforcementType uses Python identifier DrmEnforcementType
     __DrmEnforcementType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DrmEnforcementType'), 'DrmEnforcementType', '__httpddex_netxml20100712ddexC_TechnicalInstantiation_DrmEnforcementType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4439, 12), )
 
-    
+
     DrmEnforcementType = property(__DrmEnforcementType.value, __DrmEnforcementType.set, None, 'A Type of DRM enforcement.')
 
-    
+
     # Element VideoDefinitionType uses Python identifier VideoDefinitionType
     __VideoDefinitionType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VideoDefinitionType'), 'VideoDefinitionType', '__httpddex_netxml20100712ddexC_TechnicalInstantiation_VideoDefinitionType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4444, 12), )
 
-    
+
     VideoDefinitionType = property(__VideoDefinitionType.value, __VideoDefinitionType.set, None, 'A Type of resolution (or definition) in which a Video is provided.')
 
-    
+
     # Element CodingType uses Python identifier CodingType
     __CodingType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CodingType'), 'CodingType', '__httpddex_netxml20100712ddexC_TechnicalInstantiation_CodingType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4449, 12), )
 
-    
+
     CodingType = property(__CodingType.value, __CodingType.set, None, 'A Type of coding used to encode a Resource.')
 
-    
+
     # Element BitRate uses Python identifier BitRate
     __BitRate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'BitRate'), 'BitRate', '__httpddex_netxml20100712ddexC_TechnicalInstantiation_BitRate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4454, 12), )
 
-    
+
     BitRate = property(__BitRate.value, __BitRate.set, None, 'A Composite containing the BitRate for the audio data and a UnitOfMeasure (the default is kbps).')
 
     _ElementMap.update({
@@ -5641,7 +5641,7 @@ class TechnicalInstantiation (pyxb.binding.basis.complexTypeDefinition):
         __BitRate.name() : __BitRate
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'TechnicalInstantiation', TechnicalInstantiation)
 
@@ -5657,82 +5657,82 @@ class Text (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TextType uses Python identifier TextType
     __TextType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TextType'), 'TextType', '__httpddex_netxml20100712ddexC_Text_TextType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4472, 12), )
 
-    
+
     TextType = property(__TextType.value, __TextType.set, None, 'A Composite containing details of the Type of the Text.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_Text_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4477, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the Text is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element TextId uses Python identifier TextId
     __TextId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TextId'), 'TextId', '__httpddex_netxml20100712ddexC_Text_TextId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4482, 12), )
 
-    
+
     TextId = property(__TextId.value, __TextId.set, None, 'A Composite containing details of an Identifier of the Text.')
 
-    
+
     # Element IndirectTextId uses Python identifier IndirectTextId
     __IndirectTextId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectTextId'), 'IndirectTextId', '__httpddex_netxml20100712ddexC_Text_IndirectTextId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4487, 12), )
 
-    
+
     IndirectTextId = property(__IndirectTextId.value, __IndirectTextId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the Text.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_Text_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4492, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the Text within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_Text_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4497, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the Text.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_Text_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4502, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Text.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_Text_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4507, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Text.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_Text_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4512, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Text was created.')
 
-    
+
     # Element TextDetailsByTerritory uses Python identifier TextDetailsByTerritory
     __TextDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TextDetailsByTerritory'), 'TextDetailsByTerritory', '__httpddex_netxml20100712ddexC_Text_TextDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4517, 12), )
 
-    
+
     TextDetailsByTerritory = property(__TextDetailsByTerritory.value, __TextDetailsByTerritory.set, None, 'A Composite containing details of the Text which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Text_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4523, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4523, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Text as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -5764,61 +5764,61 @@ class TextDetailsByTerritory (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4559, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the Text details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4564, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the Text details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4570, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the Text.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4575, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the Text.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4580, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the Text.')
 
-    
+
     # Element CourtesyLine uses Python identifier CourtesyLine
     __CourtesyLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CourtesyLine'), 'CourtesyLine', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_CourtesyLine', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4585, 12), )
 
-    
+
     CourtesyLine = property(__CourtesyLine.value, __CourtesyLine.set, None, 'A Composite containing an Annotation which acknowledges record companies and/or other Parties giving permission for Artists or others featured in the Text.')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4590, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Text was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_TextDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4596, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4596, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the TextDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -5847,32 +5847,32 @@ class TextId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISBN uses Python identifier ISBN
     __ISBN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISBN'), 'ISBN', '__httpddex_netxml20100712ddexC_TextId_ISBN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4607, 12), )
 
-    
+
     ISBN = property(__ISBN.value, __ISBN.set, None, 'The ISBN (International Standard Book Number defined in ISO 2108) for the Text. An ISBN is a 13-digit number. Pre-2007, ISBNs, which had 10-digits and are now deprecated, are converted by adding the prefix "978" and re-calculating the check character.')
 
-    
+
     # Element ISSN uses Python identifier ISSN
     __ISSN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISSN'), 'ISSN', '__httpddex_netxml20100712ddexC_TextId_ISSN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4612, 12), )
 
-    
+
     ISSN = property(__ISSN.value, __ISSN.set, None, 'The ISSN (International Standard Serial Number defined in ISO 3297) identifying the Text. An ISSN comprises two groups of four digits, separated by a hyphen and a control digit.')
 
-    
+
     # Element SICI uses Python identifier SICI
     __SICI = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SICI'), 'SICI', '__httpddex_netxml20100712ddexC_TextId_SICI', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4617, 12), )
 
-    
+
     SICI = property(__SICI.value, __SICI.set, None, 'The SICI (Serial Item and Contribution Identifier defined in ANSI/NISO Z39.56-199) for the Text.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_TextId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4622, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Text (usually one per society involved in the messaging).')
 
     _ElementMap.update({
@@ -5882,7 +5882,7 @@ class TextId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'TextId', TextId)
 
@@ -5898,16 +5898,16 @@ class TitleText (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_TitleText_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4681, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4681, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the TitleText as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LanguageAndScriptCode.name() : __LanguageAndScriptCode
@@ -5926,25 +5926,25 @@ class TotalRoyaltyAmount (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ReleaseType uses Python identifier ReleaseType
     __ReleaseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseType'), 'ReleaseType', '__httpddex_netxml20100712ddexC_TotalRoyaltyAmount_ReleaseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4694, 12), )
 
-    
+
     ReleaseType = property(__ReleaseType.value, __ReleaseType.set, None, 'A Composite containing details of the ReleaseType for which the RoyaltyAmount is calculated.')
 
-    
+
     # Element RightsType uses Python identifier RightsType
     __RightsType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsType'), 'RightsType', '__httpddex_netxml20100712ddexC_TotalRoyaltyAmount_RightsType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4699, 12), )
 
-    
+
     RightsType = property(__RightsType.value, __RightsType.set, None, 'A Composite containing details of the RightsType for which the RoyaltyAmount is calculated.')
 
-    
+
     # Element RoyaltyAmount uses Python identifier RoyaltyAmount
     __RoyaltyAmount = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RoyaltyAmount'), 'RoyaltyAmount', '__httpddex_netxml20100712ddexC_TotalRoyaltyAmount_RoyaltyAmount', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4704, 12), )
 
-    
+
     RoyaltyAmount = property(__RoyaltyAmount.value, __RoyaltyAmount.set, None, 'A Composite containing details of the RoyaltyAmount due.')
 
     _ElementMap.update({
@@ -5953,7 +5953,7 @@ class TotalRoyaltyAmount (pyxb.binding.basis.complexTypeDefinition):
         __RoyaltyAmount.name() : __RoyaltyAmount
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'TotalRoyaltyAmount', TotalRoyaltyAmount)
 
@@ -5969,46 +5969,46 @@ class Usage (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element UseType uses Python identifier UseType
     __UseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UseType'), 'UseType', '__httpddex_netxml20100712ddexC_Usage_UseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4716, 12), )
 
-    
+
     UseType = property(__UseType.value, __UseType.set, None, 'A Composite containing details of a nature of a Service, or a Release, as used by a Consumer.')
 
-    
+
     # Element UserInterfaceType uses Python identifier UserInterfaceType
     __UserInterfaceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserInterfaceType'), 'UserInterfaceType', '__httpddex_netxml20100712ddexC_Usage_UserInterfaceType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4721, 12), )
 
-    
+
     UserInterfaceType = property(__UserInterfaceType.value, __UserInterfaceType.set, None, 'A Composite containing details of a physical interface by which a Consumer is intended to use a Service or Release.')
 
-    
+
     # Element DistributionChannelType uses Python identifier DistributionChannelType
     __DistributionChannelType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DistributionChannelType'), 'DistributionChannelType', '__httpddex_netxml20100712ddexC_Usage_DistributionChannelType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4726, 12), )
 
-    
+
     DistributionChannelType = property(__DistributionChannelType.value, __DistributionChannelType.set, None, 'A Composite containing details of a distribution channel intended to be used to disseminate a Service or Release to a Consumer.')
 
-    
+
     # Element CarrierType uses Python identifier CarrierType
     __CarrierType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CarrierType'), 'CarrierType', '__httpddex_netxml20100712ddexC_Usage_CarrierType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4731, 12), )
 
-    
+
     CarrierType = property(__CarrierType.value, __CarrierType.set, None, 'A Composite containing details of a Carrier.')
 
-    
+
     # Element TechnicalInstantiation uses Python identifier TechnicalInstantiation
     __TechnicalInstantiation = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TechnicalInstantiation'), 'TechnicalInstantiation', '__httpddex_netxml20100712ddexC_Usage_TechnicalInstantiation', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4736, 12), )
 
-    
+
     TechnicalInstantiation = property(__TechnicalInstantiation.value, __TechnicalInstantiation.set, None, 'A Composite containing technical details of the Release.')
 
-    
+
     # Element NumberOfUsages uses Python identifier NumberOfUsages
     __NumberOfUsages = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'NumberOfUsages'), 'NumberOfUsages', '__httpddex_netxml20100712ddexC_Usage_NumberOfUsages', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4741, 12), )
 
-    
+
     NumberOfUsages = property(__NumberOfUsages.value, __NumberOfUsages.set, None, 'The number of times a Release can be used under the terms of the Deal.')
 
     _ElementMap.update({
@@ -6020,7 +6020,7 @@ class Usage (pyxb.binding.basis.complexTypeDefinition):
         __NumberOfUsages.name() : __NumberOfUsages
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'Usage', Usage)
 
@@ -6036,82 +6036,82 @@ class UserDefinedResource (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element UserDefinedResourceType uses Python identifier UserDefinedResourceType
     __UserDefinedResourceType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserDefinedResourceType'), 'UserDefinedResourceType', '__httpddex_netxml20100712ddexC_UserDefinedResource_UserDefinedResourceType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4753, 12), )
 
-    
+
     UserDefinedResourceType = property(__UserDefinedResourceType.value, __UserDefinedResourceType.set, None, 'A Composite containing details of the Type of the UserDefinedResource.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_UserDefinedResource_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4758, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the UserDefinedResource is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element UserDefinedResourceId uses Python identifier UserDefinedResourceId
     __UserDefinedResourceId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserDefinedResourceId'), 'UserDefinedResourceId', '__httpddex_netxml20100712ddexC_UserDefinedResource_UserDefinedResourceId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4763, 12), )
 
-    
+
     UserDefinedResourceId = property(__UserDefinedResourceId.value, __UserDefinedResourceId.set, None, 'A Composite containing details of Identifiers of the UserDefinedResource.')
 
-    
+
     # Element IndirectUserDefinedResourceId uses Python identifier IndirectUserDefinedResourceId
     __IndirectUserDefinedResourceId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectUserDefinedResourceId'), 'IndirectUserDefinedResourceId', '__httpddex_netxml20100712ddexC_UserDefinedResource_IndirectUserDefinedResourceId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4768, 12), )
 
-    
+
     IndirectUserDefinedResourceId = property(__IndirectUserDefinedResourceId.value, __IndirectUserDefinedResourceId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the UserDefinedResource.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_UserDefinedResource_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4773, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the UserDefinedResource within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_UserDefinedResource_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4778, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the UserDefinedResource.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_UserDefinedResource_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4783, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current UserDefinedResource.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_UserDefinedResource_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4788, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the UserDefinedResource.')
 
-    
+
     # Element UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_UserDefinedResource_UserDefinedValue', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4793, 12), )
 
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A Composite containing details of a UserDefinedValue.')
 
-    
+
     # Element UserDefinedResourceDetailsByTerritory uses Python identifier UserDefinedResourceDetailsByTerritory
     __UserDefinedResourceDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserDefinedResourceDetailsByTerritory'), 'UserDefinedResourceDetailsByTerritory', '__httpddex_netxml20100712ddexC_UserDefinedResource_UserDefinedResourceDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4798, 12), )
 
-    
+
     UserDefinedResourceDetailsByTerritory = property(__UserDefinedResourceDetailsByTerritory.value, __UserDefinedResourceDetailsByTerritory.set, None, 'A Composite containing details of the UserDefinedResource which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_UserDefinedResource_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4804, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4804, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the UserDefinedResource as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -6143,68 +6143,68 @@ class UserDefinedResourceDetailsByTerritory (pyxb.binding.basis.complexTypeDefin
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_TerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4816, 16), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the UserDefinedResource details apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or ExcludedTerritory shall be present, but not both.')
 
-    
+
     # Element ExcludedTerritoryCode uses Python identifier ExcludedTerritoryCode
     __ExcludedTerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ExcludedTerritoryCode'), 'ExcludedTerritoryCode', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_ExcludedTerritoryCode', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4821, 16), )
 
-    
+
     ExcludedTerritoryCode = property(__ExcludedTerritoryCode.value, __ExcludedTerritoryCode.set, None, 'A Territory to which the UserDefinedResource details do not apply (represented by an ISO 3166-1 TerritoryCode). Either this Element or Territory shall be present, but not both.')
 
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_ResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4827, 12), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of a Contributor to the UserDefinedResource.')
 
-    
+
     # Element IndirectResourceContributor uses Python identifier IndirectResourceContributor
     __IndirectResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributor'), 'IndirectResourceContributor', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_IndirectResourceContributor', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4832, 12), )
 
-    
+
     IndirectResourceContributor = property(__IndirectResourceContributor.value, __IndirectResourceContributor.set, None, 'A Composite containing details of an indirect Contributor to the UserDefinedResource.')
 
-    
+
     # Element UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_UserDefinedValue', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4837, 12), )
 
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A Composite containing details of a UserDefinedValue.')
 
-    
+
     # Element PLine uses Python identifier PLine
     __PLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PLine'), 'PLine', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_PLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4842, 12), )
 
-    
+
     PLine = property(__PLine.value, __PLine.set, None, 'A Composite containing details of the PLine for the UserDefinedResource.')
 
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4847, 12), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the UserDefinedResource.')
 
-    
+
     # Element OriginalResourceReleaseDate uses Python identifier OriginalResourceReleaseDate
     __OriginalResourceReleaseDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'OriginalResourceReleaseDate'), 'OriginalResourceReleaseDate', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_OriginalResourceReleaseDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4852, 12), )
 
-    
+
     OriginalResourceReleaseDate = property(__OriginalResourceReleaseDate.value, __OriginalResourceReleaseDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the UserDefinedResource was originally published, whether for physical or electronic/online distribution.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_UserDefinedResourceDetailsByTerritory_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4858, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4858, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the UserDefinedResourceDetailsByTerritory as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -6234,18 +6234,18 @@ class UserDefinedResourceId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_UserDefinedResourceId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4869, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the UserDefinedResource.')
 
     _ElementMap.update({
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'UserDefinedResourceId', UserDefinedResourceId)
 
@@ -6261,16 +6261,16 @@ class UserDefinedResourceType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_UserDefinedResourceType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4882, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4882, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the UserDefinedResourceType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -6289,32 +6289,32 @@ class UserDefinedValue (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_UserDefinedValue_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4896, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4896, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the UserDefinedValue. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Description uses Python identifier Description
     __Description = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Description'), 'Description', '__httpddex_netxml20100712ddexC_UserDefinedValue_Description', pyxb.binding.datatypes.string)
     __Description._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4901, 16)
     __Description._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4901, 16)
-    
+
     Description = property(__Description.value, __Description.set, None, 'A textual Description of the Type or function of the UserDefinedValue. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_UserDefinedValue_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4906, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4906, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the Description as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -6335,166 +6335,166 @@ class Video (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element VideoType uses Python identifier VideoType
     __VideoType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VideoType'), 'VideoType', '__httpddex_netxml20100712ddexC_Video_VideoType', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4957, 12), )
 
-    
+
     VideoType = property(__VideoType.value, __VideoType.set, None, 'A Composite containing details of the Type of the Video.')
 
-    
+
     # Element IsArtistRelated uses Python identifier IsArtistRelated
     __IsArtistRelated = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsArtistRelated'), 'IsArtistRelated', '__httpddex_netxml20100712ddexC_Video_IsArtistRelated', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4962, 12), )
 
-    
+
     IsArtistRelated = property(__IsArtistRelated.value, __IsArtistRelated.set, None, 'The Flag indicating whether the Video is related to an Artist (=True) or not (=False).')
 
-    
+
     # Element VideoId uses Python identifier VideoId
     __VideoId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VideoId'), 'VideoId', '__httpddex_netxml20100712ddexC_Video_VideoId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4967, 12), )
 
-    
+
     VideoId = property(__VideoId.value, __VideoId.set, None, 'A Composite containing details of an Identifier of the Video.')
 
-    
+
     # Element IndirectVideoId uses Python identifier IndirectVideoId
     __IndirectVideoId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectVideoId'), 'IndirectVideoId', '__httpddex_netxml20100712ddexC_Video_IndirectVideoId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4972, 12), )
 
-    
+
     IndirectVideoId = property(__IndirectVideoId.value, __IndirectVideoId.set, None, 'A Composite containing details of a MusicalWorkId of a MusicalWork used in the Video.')
 
-    
+
     # Element ResourceReference uses Python identifier ResourceReference
     __ResourceReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceReference'), 'ResourceReference', '__httpddex_netxml20100712ddexC_Video_ResourceReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4977, 12), )
 
-    
+
     ResourceReference = property(__ResourceReference.value, __ResourceReference.set, None, 'The Identifier (specific to the Message) of the Video within the Release which contains it. This LocalAnchor is a string starting with the letter A.')
 
-    
+
     # Element ReferenceTitle uses Python identifier ReferenceTitle
     __ReferenceTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReferenceTitle'), 'ReferenceTitle', '__httpddex_netxml20100712ddexC_Video_ReferenceTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4982, 12), )
 
-    
+
     ReferenceTitle = property(__ReferenceTitle.value, __ReferenceTitle.set, None, 'A Composite containing details of the ReferenceTitle of the Video.')
 
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_Video_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4987, 12), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Video.')
 
-    
+
     # Element InstrumentationDescription uses Python identifier InstrumentationDescription
     __InstrumentationDescription = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'InstrumentationDescription'), 'InstrumentationDescription', '__httpddex_netxml20100712ddexC_Video_InstrumentationDescription', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4992, 12), )
 
-    
+
     InstrumentationDescription = property(__InstrumentationDescription.value, __InstrumentationDescription.set, None, 'A Composite containing a Description of the Type of instrumentation of the MusicalWork(s) in the Video.')
 
-    
+
     # Element IsMedley uses Python identifier IsMedley
     __IsMedley = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsMedley'), 'IsMedley', '__httpddex_netxml20100712ddexC_Video_IsMedley', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4997, 12), )
 
-    
+
     IsMedley = property(__IsMedley.value, __IsMedley.set, None, 'The Flag indicating whether the Video is a Medley (=True) or not (=False).')
 
-    
+
     # Element IsPotpourri uses Python identifier IsPotpourri
     __IsPotpourri = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsPotpourri'), 'IsPotpourri', '__httpddex_netxml20100712ddexC_Video_IsPotpourri', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5002, 12), )
 
-    
+
     IsPotpourri = property(__IsPotpourri.value, __IsPotpourri.set, None, 'The Flag indicating whether the Video is a Potpourri (=True) or not (=False).')
 
-    
+
     # Element IsInstrumental uses Python identifier IsInstrumental
     __IsInstrumental = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsInstrumental'), 'IsInstrumental', '__httpddex_netxml20100712ddexC_Video_IsInstrumental', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5007, 12), )
 
-    
+
     IsInstrumental = property(__IsInstrumental.value, __IsInstrumental.set, None, 'The Flag indicating whether the Video is instrumental (=True) or not (=False).')
 
-    
+
     # Element IsBackground uses Python identifier IsBackground
     __IsBackground = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBackground'), 'IsBackground', '__httpddex_netxml20100712ddexC_Video_IsBackground', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5012, 12), )
 
-    
+
     IsBackground = property(__IsBackground.value, __IsBackground.set, None, 'The Flag indicating whether the Video is used as background to other audio or audiovisual material (=True) or not (=False).')
 
-    
+
     # Element IsHiddenResource uses Python identifier IsHiddenResource
     __IsHiddenResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsHiddenResource'), 'IsHiddenResource', '__httpddex_netxml20100712ddexC_Video_IsHiddenResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5017, 12), )
 
-    
+
     IsHiddenResource = property(__IsHiddenResource.value, __IsHiddenResource.set, None, 'The Flag indicating whether the Video is hidden in some way from the Consumer (=True) or not (=False).')
 
-    
+
     # Element IsBonusResource uses Python identifier IsBonusResource
     __IsBonusResource = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsBonusResource'), 'IsBonusResource', '__httpddex_netxml20100712ddexC_Video_IsBonusResource', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5022, 12), )
 
-    
+
     IsBonusResource = property(__IsBonusResource.value, __IsBonusResource.set, None, 'The Flag indicating whether the Video is additional to those on the original Release of which this is a Version (=True) or not (=False).')
 
-    
+
     # Element LanguageOfPerformance uses Python identifier LanguageOfPerformance
     __LanguageOfPerformance = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'LanguageOfPerformance'), 'LanguageOfPerformance', '__httpddex_netxml20100712ddexC_Video_LanguageOfPerformance', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5027, 12), )
 
-    
+
     LanguageOfPerformance = property(__LanguageOfPerformance.value, __LanguageOfPerformance.set, None, 'The Language of the Performance recorded in the Video (represented by an ISO 639-2 LanguageCode).')
 
-    
+
     # Element Duration uses Python identifier Duration
     __Duration = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Duration'), 'Duration', '__httpddex_netxml20100712ddexC_Video_Duration', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5032, 12), )
 
-    
+
     Duration = property(__Duration.value, __Duration.set, None, 'The Duration of the Video (using the ISO 8601:2004 PT[[hhH]mmM]ssS format, where lower case characters indicate variables, upper case characters are part of the string, e.g. one hour, two minutes and three seconds would be PT1H2M3S).')
 
-    
+
     # Element RightsAgreementId uses Python identifier RightsAgreementId
     __RightsAgreementId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsAgreementId'), 'RightsAgreementId', '__httpddex_netxml20100712ddexC_Video_RightsAgreementId', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5037, 12), )
 
-    
+
     RightsAgreementId = property(__RightsAgreementId.value, __RightsAgreementId.set, None, 'A Composite containing details of Identifiers of a License, Claim, RightShare or contract for the MusicalWork(s) used in the Video.')
 
-    
+
     # Element ResourceMusicalWorkReferenceList uses Python identifier ResourceMusicalWorkReferenceList
     __ResourceMusicalWorkReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceMusicalWorkReferenceList'), 'ResourceMusicalWorkReferenceList', '__httpddex_netxml20100712ddexC_Video_ResourceMusicalWorkReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5042, 12), )
 
-    
+
     ResourceMusicalWorkReferenceList = property(__ResourceMusicalWorkReferenceList.value, __ResourceMusicalWorkReferenceList.set, None, 'A Composite containing details of one or more MusicalWorks contained in the Video.')
 
-    
+
     # Element ResourceContainedResourceReferenceList uses Python identifier ResourceContainedResourceReferenceList
     __ResourceContainedResourceReferenceList = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContainedResourceReferenceList'), 'ResourceContainedResourceReferenceList', '__httpddex_netxml20100712ddexC_Video_ResourceContainedResourceReferenceList', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5047, 12), )
 
-    
+
     ResourceContainedResourceReferenceList = property(__ResourceContainedResourceReferenceList.value, __ResourceContainedResourceReferenceList.set, None, 'A Composite containing details of ResourceContainedResourceReferences referring to a Resource that is contained in the current Video.')
 
-    
+
     # Element CreationDate uses Python identifier CreationDate
     __CreationDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CreationDate'), 'CreationDate', '__httpddex_netxml20100712ddexC_Video_CreationDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5052, 12), )
 
-    
+
     CreationDate = property(__CreationDate.value, __CreationDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Video was created.')
 
-    
+
     # Element MasteredDate uses Python identifier MasteredDate
     __MasteredDate = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MasteredDate'), 'MasteredDate', '__httpddex_netxml20100712ddexC_Video_MasteredDate', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5057, 12), )
 
-    
+
     MasteredDate = property(__MasteredDate.value, __MasteredDate.set, None, 'A Composite containing details of the Date and Place of the Event in which the Video was originally mastered (either in analogue or digital form).')
 
-    
+
     # Element VideoDetailsByTerritory uses Python identifier VideoDetailsByTerritory
     __VideoDetailsByTerritory = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VideoDetailsByTerritory'), 'VideoDetailsByTerritory', '__httpddex_netxml20100712ddexC_Video_VideoDetailsByTerritory', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5062, 12), )
 
-    
+
     VideoDetailsByTerritory = property(__VideoDetailsByTerritory.value, __VideoDetailsByTerritory.set, None, 'A Composite containing details of Descriptors and other attributes of the Video which may vary according to Territory of release.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Video_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5068, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5068, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Video as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -6538,18 +6538,18 @@ class VideoCueSheetReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element VideoCueSheetReference uses Python identifier VideoCueSheetReference
     __VideoCueSheetReference = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VideoCueSheetReference'), 'VideoCueSheetReference', '__httpddex_netxml20100712ddexC_VideoCueSheetReference_VideoCueSheetReference', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5103, 12), )
 
-    
+
     VideoCueSheetReference = property(__VideoCueSheetReference.value, __VideoCueSheetReference.set, None, 'A Reference for a CueSheet (specific to this Message). This LocalAnchorReference is a string starting with the letter Q.')
 
     _ElementMap.update({
         __VideoCueSheetReference.name() : __VideoCueSheetReference
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'VideoCueSheetReference', VideoCueSheetReference)
 
@@ -6565,39 +6565,39 @@ class VideoId (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element ISRC uses Python identifier ISRC
     __ISRC = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISRC'), 'ISRC', '__httpddex_netxml20100712ddexC_VideoId_ISRC', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5131, 12), )
 
-    
+
     ISRC = property(__ISRC.value, __ISRC.set, None, 'The ISRC (International Standard Recording Code as defined in ISO 3901) for the Video. An ISRC comprises four parts: two characters, followed by three alphanumeric characters, then two digits and five digits.')
 
-    
+
     # Element ISAN uses Python identifier ISAN
     __ISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ISAN'), 'ISAN', '__httpddex_netxml20100712ddexC_VideoId_ISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5136, 12), )
 
-    
+
     ISAN = property(__ISAN.value, __ISAN.set, None, 'The ISAN (International Standard Audiovisual Number as defined in ISO 15706) for the Video. An ISAN comprises four blocks of four hexadecimal charaters followed by a check character.')
 
-    
+
     # Element VISAN uses Python identifier VISAN
     __VISAN = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VISAN'), 'VISAN', '__httpddex_netxml20100712ddexC_VideoId_VISAN', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5141, 12), )
 
-    
+
     VISAN = property(__VISAN.value, __VISAN.set, None, 'The V-ISAN (Version Identifier of a International Standard Audiovisual Number as defined in ISO 15706-2) for the Video. A V-ISAN comprises four blocks of four hexadecimal charaters followed by a check character, followed by two further blocks of four hexadecimal characters, followed by a further check character.')
 
-    
+
     # Element CatalogNumber uses Python identifier CatalogNumber
     __CatalogNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CatalogNumber'), 'CatalogNumber', '__httpddex_netxml20100712ddexC_VideoId_CatalogNumber', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5146, 12), )
 
-    
+
     CatalogNumber = property(__CatalogNumber.value, __CatalogNumber.set, None, 'A Composite containing details of the CatalogNumber of the Video.')
 
-    
+
     # Element ProprietaryId uses Python identifier ProprietaryId
     __ProprietaryId = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ProprietaryId'), 'ProprietaryId', '__httpddex_netxml20100712ddexC_VideoId_ProprietaryId', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5151, 12), )
 
-    
+
     ProprietaryId = property(__ProprietaryId.value, __ProprietaryId.set, None, 'A Composite containing details of a ProprietaryIdentifier of the Video (usually one per society involved in the messaging).')
 
     _ElementMap.update({
@@ -6608,7 +6608,7 @@ class VideoId (pyxb.binding.basis.complexTypeDefinition):
         __ProprietaryId.name() : __ProprietaryId
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'VideoId', VideoId)
 
@@ -6624,32 +6624,32 @@ class WebPage (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element PageName uses Python identifier PageName
     __PageName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'PageName'), 'PageName', '__httpddex_netxml20100712ddexC_WebPage_PageName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5182, 12), )
 
-    
+
     PageName = property(__PageName.value, __PageName.set, None, 'A Composite containing the Name of the WebPage.')
 
-    
+
     # Element URL uses Python identifier URL
     __URL = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'URL'), 'URL', '__httpddex_netxml20100712ddexC_WebPage_URL', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5187, 12), )
 
-    
+
     URL = property(__URL.value, __URL.set, None, 'A URL of the WebPage.')
 
-    
+
     # Element UserName uses Python identifier UserName
     __UserName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'UserName'), 'UserName', '__httpddex_netxml20100712ddexC_WebPage_UserName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5192, 12), )
 
-    
+
     UserName = property(__UserName.value, __UserName.set, None, 'An Identifier of a computer user who is granted maintenance access to the WebPage.')
 
-    
+
     # Element Password uses Python identifier Password
     __Password = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Password'), 'Password', '__httpddex_netxml20100712ddexC_WebPage_Password', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5197, 12), )
 
-    
+
     Password = property(__Password.value, __Password.set, None, 'A Password needed to grant a user maintenance access to the WebPage in combination with the UserName.')
 
     _ElementMap.update({
@@ -6659,7 +6659,7 @@ class WebPage (pyxb.binding.basis.complexTypeDefinition):
         __Password.name() : __Password
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'WebPage', WebPage)
 
@@ -6675,19 +6675,19 @@ class WorkList (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element MusicalWork uses Python identifier MusicalWork
     __MusicalWork = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWork'), 'MusicalWork', '__httpddex_netxml20100712ddexC_WorkList_MusicalWork', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5209, 12), )
 
-    
+
     MusicalWork = property(__MusicalWork.value, __MusicalWork.set, None, 'A Composite containing details of a MusicalWork contained in a Resource.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_WorkList_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5215, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5215, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the WorkList as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -6710,20 +6710,20 @@ class AdministratingRecordCompany (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute Role uses Python identifier Role
     __Role = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Role'), 'Role', '__httpddex_netxml20100712ddexC_AdministratingRecordCompany_Role', _ImportedBinding__ddex.AdministratingRecordCompanyRole, required=True)
     __Role._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 30, 16)
     __Role._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 30, 16)
-    
+
     Role = property(__Role.value, __Role.set, None, 'The role played by the Party responsible for administering Rights in a Resource or a Release.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Role.name() : __Role
@@ -6742,40 +6742,40 @@ class AppliedRoyaltyRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute ValueType uses Python identifier ValueType
     __ValueType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'ValueType'), 'ValueType', '__httpddex_netxml20100712ddexC_AppliedRoyaltyRate_ValueType', _ImportedBinding__ddex.ValueType, required=True)
     __ValueType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 107, 16)
     __ValueType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 107, 16)
-    
+
     ValueType = property(__ValueType.value, __ValueType.set, None, 'The Type of the numeric value specified for the RoyaltyRate. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute RoyaltyRateType uses Python identifier RoyaltyRateType
     __RoyaltyRateType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'RoyaltyRateType'), 'RoyaltyRateType', '__httpddex_netxml20100712ddexC_AppliedRoyaltyRate_RoyaltyRateType', _ImportedBinding__ddex.RoyaltyRateType, required=True)
     __RoyaltyRateType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 112, 16)
     __RoyaltyRateType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 112, 16)
-    
+
     RoyaltyRateType = property(__RoyaltyRateType.value, __RoyaltyRateType.set, None, 'A Type of RoyaltyRate upon which the per unit royalty is calculated.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_AppliedRoyaltyRate_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 117, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 117, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the RoyaltyRateType if it is UserDefined. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_AppliedRoyaltyRate_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 122, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 122, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the RoyaltyRateType if it is UserDefined. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __ValueType.name() : __ValueType,
@@ -6797,24 +6797,24 @@ class ArtistRole (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ArtistRole
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ArtistRole_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 136, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 136, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ArtistRole. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ArtistRole_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 141, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 141, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ArtistRole. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -6834,32 +6834,32 @@ class AudioCodecType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.AudioCodecType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_AudioCodecType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 155, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 155, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the AudioCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_AudioCodecType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 160, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 160, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the AudioCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_AudioCodecType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 165, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 165, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the AudioCodecType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -6880,16 +6880,16 @@ class BitRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute UnitOfMeasure uses Python identifier UnitOfMeasure
     __UnitOfMeasure = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UnitOfMeasure'), 'UnitOfMeasure', '__httpddex_netxml20100712ddexC_BitRate_UnitOfMeasure', _ImportedBinding__ddex.UnitOfBitRate)
     __UnitOfMeasure._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 196, 16)
     __UnitOfMeasure._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 196, 16)
-    
+
     UnitOfMeasure = property(__UnitOfMeasure.value, __UnitOfMeasure.set, None, 'The UnitOfMeasure of the BitRate. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __UnitOfMeasure.name() : __UnitOfMeasure
@@ -6908,16 +6908,16 @@ class CalculationType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CalculationType
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_CalculationType_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 210, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 210, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the CalculationType in a group of CalculationTypes. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __SequenceNumber.name() : __SequenceNumber
@@ -6936,24 +6936,24 @@ class CarrierType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CarrierType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CarrierType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 224, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 224, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CarrierType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CarrierType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 229, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 229, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CarrierType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -6973,23 +6973,23 @@ class Character (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element ResourceContributor uses Python identifier ResourceContributor
     __ResourceContributor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributor'), 'ResourceContributor', '__httpddex_netxml20100712ddexC_Character_ResourceContributor', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 258, 20), )
 
-    
+
     ResourceContributor = property(__ResourceContributor.value, __ResourceContributor.set, None, 'A Composite containing details of the Name, Identifier and role(s) of a Contributor.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_Character_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 264, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 264, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the Character in a group of Characters. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -7012,24 +7012,24 @@ class CollectionType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CollectionType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CollectionType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 514, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 514, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CollectionType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CollectionType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 519, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 519, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CollectionType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7049,24 +7049,24 @@ class CommercialModelType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CommercialModelType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CommercialModelType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 547, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 547, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CommercialModelType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CommercialModelType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 552, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 552, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CommercialModelType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7086,28 +7086,28 @@ class ContainedReleaseSummary (ReleaseSummary):
     _ElementMap = ReleaseSummary._ElementMap.copy()
     _AttributeMap = ReleaseSummary._AttributeMap.copy()
     # Base type is ReleaseSummary
-    
+
     # Element RelatedRelease uses Python identifier RelatedRelease
     __RelatedRelease = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RelatedRelease'), 'RelatedRelease', '__httpddex_netxml20100712ddexC_ContainedReleaseSummary_RelatedRelease', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 581, 20), )
 
-    
+
     RelatedRelease = property(__RelatedRelease.value, __RelatedRelease.set, None, 'A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to the Release.')
 
-    
+
     # Element ReleaseId (ReleaseId) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummary
-    
+
     # Element ReferenceTitle (ReferenceTitle) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummary
-    
+
     # Element ReleaseSummaryDetailsByTerritory (ReleaseSummaryDetailsByTerritory) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummary
-    
+
     # Element RightsAgreementId (RightsAgreementId) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummary
-    
+
     # Attribute LanguageAndScriptCode inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummary
     _ElementMap.update({
         __RelatedRelease.name() : __RelatedRelease
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ContainedReleaseSummary', ContainedReleaseSummary)
 
@@ -7123,24 +7123,24 @@ class CueOrigin (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CueOrigin
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueOrigin_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 629, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 629, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CueOrigin. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueOrigin_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 634, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 634, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CueOrigin. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7160,24 +7160,24 @@ class CueSheetType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CueSheetType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueSheetType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 648, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 648, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CueSheetType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueSheetType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 653, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 653, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CueSheetType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7197,24 +7197,24 @@ class CueThemeType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ThemeType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueThemeType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 667, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 667, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ThemeType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueThemeType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 672, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 672, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ThemeType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7234,24 +7234,24 @@ class CueUseType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.CueUseType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueUseType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 686, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 686, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the CueUseType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueUseType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 691, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 691, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the CueUseType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7271,24 +7271,24 @@ class CueVisualPerceptionType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.VisualPerceptionType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueVisualPerceptionType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 705, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 705, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the VisualPerceptionType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueVisualPerceptionType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 710, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 710, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the VisualPerceptionType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7308,24 +7308,24 @@ class CueVocalType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.VocalType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_CueVocalType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 724, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 724, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the VocalType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_CueVocalType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 729, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 729, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the VocalType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7345,32 +7345,32 @@ class DeductionRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute DeductionRateType uses Python identifier DeductionRateType
     __DeductionRateType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'DeductionRateType'), 'DeductionRateType', '__httpddex_netxml20100712ddexC_DeductionRate_DeductionRateType', _ImportedBinding__ddex.DeductionRateType, required=True)
     __DeductionRateType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 757, 16)
     __DeductionRateType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 757, 16)
-    
+
     DeductionRateType = property(__DeductionRateType.value, __DeductionRateType.set, None, 'A Type of DeductionRate.This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute DeductionDescription uses Python identifier DeductionDescription
     __DeductionDescription = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'DeductionDescription'), 'DeductionDescription', '__httpddex_netxml20100712ddexC_DeductionRate_DeductionDescription', pyxb.binding.datatypes.string)
     __DeductionDescription._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 762, 16)
     __DeductionDescription._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 762, 16)
-    
+
     DeductionDescription = property(__DeductionDescription.value, __DeductionDescription.set, None, 'A Description of the deduction to be applied to an Amount to determine the actual Amount paid. This is a text string with no prescribed allowed values.This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_DeductionRate_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 767, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 767, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script of the DeductionDescription as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __DeductionRateType.name() : __DeductionRateType,
@@ -7391,23 +7391,23 @@ class DisplayArtist (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element ArtistRole uses Python identifier ArtistRole
     __ArtistRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ArtistRole'), 'ArtistRole', '__httpddex_netxml20100712ddexC_DisplayArtist_ArtistRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 796, 20), )
 
-    
+
     ArtistRole = property(__ArtistRole.value, __ArtistRole.set, None, 'A Composite containing details of a role played by the DisplayArtist in relation to other DisplayArtists.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_DisplayArtist_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 802, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 802, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the DisplayArtist in a group of DisplayArtists. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -7430,24 +7430,24 @@ class DistributionChannelType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.DistributionChannelType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_DistributionChannelType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 830, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 830, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the DistributionChannelType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_DistributionChannelType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 835, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 835, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the DistributionChannelType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7467,32 +7467,32 @@ class DrmPlatformType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.DrmPlatformType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_DrmPlatformType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 849, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 849, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the DrmPlatformType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_DrmPlatformType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 854, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 854, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the DrmPlatformType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_DrmPlatformType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 859, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 859, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the DrmPlatformType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -7513,37 +7513,37 @@ class DSP (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element TradingName uses Python identifier TradingName
     __TradingName = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TradingName'), 'TradingName', '__httpddex_netxml20100712ddexC_DSP_TradingName', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 874, 20), )
 
-    
+
     TradingName = property(__TradingName.value, __TradingName.set, None, 'A Composite containing a TradingName of the DSP.')
 
-    
+
     # Element URL uses Python identifier URL
     __URL = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'URL'), 'URL', '__httpddex_netxml20100712ddexC_DSP_URL', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 879, 20), )
 
-    
+
     URL = property(__URL.value, __URL.set, None, "A URL for the DSP's web site.")
 
-    
+
     # Element TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_DSP_TerritoryCode', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 884, 20), )
 
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'The Territory from which the DSP operates (represented by an ISO 3166-1 TerritoryCode). This Territory may differ from the one in which SalesTransactions occur.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_DSP_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 890, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 890, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the DSP as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -7568,16 +7568,16 @@ class Extent (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute UnitOfMeasure uses Python identifier UnitOfMeasure
     __UnitOfMeasure = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UnitOfMeasure'), 'UnitOfMeasure', '__httpddex_netxml20100712ddexC_Extent_UnitOfMeasure', _ImportedBinding__ddex.UnitOfExtent)
     __UnitOfMeasure._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 975, 16)
     __UnitOfMeasure._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 975, 16)
-    
+
     UnitOfMeasure = property(__UnitOfMeasure.value, __UnitOfMeasure.set, None, 'The UnitOfMeasure of the Extent. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __UnitOfMeasure.name() : __UnitOfMeasure
@@ -7596,16 +7596,16 @@ class ExternalLocationDescriptor (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.string
-    
+
     # Attribute DescriptorSyntax uses Python identifier DescriptorSyntax
     __DescriptorSyntax = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'DescriptorSyntax'), 'DescriptorSyntax', '__httpddex_netxml20100712ddexC_ExternalLocationDescriptor_DescriptorSyntax', _ImportedBinding__ddex.DescriptorSyntax)
     __DescriptorSyntax._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 989, 16)
     __DescriptorSyntax._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 989, 16)
-    
+
     DescriptorSyntax = property(__DescriptorSyntax.value, __DescriptorSyntax.set, None, 'A Type of the Descriptor according to how it is defined syntactically. For example, using a namespace (typically using a DPID) for a proprietary syntax or "URI" for a uniform resource identifier as defined in RFC 1630). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __DescriptorSyntax.name() : __DescriptorSyntax
@@ -7624,24 +7624,24 @@ class ExternallyLinkedResourceType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ExternallyLinkedResourceType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ExternallyLinkedResourceType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1003, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1003, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ExternallyLinkedResourceType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ExternallyLinkedResourceType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1008, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1008, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ExternallyLinkedResourceType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7661,16 +7661,16 @@ class FrameRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute UnitOfMeasure uses Python identifier UnitOfMeasure
     __UnitOfMeasure = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UnitOfMeasure'), 'UnitOfMeasure', '__httpddex_netxml20100712ddexC_FrameRate_UnitOfMeasure', _ImportedBinding__ddex.UnitOfFrameRate)
     __UnitOfMeasure._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1085, 16)
     __UnitOfMeasure._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1085, 16)
-    
+
     UnitOfMeasure = property(__UnitOfMeasure.value, __UnitOfMeasure.set, None, 'The UnitOfMeasure of the FrameRate. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __UnitOfMeasure.name() : __UnitOfMeasure
@@ -7689,24 +7689,24 @@ class GuaranteedAmount (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute CurrencyCode uses Python identifier CurrencyCode
     __CurrencyCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'CurrencyCode'), 'CurrencyCode', '__httpddex_netxml20100712ddexC_GuaranteedAmount_CurrencyCode', _ImportedBinding__iso4217a.CurrencyCode, required=True)
     __CurrencyCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1138, 16)
     __CurrencyCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1138, 16)
-    
+
     CurrencyCode = property(__CurrencyCode.value, __CurrencyCode.set, None, 'The Currency of the GuaranteedAmount (represented by an ISO 4217 CurrencyCode). This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute ReferenceUnit uses Python identifier ReferenceUnit
     __ReferenceUnit = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'ReferenceUnit'), 'ReferenceUnit', '__httpddex_netxml20100712ddexC_GuaranteedAmount_ReferenceUnit', _ImportedBinding__ddex.ReferenceUnit, required=True)
     __ReferenceUnit._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1143, 16)
     __ReferenceUnit._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1143, 16)
-    
+
     ReferenceUnit = property(__ReferenceUnit.value, __ReferenceUnit.set, None, 'A unit to which the GuaranteedAmount refers (per Use or for the whole License).')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __CurrencyCode.name() : __CurrencyCode,
@@ -7726,24 +7726,24 @@ class HashSumAlgorithmType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.HashSumAlgorithmType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_HashSumAlgorithmType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1174, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1174, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the HashSumAlgorithmType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_HashSumAlgorithmType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1179, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1179, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the HashSumAlgorithmType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7763,32 +7763,32 @@ class ImageCodecType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ImageCodecType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_ImageCodecType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1296, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1296, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the ImageCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ImageCodecType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1301, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1301, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ImageCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ImageCodecType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1306, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1306, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ImageCodecType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -7809,24 +7809,24 @@ class ImageType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ImageType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ImageType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1386, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1386, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ImageType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ImageType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1391, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1391, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ImageType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7846,23 +7846,23 @@ class IndirectResourceContributor (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element IndirectResourceContributorRole uses Python identifier IndirectResourceContributorRole
     __IndirectResourceContributorRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IndirectResourceContributorRole'), 'IndirectResourceContributorRole', '__httpddex_netxml20100712ddexC_IndirectResourceContributor_IndirectResourceContributorRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1406, 20), )
 
-    
+
     IndirectResourceContributorRole = property(__IndirectResourceContributorRole.value, __IndirectResourceContributorRole.set, None, 'A Composite containing details of a role played by the indirect Contributor.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_IndirectResourceContributor_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1412, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1412, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the indirect ResourceContributor in a group of ResourceContributors that have contributed to a Resource. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -7885,24 +7885,24 @@ class LicenseOrClaimRefusalReason (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.LicenseOrClaimRefusalReason
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_LicenseOrClaimRefusalReason_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1440, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1440, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the LicenseOrClaimRefusalReason. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_LicenseOrClaimRefusalReason_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1445, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1445, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the LicenseOrClaimRefusalReason. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7922,24 +7922,24 @@ class LinkedReleaseResourceReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.LocalResourceAnchorReference
-    
+
     # Attribute LinkDescription uses Python identifier LinkDescription
     __LinkDescription = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LinkDescription'), 'LinkDescription', '__httpddex_netxml20100712ddexC_LinkedReleaseResourceReference_LinkDescription', pyxb.binding.datatypes.string)
     __LinkDescription._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1459, 16)
     __LinkDescription._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1459, 16)
-    
+
     LinkDescription = property(__LinkDescription.value, __LinkDescription.set, None, 'A Composite containing a Description of the link for the ReleaseResourceReference.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_LinkedReleaseResourceReference_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1464, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1464, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the LinkDescription as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __LinkDescription.name() : __LinkDescription,
@@ -7959,24 +7959,24 @@ class MessageActionType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.MessageActionType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_MessageActionType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1478, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1478, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the MessageActionType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_MessageActionType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1483, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1483, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the MessageActionType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -7996,24 +7996,24 @@ class MidiType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.MidiType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_MidiType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1845, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1845, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the MidiType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_MidiType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1850, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1850, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the MidiType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8033,30 +8033,30 @@ class MusicalWorkContributor (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element MusicalWorkContributorRole uses Python identifier MusicalWorkContributorRole
     __MusicalWorkContributorRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'MusicalWorkContributorRole'), 'MusicalWorkContributorRole', '__httpddex_netxml20100712ddexC_MusicalWorkContributor_MusicalWorkContributorRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1922, 20), )
 
-    
+
     MusicalWorkContributorRole = property(__MusicalWorkContributorRole.value, __MusicalWorkContributorRole.set, None, 'A Composite containing details of a role played by the Contributor in relation to the MusicalWork. Note: This can be used in a DdexMessage in relation to any Work, Performance or Fixation any of which may form the whole or part of the Resource itself. Example: if an "AssociatedPerformer" is shown as a Contributor to a MusicalWork it refers to a performer of a Resource (e.g. a SoundRecording) expressing the MusicalWork.')
 
-    
+
     # Element SocietyAffiliation uses Python identifier SocietyAffiliation
     __SocietyAffiliation = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SocietyAffiliation'), 'SocietyAffiliation', '__httpddex_netxml20100712ddexC_MusicalWorkContributor_SocietyAffiliation', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1927, 20), )
 
-    
+
     SocietyAffiliation = property(__SocietyAffiliation.value, __SocietyAffiliation.set, None, 'A Composite containing details of a society affiliation for the MusicalWorkContributor.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_MusicalWorkContributor_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1933, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1933, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the MusicalWorkContributor in a group of MusicalWorkContributors that have contributed to a MusicalWork. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -8080,24 +8080,24 @@ class MusicalWorkContributorRole (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.MusicalWorkContributorRole
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_MusicalWorkContributorRole_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1947, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1947, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the MusicalWorkContributorRole. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_MusicalWorkContributorRole_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1952, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 1952, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the MusicalWorkContributorRole. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8117,24 +8117,24 @@ class MusicalWorkType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.MusicalWorkType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_MusicalWorkType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2022, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2022, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the MusicalWorkType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_MusicalWorkType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2027, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2027, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the MusicalWorkType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8154,16 +8154,16 @@ class NumberOfDataMismatchItems (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.integer
-    
+
     # Attribute DataMismatchStatus uses Python identifier DataMismatchStatus
     __DataMismatchStatus = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'DataMismatchStatus'), 'DataMismatchStatus', '__httpddex_netxml20100712ddexC_NumberOfDataMismatchItems_DataMismatchStatus', _ImportedBinding__ddex.DataMismatchStatus)
     __DataMismatchStatus._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2055, 16)
     __DataMismatchStatus._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2055, 16)
-    
+
     DataMismatchStatus = property(__DataMismatchStatus.value, __DataMismatchStatus.set, None, 'A status of the DataMismatch(es). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __DataMismatchStatus.name() : __DataMismatchStatus
@@ -8182,32 +8182,32 @@ class OperatingSystemType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.OperatingSystemType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_OperatingSystemType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2101, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2101, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the OperatingSystemType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_OperatingSystemType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2106, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2106, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the OperatingSystemType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_OperatingSystemType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2111, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2111, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the OperatingSystemType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -8228,24 +8228,24 @@ class OrderType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.OrderType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_OrderType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2125, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2125, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the OrderType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_OrderType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2130, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2130, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the OrderType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8265,24 +8265,24 @@ class ParentalWarningType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ParentalWarningType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ParentalWarningType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2144, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2144, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ParentalWarningType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ParentalWarningType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2149, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2149, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ParentalWarningType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8302,16 +8302,16 @@ class Price (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute CurrencyCode uses Python identifier CurrencyCode
     __CurrencyCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'CurrencyCode'), 'CurrencyCode', '__httpddex_netxml20100712ddexC_Price_CurrencyCode', _ImportedBinding__iso4217a.CurrencyCode, required=True)
     __CurrencyCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2287, 16)
     __CurrencyCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2287, 16)
-    
+
     CurrencyCode = property(__CurrencyCode.value, __CurrencyCode.set, None, 'The Currency of the Price (represented by an ISO 4217 CurrencyCode). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __CurrencyCode.name() : __CurrencyCode
@@ -8330,16 +8330,16 @@ class PriceConsumerPaidExcSalesTax (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute CurrencyCode uses Python identifier CurrencyCode
     __CurrencyCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'CurrencyCode'), 'CurrencyCode', '__httpddex_netxml20100712ddexC_PriceConsumerPaidExcSalesTax_CurrencyCode', _ImportedBinding__iso4217a.CurrencyCode)
     __CurrencyCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2301, 16)
     __CurrencyCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2301, 16)
-    
+
     CurrencyCode = property(__CurrencyCode.value, __CurrencyCode.set, None, 'The Currency of the Price (represented by an ISO 4217 CurrencyCode). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __CurrencyCode.name() : __CurrencyCode
@@ -8358,16 +8358,16 @@ class PriceRangeType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.PriceRangeType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_PriceRangeType_Namespace', pyxb.binding.datatypes.string, required=True)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2347, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2347, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the PriceRangeType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -8386,16 +8386,16 @@ class PriceType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.PriceType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_PriceType_Namespace', pyxb.binding.datatypes.string, required=True)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2361, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2361, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the PriceType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace
@@ -8414,24 +8414,24 @@ class ProductType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ProductType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ProductType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2375, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2375, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ProductType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ProductType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2380, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2380, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ProductType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8451,24 +8451,24 @@ class Purpose (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.Purpose
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_Purpose_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2422, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2422, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the Purpose. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_Purpose_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2427, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2427, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the Purpose. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8488,24 +8488,24 @@ class RatingAgency (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.RatingAgency
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_RatingAgency_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2441, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2441, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the RatingAgency. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_RatingAgency_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2446, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2446, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the RatingAgency. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8525,24 +8525,24 @@ class ReasonType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReasonType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReasonType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2474, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2474, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReasonType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReasonType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2479, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2479, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReasonType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8562,24 +8562,24 @@ class RedeliveryReasonType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.RedeliveryReasonType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_RedeliveryReasonType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2530, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2530, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the RedeliveryReasonType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_RedeliveryReasonType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2535, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2535, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the RedeliveryReasonType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8599,24 +8599,24 @@ class ReleaseAvailabilityStatus (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReleaseAvailabilityStatus
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReleaseAvailabilityStatus_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2675, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2675, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReleaseAvailabilityStatus. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReleaseAvailabilityStatus_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2680, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2680, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReleaseAvailabilityStatus. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8636,16 +8636,16 @@ class ReleaseCollectionReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.LocalCollectionAnchorReference
-    
+
     # Attribute ReleaseResourceType uses Python identifier ReleaseResourceType
     __ReleaseResourceType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'ReleaseResourceType'), 'ReleaseResourceType', '__httpddex_netxml20100712ddexC_ReleaseCollectionReference_ReleaseResourceType', _ImportedBinding__ddex.ReleaseResourceType)
     __ReleaseResourceType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2694, 16)
     __ReleaseResourceType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2694, 16)
-    
+
     ReleaseResourceType = property(__ReleaseResourceType.value, __ReleaseResourceType.set, None, 'A Type of Collection in the context of a Release. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __ReleaseResourceType.name() : __ReleaseResourceType
@@ -8664,59 +8664,59 @@ class ReleaseDetailsByTerritory (ReleaseSummaryDetailsByTerritory):
     _ElementMap = ReleaseSummaryDetailsByTerritory._ElementMap.copy()
     _AttributeMap = ReleaseSummaryDetailsByTerritory._AttributeMap.copy()
     # Base type is ReleaseSummaryDetailsByTerritory
-    
+
     # Element Title uses Python identifier Title
     __Title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Title'), 'Title', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_Title', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2726, 20), )
 
-    
+
     Title = property(__Title.value, __Title.set, None, 'A Composite containing details of a Title of the Release.')
 
-    
+
     # Element DisplayArtist uses Python identifier DisplayArtist
     __DisplayArtist = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'DisplayArtist'), 'DisplayArtist', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_DisplayArtist', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2731, 20), )
 
-    
+
     DisplayArtist = property(__DisplayArtist.value, __DisplayArtist.set, None, 'A Composite containing details of the DisplayArtist for the Release. The DisplayArtist may be described through Name, Identifier and Roles.')
 
-    
+
     # Element IsMultiArtistCompilation uses Python identifier IsMultiArtistCompilation
     __IsMultiArtistCompilation = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'IsMultiArtistCompilation'), 'IsMultiArtistCompilation', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_IsMultiArtistCompilation', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2736, 20), )
 
-    
+
     IsMultiArtistCompilation = property(__IsMultiArtistCompilation.value, __IsMultiArtistCompilation.set, None, 'The Flag indicating whether the Release is a multiartist compilation (=True) or not (=False).')
 
-    
+
     # Element AdministratingRecordCompany uses Python identifier AdministratingRecordCompany
     __AdministratingRecordCompany = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'AdministratingRecordCompany'), 'AdministratingRecordCompany', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_AdministratingRecordCompany', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2741, 20), )
 
-    
+
     AdministratingRecordCompany = property(__AdministratingRecordCompany.value, __AdministratingRecordCompany.set, None, 'A Composite containing details of the AdministratingRecordCompany for the Release.')
 
-    
+
     # Element ReleaseType uses Python identifier ReleaseType
     __ReleaseType = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ReleaseType'), 'ReleaseType', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_ReleaseType', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2746, 20), )
 
-    
+
     ReleaseType = property(__ReleaseType.value, __ReleaseType.set, None, 'A Composite containing details of the form in which a ReleaseCreator anticipates offering the Release to Consumers. This overrides the ReleaseType specified globally for the Release.')
 
-    
+
     # Element RelatedRelease uses Python identifier RelatedRelease
     __RelatedRelease = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RelatedRelease'), 'RelatedRelease', '__httpddex_netxml20100712ddexC_ReleaseDetailsByTerritory_RelatedRelease', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2751, 20), )
 
-    
+
     RelatedRelease = property(__RelatedRelease.value, __RelatedRelease.set, None, 'A Composite containing details of a Release (or a PhysicalProduct or a DigitalProduct derived from such a Release) which is related to this Release.')
 
-    
+
     # Element TerritoryCode (TerritoryCode) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
-    
+
     # Element ExcludedTerritoryCode (ExcludedTerritoryCode) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
-    
+
     # Element DisplayArtistName (DisplayArtistName) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
-    
+
     # Element LabelName (LabelName) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
-    
+
     # Element RightsAgreementId (RightsAgreementId) inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
-    
+
     # Attribute LanguageAndScriptCode inherited from {http://ddex.net/xml/20100712/ddexC}ReleaseSummaryDetailsByTerritory
     _ElementMap.update({
         __Title.name() : __Title,
@@ -8727,7 +8727,7 @@ class ReleaseDetailsByTerritory (ReleaseSummaryDetailsByTerritory):
         __RelatedRelease.name() : __RelatedRelease
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'ReleaseDetailsByTerritory', ReleaseDetailsByTerritory)
 
@@ -8743,24 +8743,24 @@ class ReleaseRelationshipType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReleaseRelationshipType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReleaseRelationshipType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2798, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2798, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReleaseRelationshipType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReleaseRelationshipType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2803, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2803, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReleaseRelationshipType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8780,16 +8780,16 @@ class ReleaseResourceReference (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.LocalResourceAnchorReference
-    
+
     # Attribute ReleaseResourceType uses Python identifier ReleaseResourceType
     __ReleaseResourceType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'ReleaseResourceType'), 'ReleaseResourceType', '__httpddex_netxml20100712ddexC_ReleaseResourceReference_ReleaseResourceType', _ImportedBinding__ddex.ReleaseResourceType)
     __ReleaseResourceType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2817, 16)
     __ReleaseResourceType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2817, 16)
-    
+
     ReleaseResourceType = property(__ReleaseResourceType.value, __ReleaseResourceType.set, None, 'A Type of Resource in the context of a Release. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __ReleaseResourceType.name() : __ReleaseResourceType
@@ -8808,24 +8808,24 @@ class ReleaseType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReleaseType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReleaseType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2914, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2914, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReleaseType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReleaseType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2919, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2919, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReleaseType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8845,24 +8845,24 @@ class ReportFormat (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReportFormat
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReportFormat_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2947, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2947, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReportFormat. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReportFormat_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2952, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2952, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReportFormat. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8882,24 +8882,24 @@ class ReportType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ReportType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ReportType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2966, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2966, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ReportType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ReportType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2971, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 2971, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ReportType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8919,23 +8919,23 @@ class ResourceContributor (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element ResourceContributorRole uses Python identifier ResourceContributorRole
     __ResourceContributorRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributorRole'), 'ResourceContributorRole', '__httpddex_netxml20100712ddexC_ResourceContributor_ResourceContributorRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3025, 20), )
 
-    
+
     ResourceContributorRole = property(__ResourceContributorRole.value, __ResourceContributorRole.set, None, 'A Composite containing details of a role played by the Contributor.')
 
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_ResourceContributor_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3031, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3031, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the ResourceContributor in a group of ResourceContributors that have contributed to a Resource. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -8958,24 +8958,24 @@ class ResourceContributorRole (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ResourceContributorRole
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ResourceContributorRole_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3045, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3045, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ResourceContributorRole. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ResourceContributorRole_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3050, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3050, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ResourceContributorRole. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -8995,24 +8995,24 @@ class ResourceType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.ResourceType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_ResourceType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3167, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3167, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the ResourceType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_ResourceType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3172, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3172, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the ResourceType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9032,37 +9032,37 @@ class RightsController (PartyDescriptor):
     _ElementMap = PartyDescriptor._ElementMap.copy()
     _AttributeMap = PartyDescriptor._AttributeMap.copy()
     # Base type is PartyDescriptor
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}PartyDescriptor
-    
+
     # Element RightsControllerRole uses Python identifier RightsControllerRole
     __RightsControllerRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightsControllerRole'), 'RightsControllerRole', '__httpddex_netxml20100712ddexC_RightsController_RightsControllerRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3204, 20), )
 
-    
+
     RightsControllerRole = property(__RightsControllerRole.value, __RightsControllerRole.set, None, 'A role that describes the Party involved in the administration of Rights.')
 
-    
+
     # Element RightShareUnknown uses Python identifier RightShareUnknown
     __RightShareUnknown = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightShareUnknown'), 'RightShareUnknown', '__httpddex_netxml20100712ddexC_RightsController_RightShareUnknown', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3210, 24), )
 
-    
+
     RightShareUnknown = property(__RightShareUnknown.value, __RightShareUnknown.set, None, 'The Flag indicating whether the RightSharePercentage is unknown (=True) or not (=False).')
 
-    
+
     # Element RightSharePercentage uses Python identifier RightSharePercentage
     __RightSharePercentage = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'RightSharePercentage'), 'RightSharePercentage', '__httpddex_netxml20100712ddexC_RightsController_RightSharePercentage', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3215, 24), )
 
-    
+
     RightSharePercentage = property(__RightSharePercentage.value, __RightSharePercentage.set, None, 'The share of the licensed Rights owned by the RightsController. RightShare information is given as a decimal value (e.g. "0.125" represents 12.5%). If no information is given, 100% is assumed.')
 
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_RightsController_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3222, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3222, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the RightsController in a group of RightsControllers. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -9087,16 +9087,16 @@ class RoyaltyAmount (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute CurrencyCode uses Python identifier CurrencyCode
     __CurrencyCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'CurrencyCode'), 'CurrencyCode', '__httpddex_netxml20100712ddexC_RoyaltyAmount_CurrencyCode', _ImportedBinding__iso4217a.CurrencyCode, required=True)
     __CurrencyCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3393, 16)
     __CurrencyCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3393, 16)
-    
+
     CurrencyCode = property(__CurrencyCode.value, __CurrencyCode.set, None, 'The Currency of the RoyaltyAmount (represented by an ISO 4217 CurrencyCode). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __CurrencyCode.name() : __CurrencyCode
@@ -9115,16 +9115,16 @@ class SamplingRate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute UnitOfMeasure uses Python identifier UnitOfMeasure
     __UnitOfMeasure = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UnitOfMeasure'), 'UnitOfMeasure', '__httpddex_netxml20100712ddexC_SamplingRate_UnitOfMeasure', _ImportedBinding__ddex.UnitOfFrequency)
     __UnitOfMeasure._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3443, 16)
     __UnitOfMeasure._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3443, 16)
-    
+
     UnitOfMeasure = property(__UnitOfMeasure.value, __UnitOfMeasure.set, None, 'The UnitOfMeasure of the SamplingRate. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __UnitOfMeasure.name() : __UnitOfMeasure
@@ -9143,32 +9143,32 @@ class SheetMusicCodecType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SheetMusicCodecType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_SheetMusicCodecType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3529, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3529, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the SheetMusicCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SheetMusicCodecType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3534, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3534, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SheetMusicCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SheetMusicCodecType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3539, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3539, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SheetMusicCodecType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -9189,24 +9189,24 @@ class SheetMusicType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SheetMusicType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SheetMusicType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3624, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3624, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SheetMusicType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SheetMusicType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3629, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3629, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SheetMusicType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9226,23 +9226,23 @@ class SimpleProfileDisplayArtist (SimpleProfilePartyDescriptor):
     _ElementMap = SimpleProfilePartyDescriptor._ElementMap.copy()
     _AttributeMap = SimpleProfilePartyDescriptor._AttributeMap.copy()
     # Base type is SimpleProfilePartyDescriptor
-    
+
     # Element ArtistRole uses Python identifier ArtistRole
     __ArtistRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ArtistRole'), 'ArtistRole', '__httpddex_netxml20100712ddexC_SimpleProfileDisplayArtist_ArtistRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3644, 20), )
 
-    
+
     ArtistRole = property(__ArtistRole.value, __ArtistRole.set, None, 'A Composite containing details of a role played by the DisplayArtist in relation to other DisplayArtists.')
 
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}SimpleProfilePartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}SimpleProfilePartyDescriptor
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_SimpleProfileDisplayArtist_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3650, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3650, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the DisplayArtist in a group of DisplayArtists. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -9265,23 +9265,23 @@ class SimpleProfileResourceContributor (SimpleProfilePartyDescriptor):
     _ElementMap = SimpleProfilePartyDescriptor._ElementMap.copy()
     _AttributeMap = SimpleProfilePartyDescriptor._AttributeMap.copy()
     # Base type is SimpleProfilePartyDescriptor
-    
+
     # Element PartyId (PartyId) inherited from {http://ddex.net/xml/20100712/ddexC}SimpleProfilePartyDescriptor
-    
+
     # Element PartyName (PartyName) inherited from {http://ddex.net/xml/20100712/ddexC}SimpleProfilePartyDescriptor
-    
+
     # Element ResourceContributorRole uses Python identifier ResourceContributorRole
     __ResourceContributorRole = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ResourceContributorRole'), 'ResourceContributorRole', '__httpddex_netxml20100712ddexC_SimpleProfileResourceContributor_ResourceContributorRole', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3780, 20), )
 
-    
+
     ResourceContributorRole = property(__ResourceContributorRole.value, __ResourceContributorRole.set, None, 'A Composite containing details of a role played by the Contributor.')
 
-    
+
     # Attribute SequenceNumber uses Python identifier SequenceNumber
     __SequenceNumber = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'SequenceNumber'), 'SequenceNumber', '__httpddex_netxml20100712ddexC_SimpleProfileResourceContributor_SequenceNumber', pyxb.binding.datatypes.integer)
     __SequenceNumber._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3786, 16)
     __SequenceNumber._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3786, 16)
-    
+
     SequenceNumber = property(__SequenceNumber.value, __SequenceNumber.set, None, 'The number indicating the order of the ResourceContributor in a group of ResourceContributors that have contributed to a Resource. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -9304,24 +9304,24 @@ class SoftwareType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SoftwareType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SoftwareType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3952, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3952, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SoftwareType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SoftwareType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3957, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3957, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SoftwareType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9341,32 +9341,32 @@ class SoundProcessorType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SoundProcessorType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_SoundProcessorType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3971, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3971, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the SoundProcessorType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SoundProcessorType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3976, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3976, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SoundProcessorType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SoundProcessorType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3981, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3981, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SoundProcessorType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -9387,24 +9387,24 @@ class SoundRecordingType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SoundRecordingType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SoundRecordingType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4267, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4267, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SoundRecordingType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SoundRecordingType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4272, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4272, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SoundRecordingType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9424,24 +9424,24 @@ class SupplyChainStatus (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.SupplyChainStatus
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_SupplyChainStatus_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4314, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4314, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the SupplyChainStatus. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_SupplyChainStatus_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4319, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4319, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the SupplyChainStatus. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9461,16 +9461,16 @@ class Tax (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.decimal
-    
+
     # Attribute CurrencyCode uses Python identifier CurrencyCode
     __CurrencyCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'CurrencyCode'), 'CurrencyCode', '__httpddex_netxml20100712ddexC_Tax_CurrencyCode', _ImportedBinding__iso4217a.CurrencyCode, required=True)
     __CurrencyCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4366, 16)
     __CurrencyCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4366, 16)
-    
+
     CurrencyCode = property(__CurrencyCode.value, __CurrencyCode.set, None, 'The Currency of the Tax (represented by an ISO 4217 CurrencyCode). This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __CurrencyCode.name() : __CurrencyCode
@@ -9489,24 +9489,24 @@ class TaxScope (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.TaxScope
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_TaxScope_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4402, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4402, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the TaxScope. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_TaxScope_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4407, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4407, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the TaxScope. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9526,24 +9526,24 @@ class TaxType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.TaxType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_TaxType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4421, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4421, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the TaxType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_TaxType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4426, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4426, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the TaxType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9563,32 +9563,32 @@ class TextCodecType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.TextCodecType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_TextCodecType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4535, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4535, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the TextCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_TextCodecType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4540, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4540, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the TextCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_TextCodecType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4545, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4545, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the TextCodecType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -9609,24 +9609,24 @@ class TextType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.TextType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_TextType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4635, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4635, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the TextType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_TextType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4640, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4640, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the TextType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9646,34 +9646,34 @@ class Title (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
-    
+
     # Element TitleText uses Python identifier TitleText
     __TitleText = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'TitleText'), 'TitleText', '__httpddex_netxml20100712ddexC_Title_TitleText', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4653, 12), )
 
-    
+
     TitleText = property(__TitleText.value, __TitleText.set, None, 'A Composite containing the text of the Title.')
 
-    
+
     # Element SubTitle uses Python identifier SubTitle
     __SubTitle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'SubTitle'), 'SubTitle', '__httpddex_netxml20100712ddexC_Title_SubTitle', False, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4658, 12), )
 
-    
+
     SubTitle = property(__SubTitle.value, __SubTitle.set, None, 'A Composite containing details of a SubTitle of the Title, including Titles of Versions used to differentiate different versions of the same Title, as required by the GRId and ISRC ReferenceDescriptiveMetadataSets.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_Title_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4664, 8)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4664, 8)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the Elements of the Title as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute TitleType uses Python identifier TitleType
     __TitleType = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'TitleType'), 'TitleType', '__httpddex_netxml20100712ddexC_Title_TitleType', _ImportedBinding__ddex.TitleType)
     __TitleType._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4669, 8)
     __TitleType._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4669, 8)
-    
+
     TitleType = property(__TitleType.value, __TitleType.set, None, 'A Type of the Title which defines its origin or the function it fulfils in relation to a Creation. Note: A Title may fulfil more than one role. Example: "Help" may be both the OriginalTitle and the DisplayTitle for the well-known Beatles song. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
@@ -9698,24 +9698,24 @@ class UserInterfaceType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.UserInterfaceType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_UserInterfaceType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4920, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4920, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the UserInterfaceType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_UserInterfaceType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4925, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4925, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the UserInterfaceType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9735,24 +9735,24 @@ class UseType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.UseType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_UseType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4939, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4939, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the UseType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_UseType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4944, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 4944, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the UseType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9772,32 +9772,32 @@ class VideoCodecType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.VideoCodecType
-    
+
     # Attribute Version uses Python identifier Version
     __Version = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Version'), 'Version', '__httpddex_netxml20100712ddexC_VideoCodecType_Version', pyxb.binding.datatypes.string)
     __Version._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5080, 16)
     __Version._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5080, 16)
-    
+
     Version = property(__Version.value, __Version.set, None, 'The Identifier of the Version of the VideoCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_VideoCodecType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5085, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5085, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the VideoCodecType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_VideoCodecType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5090, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5090, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the VideoCodecType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Version.name() : __Version,
@@ -9818,44 +9818,44 @@ class VideoDetailsByTerritory (SoundRecordingDetailsByTerritory):
     _ElementMap = SoundRecordingDetailsByTerritory._ElementMap.copy()
     _AttributeMap = SoundRecordingDetailsByTerritory._AttributeMap.copy()
     # Base type is SoundRecordingDetailsByTerritory
-    
+
     # Element TerritoryCode (TerritoryCode) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element ExcludedTerritoryCode (ExcludedTerritoryCode) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element Title (Title) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element DisplayArtist (DisplayArtist) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element ResourceContributor (ResourceContributor) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element IndirectResourceContributor (IndirectResourceContributor) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element RightsAgreementId (RightsAgreementId) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element LabelName (LabelName) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element RightsController (RightsController) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element RemasteredDate (RemasteredDate) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element OriginalResourceReleaseDate (OriginalResourceReleaseDate) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element PLine (PLine) inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
-    
+
     # Element CLine uses Python identifier CLine
     __CLine = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'CLine'), 'CLine', '__httpddex_netxml20100712ddexC_VideoDetailsByTerritory_CLine', True, pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5117, 20), )
 
-    
+
     CLine = property(__CLine.value, __CLine.set, None, 'A Composite containing details of the CLine for the Video.')
 
-    
+
     # Attribute LanguageAndScriptCode inherited from {http://ddex.net/xml/20100712/ddexC}SoundRecordingDetailsByTerritory
     _ElementMap.update({
         __CLine.name() : __CLine
     })
     _AttributeMap.update({
-        
+
     })
 Namespace.addCategoryObject('typeBinding', 'VideoDetailsByTerritory', VideoDetailsByTerritory)
 
@@ -9871,24 +9871,24 @@ class VideoType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.VideoType
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_VideoType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5164, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5164, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the VideoType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_VideoType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5169, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5169, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the VideoType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9908,24 +9908,24 @@ class WsMessageStatus (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.WsMessageStatus
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_WsMessageStatus_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5227, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5227, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the WsMessageStatus. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_WsMessageStatus_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5232, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 5232, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the WsMessageStatus. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __Namespace.name() : __Namespace,
@@ -9945,56 +9945,56 @@ class EventDate (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.date
-    
+
     # Attribute IsApproximate uses Python identifier IsApproximate
     __IsApproximate = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsApproximate'), 'IsApproximate', '__httpddex_netxml20100712ddexC_EventDate_IsApproximate', pyxb.binding.datatypes.boolean)
     __IsApproximate._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 936, 16)
     __IsApproximate._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 936, 16)
-    
+
     IsApproximate = property(__IsApproximate.value, __IsApproximate.set, None, 'The Flag indicating whether the reported Date is approximate (=True) or exact (=False). This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute IsBefore uses Python identifier IsBefore
     __IsBefore = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsBefore'), 'IsBefore', '__httpddex_netxml20100712ddexC_EventDate_IsBefore', pyxb.binding.datatypes.boolean)
     __IsBefore._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 941, 16)
     __IsBefore._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 941, 16)
-    
+
     IsBefore = property(__IsBefore.value, __IsBefore.set, None, 'The Flag indicating whether the Event being described occurred sometime before the reported Date (=True) or not (=False). This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute IsAfter uses Python identifier IsAfter
     __IsAfter = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'IsAfter'), 'IsAfter', '__httpddex_netxml20100712ddexC_EventDate_IsAfter', pyxb.binding.datatypes.boolean)
     __IsAfter._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 946, 16)
     __IsAfter._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 946, 16)
-    
+
     IsAfter = property(__IsAfter.value, __IsAfter.set, None, 'The Flag indicating whether the Event being described occurred sometime after the reported Date (=True) or not (=False). This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_EventDate_TerritoryCode', TerritoryCode)
     __TerritoryCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 951, 16)
     __TerritoryCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 951, 16)
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'The Territory in which the Event occurred (represented by an ISO 3166-1 TerritoryCode). This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute LocationDescription uses Python identifier LocationDescription
     __LocationDescription = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LocationDescription'), 'LocationDescription', '__httpddex_netxml20100712ddexC_EventDate_LocationDescription', pyxb.binding.datatypes.string)
     __LocationDescription._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 956, 16)
     __LocationDescription._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 956, 16)
-    
+
     LocationDescription = property(__LocationDescription.value, __LocationDescription.set, None, 'A Description of the location in which the Event occurred. It offers the opportunity to describe a place more precisely than using the TerritoryCode. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute LanguageAndScriptCode uses Python identifier LanguageAndScriptCode
     __LanguageAndScriptCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'LanguageAndScriptCode'), 'LanguageAndScriptCode', '__httpddex_netxml20100712ddexC_EventDate_LanguageAndScriptCode', pyxb.binding.datatypes.string)
     __LanguageAndScriptCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 961, 16)
     __LanguageAndScriptCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 961, 16)
-    
+
     LanguageAndScriptCode = property(__LanguageAndScriptCode.value, __LanguageAndScriptCode.set, None, 'The Language and script for the LocationDescription as defined in IETF RfC 4646. The default is the same as indicated for the containing composite. Language and Script are provided as lang[-scipt][-region][-variant]. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __IsApproximate.name() : __IsApproximate,
@@ -10018,32 +10018,32 @@ class RightsType (pyxb.binding.basis.complexTypeDefinition):
     _ElementMap = {}
     _AttributeMap = {}
     # Base type is _ImportedBinding__ddex.RightsCoverage
-    
+
     # Attribute TerritoryCode uses Python identifier TerritoryCode
     __TerritoryCode = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'TerritoryCode'), 'TerritoryCode', '__httpddex_netxml20100712ddexC_RightsType_TerritoryCode', TerritoryCode, required=True)
     __TerritoryCode._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3369, 16)
     __TerritoryCode._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3369, 16)
-    
+
     TerritoryCode = property(__TerritoryCode.value, __TerritoryCode.set, None, 'A Territory to which the RightsType applies (represented by an ISO 3166-1 TerritoryCode). The RightsType is defined according to the jurisdiction of this Territory.')
 
-    
+
     # Attribute Namespace uses Python identifier Namespace_
     __Namespace = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'Namespace'), 'Namespace_', '__httpddex_netxml20100712ddexC_RightsType_Namespace', pyxb.binding.datatypes.string)
     __Namespace._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3374, 16)
     __Namespace._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3374, 16)
-    
+
     Namespace_ = property(__Namespace.value, __Namespace.set, None, 'The Namespace of the RightsType. This is represented in an XML schema as an XML Attribute.')
 
-    
+
     # Attribute UserDefinedValue uses Python identifier UserDefinedValue
     __UserDefinedValue = pyxb.binding.content.AttributeUse(pyxb.namespace.ExpandedName(None, 'UserDefinedValue'), 'UserDefinedValue', '__httpddex_netxml20100712ddexC_RightsType_UserDefinedValue', pyxb.binding.datatypes.string)
     __UserDefinedValue._DeclarationLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3379, 16)
     __UserDefinedValue._UseLocation = pyxb.utils.utility.Location('http://ddex.net/xml/20100712/ddexC.xsd', 3379, 16)
-    
+
     UserDefinedValue = property(__UserDefinedValue.value, __UserDefinedValue.set, None, 'A UserDefined value of the RightsType. This is represented in an XML schema as an XML Attribute.')
 
     _ElementMap.update({
-        
+
     })
     _AttributeMap.update({
         __TerritoryCode.name() : __TerritoryCode,
